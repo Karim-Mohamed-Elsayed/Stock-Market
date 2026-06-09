@@ -1,6 +1,5 @@
 daily_download.log
 hourly_download.log
 /.env
-
-
-
+sp500_daily_csv
+sp500_hourly_csv
