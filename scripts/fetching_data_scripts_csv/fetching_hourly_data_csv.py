@@ -5,6 +5,7 @@ S&P 500 Hourly Data Downloader
 """
 
 import os
+import sys
 import time
 import logging
 import pandas as pd
@@ -15,26 +16,32 @@ from io import StringIO
 from pathlib import Path
 from datetime import datetime, timedelta
 
-# ── Config ────────────────────────────────────────────────────────────────────
+# -- Config -------------------------------------------------------------------
 OUTPUT_DIR   = Path("sp500_hourly_csv")
 INTERVAL     = "1h"
 BATCH_SIZE   = 50
 SLEEP_SECS   = 2
 START_DATE   = (datetime.today() - timedelta(days=729)).strftime("%Y-%m-%d")
-END_DATE     = datetime.today().strftime("%Y-%m-%d")
+END_DATE     = (datetime.today() + timedelta(days=1)).strftime("%Y-%m-%d")
 LOG_FILE     = "hourly_download.log"
-# ─────────────────────────────────────────────────────────────────────────────
+# -----------------------------------------------------------------------------
 
+# Fix: use UTF-8 for file handler and reconfigure stdout to handle Unicode
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s  %(levelname)s  %(message)s",
-    handlers=[logging.FileHandler(LOG_FILE), logging.StreamHandler()],
+    handlers=[
+        logging.FileHandler(LOG_FILE, encoding="utf-8"),
+        logging.StreamHandler(
+            stream=open(sys.stdout.fileno(), "w", encoding="utf-8", closefd=False)
+        ),
+    ],
 )
 log = logging.getLogger(__name__)
 
 
 def get_sp500_tickers() -> list[str]:
-    log.info("Fetching S&P 500 tickers from Wikipedia …")
+    log.info("Fetching S&P 500 tickers from Wikipedia ...")
     url     = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
     headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
     resp    = requests.get(url, headers=headers, timeout=15)
@@ -56,11 +63,14 @@ def get_last_timestamp(ticker: str) -> str | None:
     try:
         df   = pd.read_csv(path, index_col=0, parse_dates=True)
         last = pd.to_datetime(df.index).max()
+        # Strip timezone info so comparison with naive datetime.today() works
+        if hasattr(last, "tzinfo") and last.tzinfo is not None:
+            last = last.tz_localize(None)
         # clamp: don't go beyond yfinance's 730-day limit
         yf_limit = datetime.today() - timedelta(days=729)
         if last < yf_limit:
             return START_DATE
-        return (last + timedelta(hours=1)).strftime("%Y-%m-%d %H:%M:%S")
+        return (last + timedelta(hours=1)).strftime("%Y-%m-%d")
     except Exception as e:
         log.warning(f"Could not read {ticker}: {e}")
         return None
@@ -85,7 +95,7 @@ def download_batch(tickers: list[str], start: str) -> pd.DataFrame:
 
 def append_or_create(ticker: str, new_data: pd.DataFrame) -> None:
     if new_data.empty:
-        log.warning(f"  No new data for {ticker} — skipped.")
+        log.warning(f"  No new data for {ticker} -- skipped.")
         return
     path = OUTPUT_DIR / f"{ticker}.csv"
     if path.exists():
@@ -93,7 +103,7 @@ def append_or_create(ticker: str, new_data: pd.DataFrame) -> None:
         combined = pd.concat([existing, new_data])
         combined = combined[~combined.index.duplicated(keep="last")].sort_index()
         combined.to_csv(path)
-        log.info(f"  {ticker}: +{len(new_data)} rows → {len(combined)} total")
+        log.info(f"  {ticker}: +{len(new_data)} rows -> {len(combined)} total")
     else:
         new_data.to_csv(path)
         log.info(f"  {ticker}: created with {len(new_data)} rows")
