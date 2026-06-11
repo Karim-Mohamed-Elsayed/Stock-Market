@@ -1,0 +1,798 @@
+[2026-06-11T02:28:55.454+0000] {processor.py:161} INFO - Started process (PID=189) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:28:55.457+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:28:55.460+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:28:55.459+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:28:57.423+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:28:57.411+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/sp500_master_ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/sp500_master_ingestion_dag.py", line 12, in <module>
+    from minio_fetching_data_hourly import main as run_hourly_ingestion
+  File "/opt/airflow/scripts/minio_fetching_data/minio_fetching_data_hourly.py", line 36, in <module>
+    stream=open(sys.stdout.fileno(), "w", encoding="utf-8", closefd=False)
+                ^^^^^^^^^^^^^^^^^^^
+io.UnsupportedOperation: fileno
+[2026-06-11T02:28:57.427+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:28:57.442+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 1.993 seconds
+[2026-06-11T02:29:27.636+0000] {processor.py:161} INFO - Started process (PID=195) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:29:27.637+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:29:27.639+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:29:27.639+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:29:28.395+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:29:28.386+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/sp500_master_ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/sp500_master_ingestion_dag.py", line 12, in <module>
+    from minio_fetching_data_hourly import main as run_hourly_ingestion
+  File "/opt/airflow/scripts/minio_fetching_data/minio_fetching_data_hourly.py", line 36, in <module>
+    stream=open(sys.stdout.fileno(), "w", encoding="utf-8", closefd=False)
+                ^^^^^^^^^^^^^^^^^^^
+io.UnsupportedOperation: fileno
+[2026-06-11T02:29:28.398+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:29:28.411+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.779 seconds
+[2026-06-11T02:29:58.626+0000] {processor.py:161} INFO - Started process (PID=201) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:29:58.628+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:29:58.630+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:29:58.630+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:29:59.377+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:29:59.369+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/sp500_master_ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/sp500_master_ingestion_dag.py", line 12, in <module>
+    from minio_fetching_data_hourly import main as run_hourly_ingestion
+  File "/opt/airflow/scripts/minio_fetching_data/minio_fetching_data_hourly.py", line 36, in <module>
+    stream=open(sys.stdout.fileno(), "w", encoding="utf-8", closefd=False)
+                ^^^^^^^^^^^^^^^^^^^
+io.UnsupportedOperation: fileno
+[2026-06-11T02:29:59.381+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:29:59.399+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.778 seconds
+[2026-06-11T02:30:29.597+0000] {processor.py:161} INFO - Started process (PID=207) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:30:29.598+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:30:29.601+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:30:29.600+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:30:30.385+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:30:30.373+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/sp500_master_ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/sp500_master_ingestion_dag.py", line 12, in <module>
+    from minio_fetching_data_hourly import main as run_hourly_ingestion
+  File "/opt/airflow/scripts/minio_fetching_data/minio_fetching_data_hourly.py", line 36, in <module>
+    stream=open(sys.stdout.fileno(), "w", encoding="utf-8", closefd=False)
+                ^^^^^^^^^^^^^^^^^^^
+io.UnsupportedOperation: fileno
+[2026-06-11T02:30:30.388+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:30:30.404+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.812 seconds
+[2026-06-11T02:31:00.613+0000] {processor.py:161} INFO - Started process (PID=213) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:31:00.615+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:31:00.619+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:31:00.618+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:31:01.417+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:31:01.403+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/sp500_master_ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/sp500_master_ingestion_dag.py", line 12, in <module>
+    from minio_fetching_data_hourly import main as run_hourly_ingestion
+  File "/opt/airflow/scripts/minio_fetching_data/minio_fetching_data_hourly.py", line 36, in <module>
+    stream=open(sys.stdout.fileno(), "w", encoding="utf-8", closefd=False)
+                ^^^^^^^^^^^^^^^^^^^
+io.UnsupportedOperation: fileno
+[2026-06-11T02:31:01.422+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:31:01.437+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.830 seconds
+[2026-06-11T02:31:31.650+0000] {processor.py:161} INFO - Started process (PID=219) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:31:31.652+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:31:31.656+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:31:31.655+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:31:32.457+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:31:32.445+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/sp500_master_ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/sp500_master_ingestion_dag.py", line 12, in <module>
+    from minio_fetching_data_hourly import main as run_hourly_ingestion
+  File "/opt/airflow/scripts/minio_fetching_data/minio_fetching_data_hourly.py", line 36, in <module>
+    stream=open(sys.stdout.fileno(), "w", encoding="utf-8", closefd=False)
+                ^^^^^^^^^^^^^^^^^^^
+io.UnsupportedOperation: fileno
+[2026-06-11T02:31:32.463+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:31:32.478+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.834 seconds
+[2026-06-11T02:32:02.658+0000] {processor.py:161} INFO - Started process (PID=225) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:32:02.659+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:32:02.662+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:32:02.661+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:32:03.356+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:32:03.344+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/sp500_master_ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/sp500_master_ingestion_dag.py", line 12, in <module>
+    from minio_fetching_data_hourly import main as run_hourly_ingestion
+  File "/opt/airflow/scripts/minio_fetching_data/minio_fetching_data_hourly.py", line 36, in <module>
+    stream=open(sys.stdout.fileno(), "w", encoding="utf-8", closefd=False)
+                ^^^^^^^^^^^^^^^^^^^
+io.UnsupportedOperation: fileno
+[2026-06-11T02:32:03.361+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:32:03.375+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.723 seconds
+[2026-06-11T02:32:33.596+0000] {processor.py:161} INFO - Started process (PID=231) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:32:33.598+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:32:33.600+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:32:33.600+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:32:34.332+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:32:34.325+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/sp500_master_ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/sp500_master_ingestion_dag.py", line 12, in <module>
+    from minio_fetching_data_hourly import main as run_hourly_ingestion
+  File "/opt/airflow/scripts/minio_fetching_data/minio_fetching_data_hourly.py", line 36, in <module>
+    stream=open(sys.stdout.fileno(), "w", encoding="utf-8", closefd=False)
+                ^^^^^^^^^^^^^^^^^^^
+io.UnsupportedOperation: fileno
+[2026-06-11T02:32:34.337+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:32:34.351+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.760 seconds
+[2026-06-11T02:33:04.558+0000] {processor.py:161} INFO - Started process (PID=237) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:33:04.560+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:33:04.562+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:33:04.562+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:33:05.272+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:33:05.265+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/sp500_master_ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/sp500_master_ingestion_dag.py", line 12, in <module>
+    from minio_fetching_data_hourly import main as run_hourly_ingestion
+  File "/opt/airflow/scripts/minio_fetching_data/minio_fetching_data_hourly.py", line 36, in <module>
+    stream=open(sys.stdout.fileno(), "w", encoding="utf-8", closefd=False)
+                ^^^^^^^^^^^^^^^^^^^
+io.UnsupportedOperation: fileno
+[2026-06-11T02:33:05.275+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:33:05.291+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.738 seconds
+[2026-06-11T02:33:35.486+0000] {processor.py:161} INFO - Started process (PID=243) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:33:35.488+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:33:35.490+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:33:35.490+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:33:36.277+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:33:36.270+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/sp500_master_ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/sp500_master_ingestion_dag.py", line 12, in <module>
+    from minio_fetching_data_hourly import main as run_hourly_ingestion
+  File "/opt/airflow/scripts/minio_fetching_data/minio_fetching_data_hourly.py", line 36, in <module>
+    stream=open(sys.stdout.fileno(), "w", encoding="utf-8", closefd=False)
+                ^^^^^^^^^^^^^^^^^^^
+io.UnsupportedOperation: fileno
+[2026-06-11T02:33:36.280+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:33:36.294+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.813 seconds
+[2026-06-11T02:34:06.524+0000] {processor.py:161} INFO - Started process (PID=249) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:34:06.526+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:34:06.529+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:34:06.529+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:34:07.331+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:34:07.318+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/sp500_master_ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/sp500_master_ingestion_dag.py", line 12, in <module>
+    from minio_fetching_data_hourly import main as run_hourly_ingestion
+  File "/opt/airflow/scripts/minio_fetching_data/minio_fetching_data_hourly.py", line 36, in <module>
+    stream=open(sys.stdout.fileno(), "w", encoding="utf-8", closefd=False)
+                ^^^^^^^^^^^^^^^^^^^
+io.UnsupportedOperation: fileno
+[2026-06-11T02:34:07.336+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:34:07.352+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.833 seconds
+[2026-06-11T02:34:37.493+0000] {processor.py:161} INFO - Started process (PID=255) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:34:37.494+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:34:37.497+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:34:37.496+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:34:38.207+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:34:38.200+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/sp500_master_ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/sp500_master_ingestion_dag.py", line 12, in <module>
+    from minio_fetching_data_hourly import main as run_hourly_ingestion
+  File "/opt/airflow/scripts/minio_fetching_data/minio_fetching_data_hourly.py", line 36, in <module>
+    stream=open(sys.stdout.fileno(), "w", encoding="utf-8", closefd=False)
+                ^^^^^^^^^^^^^^^^^^^
+io.UnsupportedOperation: fileno
+[2026-06-11T02:34:38.209+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:34:38.225+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.737 seconds
+[2026-06-11T02:35:08.426+0000] {processor.py:161} INFO - Started process (PID=261) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:35:08.427+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:35:08.430+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:35:08.429+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:35:09.126+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:35:09.119+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/sp500_master_ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/sp500_master_ingestion_dag.py", line 12, in <module>
+    from minio_fetching_data_hourly import main as run_hourly_ingestion
+  File "/opt/airflow/scripts/minio_fetching_data/minio_fetching_data_hourly.py", line 36, in <module>
+    stream=open(sys.stdout.fileno(), "w", encoding="utf-8", closefd=False)
+                ^^^^^^^^^^^^^^^^^^^
+io.UnsupportedOperation: fileno
+[2026-06-11T02:35:09.129+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:35:09.144+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.724 seconds
+[2026-06-11T02:35:39.334+0000] {processor.py:161} INFO - Started process (PID=267) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:35:39.335+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:35:39.338+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:35:39.337+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:35:40.091+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:35:40.081+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/sp500_master_ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/sp500_master_ingestion_dag.py", line 12, in <module>
+    from minio_fetching_data_hourly import main as run_hourly_ingestion
+  File "/opt/airflow/scripts/minio_fetching_data/minio_fetching_data_hourly.py", line 36, in <module>
+    stream=open(sys.stdout.fileno(), "w", encoding="utf-8", closefd=False)
+                ^^^^^^^^^^^^^^^^^^^
+io.UnsupportedOperation: fileno
+[2026-06-11T02:35:40.094+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:35:40.112+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.783 seconds
+[2026-06-11T02:36:10.298+0000] {processor.py:161} INFO - Started process (PID=273) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:36:10.299+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:36:10.302+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:36:10.302+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:36:11.025+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:36:11.188+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:36:11.188+0000] {override.py:1829} INFO - Created Permission View: can edit on DAG:sp500_master_ingestion_pipeline
+[2026-06-11T02:36:11.197+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:36:11.197+0000] {override.py:1829} INFO - Created Permission View: can delete on DAG:sp500_master_ingestion_pipeline
+[2026-06-11T02:36:11.205+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:36:11.205+0000] {override.py:1829} INFO - Created Permission View: can read on DAG:sp500_master_ingestion_pipeline
+[2026-06-11T02:36:11.206+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:36:11.206+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:36:11.214+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:36:11.213+0000] {dag.py:3118} INFO - Creating ORM DAG for sp500_master_ingestion_pipeline
+[2026-06-11T02:36:11.221+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:36:11.221+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-09 20:30:00+00:00, run_after=2026-06-10 20:30:00+00:00
+[2026-06-11T02:36:11.243+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.949 seconds
+[2026-06-11T02:36:41.425+0000] {processor.py:161} INFO - Started process (PID=279) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:36:41.427+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:36:41.429+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:36:41.429+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:36:42.272+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:36:42.295+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:36:42.294+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:36:42.312+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:36:42.311+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-09 20:30:00+00:00, run_after=2026-06-10 20:30:00+00:00
+[2026-06-11T02:36:42.333+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.914 seconds
+[2026-06-11T02:37:12.532+0000] {processor.py:161} INFO - Started process (PID=285) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:37:12.534+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:37:12.537+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:37:12.537+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:37:13.301+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:37:13.323+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:37:13.323+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:37:13.339+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:37:13.339+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-09 20:30:00+00:00, run_after=2026-06-10 20:30:00+00:00
+[2026-06-11T02:37:13.358+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.831 seconds
+[2026-06-11T02:37:43.511+0000] {processor.py:161} INFO - Started process (PID=291) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:37:43.513+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:37:43.516+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:37:43.516+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:37:44.282+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:37:44.302+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:37:44.301+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:37:44.317+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:37:44.317+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-09 20:30:00+00:00, run_after=2026-06-10 20:30:00+00:00
+[2026-06-11T02:37:44.335+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.828 seconds
+[2026-06-11T02:38:14.558+0000] {processor.py:161} INFO - Started process (PID=297) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:38:14.559+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:38:14.562+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:38:14.561+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:38:15.237+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:38:15.257+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:38:15.257+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:38:15.273+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:38:15.273+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-09 20:30:00+00:00, run_after=2026-06-10 20:30:00+00:00
+[2026-06-11T02:38:15.292+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.741 seconds
+[2026-06-11T02:38:45.499+0000] {processor.py:161} INFO - Started process (PID=303) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:38:45.501+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:38:45.504+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:38:45.503+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:38:46.250+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:38:46.270+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:38:46.270+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:38:46.285+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:38:46.285+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-09 20:30:00+00:00, run_after=2026-06-10 20:30:00+00:00
+[2026-06-11T02:38:46.304+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.810 seconds
+[2026-06-11T02:39:16.509+0000] {processor.py:161} INFO - Started process (PID=309) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:39:16.512+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:39:16.518+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:39:16.517+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:39:17.826+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:39:17.851+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:39:17.850+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:39:17.870+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:39:17.870+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-09 20:30:00+00:00, run_after=2026-06-10 20:30:00+00:00
+[2026-06-11T02:39:17.891+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 1.394 seconds
+[2026-06-11T02:39:48.095+0000] {processor.py:161} INFO - Started process (PID=315) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:39:48.097+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:39:48.099+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:39:48.099+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:39:48.827+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:39:48.847+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:39:48.847+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:39:48.863+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:39:48.863+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-09 20:30:00+00:00, run_after=2026-06-10 20:30:00+00:00
+[2026-06-11T02:39:48.883+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.793 seconds
+[2026-06-11T02:40:19.070+0000] {processor.py:161} INFO - Started process (PID=321) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:40:19.072+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:40:19.075+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:40:19.074+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:40:19.818+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:40:19.837+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:40:19.837+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:40:19.851+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:40:19.851+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-09 20:30:00+00:00, run_after=2026-06-10 20:30:00+00:00
+[2026-06-11T02:40:19.867+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.801 seconds
+[2026-06-11T02:40:50.005+0000] {processor.py:161} INFO - Started process (PID=327) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:40:50.007+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:40:50.010+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:40:50.009+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:40:50.710+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:40:50.729+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:40:50.728+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:40:50.744+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:40:50.743+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-09 20:30:00+00:00, run_after=2026-06-10 20:30:00+00:00
+[2026-06-11T02:40:50.761+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.762 seconds
+[2026-06-11T02:41:20.966+0000] {processor.py:161} INFO - Started process (PID=333) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:41:20.967+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:41:20.969+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:41:20.969+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:41:21.634+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:41:21.653+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:41:21.653+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:41:21.668+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:41:21.668+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-09 20:30:00+00:00, run_after=2026-06-10 20:30:00+00:00
+[2026-06-11T02:41:21.686+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.725 seconds
+[2026-06-11T02:41:51.878+0000] {processor.py:161} INFO - Started process (PID=339) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:41:51.879+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:41:51.881+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:41:51.881+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:41:52.595+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:41:52.614+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:41:52.613+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:41:52.628+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:41:52.628+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-09 20:30:00+00:00, run_after=2026-06-10 20:30:00+00:00
+[2026-06-11T02:41:52.649+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.776 seconds
+[2026-06-11T02:42:22.845+0000] {processor.py:161} INFO - Started process (PID=345) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:42:22.847+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:42:22.849+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:42:22.848+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:42:23.596+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:42:23.620+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:42:23.620+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:42:23.640+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:42:23.640+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-09 20:30:00+00:00, run_after=2026-06-10 20:30:00+00:00
+[2026-06-11T02:42:23.663+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.823 seconds
+[2026-06-11T02:42:53.858+0000] {processor.py:161} INFO - Started process (PID=351) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:42:53.860+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:42:53.864+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:42:53.863+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:42:54.629+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:42:54.654+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:42:54.653+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:42:54.670+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:42:54.670+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-09 20:30:00+00:00, run_after=2026-06-10 20:30:00+00:00
+[2026-06-11T02:42:54.692+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.840 seconds
+[2026-06-11T02:43:24.873+0000] {processor.py:161} INFO - Started process (PID=357) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:43:24.875+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:43:24.878+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:43:24.878+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:43:25.581+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:43:25.600+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:43:25.600+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:43:25.616+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:43:25.615+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-09 20:30:00+00:00, run_after=2026-06-10 20:30:00+00:00
+[2026-06-11T02:43:25.633+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.766 seconds
+[2026-06-11T02:43:55.855+0000] {processor.py:161} INFO - Started process (PID=363) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:43:55.856+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:43:55.859+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:43:55.859+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:43:56.622+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:43:56.641+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:43:56.640+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:43:56.655+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:43:56.655+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-09 20:30:00+00:00, run_after=2026-06-10 20:30:00+00:00
+[2026-06-11T02:43:56.674+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.824 seconds
+[2026-06-11T02:44:26.885+0000] {processor.py:161} INFO - Started process (PID=369) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:44:26.887+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:44:26.890+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:44:26.890+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:44:27.716+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:44:27.738+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:44:27.738+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:44:27.754+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:44:27.754+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-09 20:30:00+00:00, run_after=2026-06-10 20:30:00+00:00
+[2026-06-11T02:44:27.775+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.897 seconds
+[2026-06-11T02:44:57.986+0000] {processor.py:161} INFO - Started process (PID=375) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:44:57.988+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:44:57.990+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:44:57.990+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:44:58.666+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:44:58.691+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:44:58.691+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:44:58.709+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:44:58.709+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-09 20:30:00+00:00, run_after=2026-06-10 20:30:00+00:00
+[2026-06-11T02:44:58.727+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.748 seconds
+[2026-06-11T02:45:28.935+0000] {processor.py:161} INFO - Started process (PID=381) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:45:28.937+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:45:28.939+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:45:28.939+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:45:29.731+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:45:29.751+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:45:29.751+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:45:29.770+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:45:29.769+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-09 20:30:00+00:00, run_after=2026-06-10 20:30:00+00:00
+[2026-06-11T02:45:29.792+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.864 seconds
+[2026-06-11T02:45:59.992+0000] {processor.py:161} INFO - Started process (PID=387) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:45:59.993+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:45:59.995+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:45:59.995+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:46:00.756+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:46:00.776+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:46:00.776+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:46:00.792+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:46:00.792+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-09 20:30:00+00:00, run_after=2026-06-10 20:30:00+00:00
+[2026-06-11T02:46:00.813+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.826 seconds
+[2026-06-11T02:46:30.936+0000] {processor.py:161} INFO - Started process (PID=393) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:46:30.938+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:46:30.941+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:46:30.941+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:46:31.629+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:46:31.648+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:46:31.648+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:46:31.662+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:46:31.662+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-09 20:30:00+00:00, run_after=2026-06-10 20:30:00+00:00
+[2026-06-11T02:46:31.681+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.749 seconds
+[2026-06-11T02:47:01.898+0000] {processor.py:161} INFO - Started process (PID=399) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:47:01.900+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:47:01.902+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:47:01.902+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:47:02.663+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:47:02.684+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:47:02.684+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:47:02.700+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:47:02.700+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-09 20:30:00+00:00, run_after=2026-06-10 20:30:00+00:00
+[2026-06-11T02:47:02.719+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.826 seconds
+[2026-06-11T02:47:32.914+0000] {processor.py:161} INFO - Started process (PID=405) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:47:32.916+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:47:32.918+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:47:32.918+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:47:33.606+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:47:33.627+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:47:33.627+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:47:33.645+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:47:33.644+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-09 20:30:00+00:00, run_after=2026-06-10 20:30:00+00:00
+[2026-06-11T02:47:33.663+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.754 seconds
+[2026-06-11T02:48:03.853+0000] {processor.py:161} INFO - Started process (PID=411) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:48:03.854+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:48:03.857+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:48:03.856+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:48:04.630+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:48:04.649+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:48:04.648+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:48:04.663+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:48:04.663+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-09 20:30:00+00:00, run_after=2026-06-10 20:30:00+00:00
+[2026-06-11T02:48:04.681+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.833 seconds
+[2026-06-11T02:48:34.868+0000] {processor.py:161} INFO - Started process (PID=417) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:48:34.869+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:48:34.872+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:48:34.872+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:48:35.615+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:48:35.636+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:48:35.635+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:48:35.652+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:48:35.651+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-09 20:30:00+00:00, run_after=2026-06-10 20:30:00+00:00
+[2026-06-11T02:48:35.670+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.808 seconds
+[2026-06-11T02:49:05.868+0000] {processor.py:161} INFO - Started process (PID=426) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:49:05.869+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:49:05.872+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:49:05.871+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:49:06.653+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:49:06.675+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:49:06.674+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:49:06.691+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:49:06.691+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-10 20:30:00+00:00, run_after=2026-06-11 20:30:00+00:00
+[2026-06-11T02:49:06.709+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.846 seconds
+[2026-06-11T02:49:36.906+0000] {processor.py:161} INFO - Started process (PID=1238) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:49:36.908+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:49:36.911+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:49:36.910+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:49:37.676+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:49:37.697+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:49:37.696+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:49:37.712+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:49:37.712+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-10 20:30:00+00:00, run_after=2026-06-11 20:30:00+00:00
+[2026-06-11T02:49:37.729+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.829 seconds
+[2026-06-11T02:50:07.961+0000] {processor.py:161} INFO - Started process (PID=2324) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:50:07.964+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:50:07.967+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:50:07.967+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:50:08.787+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:50:08.808+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:50:08.807+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:50:08.824+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:50:08.824+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-10 20:30:00+00:00, run_after=2026-06-11 20:30:00+00:00
+[2026-06-11T02:50:08.842+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.890 seconds
+[2026-06-11T02:50:39.065+0000] {processor.py:161} INFO - Started process (PID=2859) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:50:39.067+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:50:39.070+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:50:39.069+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:50:39.924+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:50:39.943+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:50:39.942+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:50:39.961+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:50:39.961+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-10 20:30:00+00:00, run_after=2026-06-11 20:30:00+00:00
+[2026-06-11T02:50:39.984+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.926 seconds
+[2026-06-11T02:51:10.205+0000] {processor.py:161} INFO - Started process (PID=3683) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:51:10.207+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:51:10.210+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:51:10.210+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:51:11.003+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:51:11.024+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:51:11.024+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:51:11.046+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:51:11.045+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-10 20:30:00+00:00, run_after=2026-06-11 20:30:00+00:00
+[2026-06-11T02:51:11.069+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.870 seconds
+[2026-06-11T02:51:41.290+0000] {processor.py:161} INFO - Started process (PID=4495) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:51:41.292+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:51:41.294+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:51:41.294+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:51:42.078+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:51:42.098+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:51:42.097+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:51:42.114+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:51:42.114+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-10 20:30:00+00:00, run_after=2026-06-11 20:30:00+00:00
+[2026-06-11T02:51:42.133+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.849 seconds
+[2026-06-11T02:52:12.346+0000] {processor.py:161} INFO - Started process (PID=4507) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:52:12.348+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:52:12.350+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:52:12.349+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:52:12.983+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:52:13.001+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:52:13.001+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:52:13.014+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:52:13.014+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-10 20:30:00+00:00, run_after=2026-06-11 20:30:00+00:00
+[2026-06-11T02:52:13.032+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.690 seconds
+[2026-06-11T02:52:43.245+0000] {processor.py:161} INFO - Started process (PID=4513) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:52:43.247+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:52:43.249+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:52:43.249+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:52:43.940+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:52:43.958+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:52:43.957+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:52:43.971+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:52:43.971+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-10 20:30:00+00:00, run_after=2026-06-11 20:30:00+00:00
+[2026-06-11T02:52:43.989+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.748 seconds
+[2026-06-11T02:53:14.136+0000] {processor.py:161} INFO - Started process (PID=4519) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:53:14.138+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:53:14.141+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:53:14.140+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:53:14.890+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:53:14.907+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:53:14.907+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:53:14.925+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:53:14.924+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-10 20:30:00+00:00, run_after=2026-06-11 20:30:00+00:00
+[2026-06-11T02:53:14.943+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.813 seconds
+[2026-06-11T02:53:45.168+0000] {processor.py:161} INFO - Started process (PID=4525) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:53:45.169+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:53:45.171+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:53:45.171+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:53:45.890+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:53:45.913+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:53:45.912+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:53:45.930+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:53:45.930+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-10 20:30:00+00:00, run_after=2026-06-11 20:30:00+00:00
+[2026-06-11T02:53:45.948+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.785 seconds
+[2026-06-11T02:54:16.193+0000] {processor.py:161} INFO - Started process (PID=4531) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:54:16.195+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:54:16.198+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:54:16.198+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:54:16.923+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:54:16.943+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:54:16.942+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:54:16.957+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:54:16.957+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-10 20:30:00+00:00, run_after=2026-06-11 20:30:00+00:00
+[2026-06-11T02:54:16.978+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.791 seconds
+[2026-06-11T02:54:47.184+0000] {processor.py:161} INFO - Started process (PID=4537) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:54:47.185+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:54:47.187+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:54:47.187+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:54:47.836+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:54:47.853+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:54:47.853+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:54:47.867+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:54:47.867+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-10 20:30:00+00:00, run_after=2026-06-11 20:30:00+00:00
+[2026-06-11T02:54:47.885+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.705 seconds
+[2026-06-11T02:55:18.083+0000] {processor.py:161} INFO - Started process (PID=4543) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:55:18.085+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:55:18.087+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:55:18.087+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:55:18.740+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:55:18.758+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:55:18.758+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:55:18.774+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:55:18.774+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-10 20:30:00+00:00, run_after=2026-06-11 20:30:00+00:00
+[2026-06-11T02:55:18.792+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.714 seconds
+[2026-06-11T02:55:48.996+0000] {processor.py:161} INFO - Started process (PID=4549) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:55:48.998+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:55:49.000+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:55:48.999+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:55:49.656+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:55:49.675+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:55:49.675+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:55:49.691+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:55:49.691+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-10 20:30:00+00:00, run_after=2026-06-11 20:30:00+00:00
+[2026-06-11T02:55:49.708+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.716 seconds
+[2026-06-11T02:56:19.911+0000] {processor.py:161} INFO - Started process (PID=4555) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:56:19.913+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:56:19.915+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:56:19.915+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:56:20.604+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:56:20.630+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:56:20.630+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:56:20.651+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:56:20.651+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-10 20:30:00+00:00, run_after=2026-06-11 20:30:00+00:00
+[2026-06-11T02:56:20.673+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.767 seconds
+[2026-06-11T02:56:50.876+0000] {processor.py:161} INFO - Started process (PID=4561) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:56:50.877+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:56:50.880+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:56:50.879+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:56:51.545+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:56:51.563+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:56:51.563+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:56:51.581+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:56:51.581+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-10 20:30:00+00:00, run_after=2026-06-11 20:30:00+00:00
+[2026-06-11T02:56:51.596+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.724 seconds
+[2026-06-11T02:57:21.743+0000] {processor.py:161} INFO - Started process (PID=4567) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:57:21.744+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:57:21.746+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:57:21.746+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:57:22.413+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:57:22.437+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:57:22.436+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:57:22.451+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:57:22.451+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-10 20:30:00+00:00, run_after=2026-06-11 20:30:00+00:00
+[2026-06-11T02:57:22.469+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.731 seconds
+[2026-06-11T02:57:52.686+0000] {processor.py:161} INFO - Started process (PID=4573) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:57:52.687+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:57:52.689+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:57:52.689+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:57:53.321+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:57:53.340+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:57:53.340+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:57:53.357+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:57:53.357+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-10 20:30:00+00:00, run_after=2026-06-11 20:30:00+00:00
+[2026-06-11T02:57:53.380+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.698 seconds
+[2026-06-11T02:58:23.579+0000] {processor.py:161} INFO - Started process (PID=4579) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:58:23.580+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:58:23.582+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:58:23.582+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:58:24.257+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:58:24.277+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:58:24.277+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:58:24.293+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:58:24.293+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-10 20:30:00+00:00, run_after=2026-06-11 20:30:00+00:00
+[2026-06-11T02:58:24.308+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.733 seconds
+[2026-06-11T02:58:54.492+0000] {processor.py:161} INFO - Started process (PID=4585) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:58:54.494+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:58:54.496+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:58:54.496+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:58:55.167+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:58:55.186+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:58:55.185+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:58:55.200+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:58:55.200+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-10 20:30:00+00:00, run_after=2026-06-11 20:30:00+00:00
+[2026-06-11T02:58:55.217+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.730 seconds
+[2026-06-11T02:59:25.500+0000] {processor.py:161} INFO - Started process (PID=4591) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:59:25.503+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:59:25.506+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:59:25.505+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:59:26.232+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:59:26.255+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:59:26.255+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:59:26.271+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:59:26.271+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-10 20:30:00+00:00, run_after=2026-06-11 20:30:00+00:00
+[2026-06-11T02:59:26.289+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.794 seconds
+[2026-06-11T02:59:56.508+0000] {processor.py:161} INFO - Started process (PID=4597) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:59:56.509+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T02:59:56.513+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:59:56.512+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:59:57.287+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T02:59:57.308+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:59:57.308+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T02:59:57.324+0000] {logging_mixin.py:188} INFO - [2026-06-11T02:59:57.324+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-10 20:30:00+00:00, run_after=2026-06-11 20:30:00+00:00
+[2026-06-11T02:59:57.342+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.839 seconds
+[2026-06-11T03:00:27.545+0000] {processor.py:161} INFO - Started process (PID=4603) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:00:27.546+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T03:00:27.549+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:00:27.549+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:00:28.212+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:00:28.232+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:00:28.231+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T03:00:28.246+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:00:28.246+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-10 20:30:00+00:00, run_after=2026-06-11 20:30:00+00:00
+[2026-06-11T03:00:28.264+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.723 seconds
+[2026-06-11T03:00:58.479+0000] {processor.py:161} INFO - Started process (PID=4609) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:00:58.481+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T03:00:58.484+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:00:58.483+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:00:59.226+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:00:59.245+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:00:59.245+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T03:00:59.262+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:00:59.261+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-10 20:30:00+00:00, run_after=2026-06-11 20:30:00+00:00
+[2026-06-11T03:00:59.284+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.810 seconds
+[2026-06-11T03:01:29.480+0000] {processor.py:161} INFO - Started process (PID=4615) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:01:29.481+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T03:01:29.485+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:01:29.484+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:01:30.580+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:01:30.608+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:01:30.608+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T03:01:30.622+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:01:30.622+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-10 20:30:00+00:00, run_after=2026-06-11 20:30:00+00:00
+[2026-06-11T03:01:30.639+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 1.167 seconds
+[2026-06-11T03:02:00.833+0000] {processor.py:161} INFO - Started process (PID=4621) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:02:00.835+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T03:02:00.838+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:02:00.838+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:02:01.651+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:02:01.677+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:02:01.677+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T03:02:01.699+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:02:01.698+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-10 20:30:00+00:00, run_after=2026-06-11 20:30:00+00:00
+[2026-06-11T03:02:01.719+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.892 seconds
+[2026-06-11T03:02:31.839+0000] {processor.py:161} INFO - Started process (PID=4627) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:02:31.841+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T03:02:31.843+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:02:31.843+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:02:32.516+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:02:32.537+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:02:32.536+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T03:02:32.552+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:02:32.552+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-10 20:30:00+00:00, run_after=2026-06-11 20:30:00+00:00
+[2026-06-11T03:02:32.569+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.735 seconds
+[2026-06-11T03:03:02.789+0000] {processor.py:161} INFO - Started process (PID=4633) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:03:02.791+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T03:03:02.794+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:03:02.793+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:03:03.571+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:03:03.595+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:03:03.594+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T03:03:03.614+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:03:03.613+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-10 20:30:00+00:00, run_after=2026-06-11 20:30:00+00:00
+[2026-06-11T03:03:03.636+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.853 seconds
+[2026-06-11T03:03:33.854+0000] {processor.py:161} INFO - Started process (PID=4639) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:03:33.855+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T03:03:33.857+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:03:33.857+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:03:34.629+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:03:34.649+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:03:34.648+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T03:03:34.666+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:03:34.666+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-10 20:30:00+00:00, run_after=2026-06-11 20:30:00+00:00
+[2026-06-11T03:03:34.688+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.839 seconds
+[2026-06-11T03:04:04.881+0000] {processor.py:161} INFO - Started process (PID=4645) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:04:04.883+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T03:04:04.885+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:04:04.885+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:04:05.566+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:04:05.588+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:04:05.587+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T03:04:05.605+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:04:05.605+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-10 20:30:00+00:00, run_after=2026-06-11 20:30:00+00:00
+[2026-06-11T03:04:05.624+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.748 seconds
+[2026-06-11T03:04:35.827+0000] {processor.py:161} INFO - Started process (PID=4651) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:04:35.828+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T03:04:35.831+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:04:35.831+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:04:36.615+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:04:36.636+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:04:36.636+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T03:04:36.652+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:04:36.652+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-10 20:30:00+00:00, run_after=2026-06-11 20:30:00+00:00
+[2026-06-11T03:04:36.672+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.852 seconds
+[2026-06-11T03:05:06.751+0000] {processor.py:161} INFO - Started process (PID=4657) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:05:06.752+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T03:05:06.754+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:05:06.754+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:05:07.497+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:05:07.517+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:05:07.517+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T03:05:07.533+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:05:07.533+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-10 20:30:00+00:00, run_after=2026-06-11 20:30:00+00:00
+[2026-06-11T03:05:07.550+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.803 seconds
+[2026-06-11T03:05:37.764+0000] {processor.py:161} INFO - Started process (PID=4663) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:05:37.766+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T03:05:37.768+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:05:37.768+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:05:38.472+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:05:38.490+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:05:38.490+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T03:05:38.505+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:05:38.505+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-10 20:30:00+00:00, run_after=2026-06-11 20:30:00+00:00
+[2026-06-11T03:05:38.524+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.765 seconds
+[2026-06-11T03:06:08.725+0000] {processor.py:161} INFO - Started process (PID=4669) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:06:08.726+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T03:06:08.729+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:06:08.729+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:06:09.415+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:06:09.433+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:06:09.433+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T03:06:09.447+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:06:09.447+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-10 20:30:00+00:00, run_after=2026-06-11 20:30:00+00:00
+[2026-06-11T03:06:09.462+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.743 seconds
+[2026-06-11T03:06:39.657+0000] {processor.py:161} INFO - Started process (PID=4675) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:06:39.658+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T03:06:39.660+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:06:39.660+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:06:39.683+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:06:39.675+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/sp500_master_ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/sp500_master_ingestion_dag.py", line 11, in <module>
+    from minio_fetching_data_daily import main as run_daily_ingestion
+ModuleNotFoundError: No module named 'minio_fetching_data_daily'
+[2026-06-11T03:06:39.685+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:06:39.705+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.053 seconds
+[2026-06-11T03:07:09.847+0000] {processor.py:161} INFO - Started process (PID=4680) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:07:09.849+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T03:07:09.851+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:07:09.850+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:07:09.877+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:07:09.871+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/sp500_master_ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/sp500_master_ingestion_dag.py", line 11, in <module>
+    from minio_fetching_data_daily import main as run_daily_ingestion
+ModuleNotFoundError: No module named 'minio_fetching_data_daily'
+[2026-06-11T03:07:09.879+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:07:09.896+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.055 seconds
+[2026-06-11T03:07:40.057+0000] {processor.py:161} INFO - Started process (PID=4685) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:07:40.059+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T03:07:40.061+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:07:40.061+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:07:40.097+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:07:40.090+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/sp500_master_ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/sp500_master_ingestion_dag.py", line 11, in <module>
+    from minio_fetching_data_daily import main as run_daily_ingestion
+ModuleNotFoundError: No module named 'minio_fetching_data_daily'
+[2026-06-11T03:07:40.101+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:07:40.120+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.067 seconds
+[2026-06-11T03:08:10.258+0000] {processor.py:161} INFO - Started process (PID=4690) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:08:10.260+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T03:08:10.262+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:08:10.261+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:08:10.298+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:08:10.292+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/sp500_master_ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/sp500_master_ingestion_dag.py", line 11, in <module>
+    from minio_fetching_data_daily import main as run_daily_ingestion
+ModuleNotFoundError: No module named 'minio_fetching_data_daily'
+[2026-06-11T03:08:10.301+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:08:10.318+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.064 seconds
+[2026-06-11T03:08:40.465+0000] {processor.py:161} INFO - Started process (PID=4695) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:08:40.467+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T03:08:40.468+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:08:40.468+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:08:40.500+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:08:40.495+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/sp500_master_ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/sp500_master_ingestion_dag.py", line 11, in <module>
+    from minio_fetching_data_daily import main as run_daily_ingestion
+ModuleNotFoundError: No module named 'minio_fetching_data_daily'
+[2026-06-11T03:08:40.503+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:08:40.523+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.063 seconds
+[2026-06-11T03:08:48.594+0000] {processor.py:161} INFO - Started process (PID=4700) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:08:48.596+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T03:08:48.597+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:08:48.597+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:08:48.639+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:08:48.636+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/sp500_master_ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/sp500_master_ingestion_dag.py", line 11, in <module>
+    from minio_fetching_data_daily import main as run_daily_ingestion
+ModuleNotFoundError: No module named 'minio_fetching_data_daily'
+[2026-06-11T03:08:48.642+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:08:48.659+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.070 seconds
+[2026-06-11T03:09:00.732+0000] {processor.py:161} INFO - Started process (PID=4705) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:09:00.734+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T03:09:00.736+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:09:00.735+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:09:00.763+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:09:00.761+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/sp500_master_ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/sp500_master_ingestion_dag.py", line 8
+    sys.path.insert(0, '/opt/airflow/bronze_layer_scripts/minIO_fetching_data'd)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+[2026-06-11T03:09:00.765+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:09:00.782+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.054 seconds
+[2026-06-11T03:09:03.796+0000] {processor.py:161} INFO - Started process (PID=4710) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:09:03.798+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T03:09:03.800+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:09:03.800+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:09:03.858+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:09:03.851+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/sp500_master_ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/sp500_master_ingestion_dag.py", line 11, in <module>
+    from minio_fetching_data_daily import main as run_daily_ingestion
+ModuleNotFoundError: No module named 'minio_fetching_data_daily'
+[2026-06-11T03:09:03.861+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:09:03.879+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.087 seconds
+[2026-06-11T03:10:15.391+0000] {processor.py:161} INFO - Started process (PID=195) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:10:15.393+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T03:10:15.395+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:10:15.395+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:10:17.439+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:10:17.635+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:10:17.635+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T03:10:17.654+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:10:17.654+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-10 20:30:00+00:00, run_after=2026-06-11 20:30:00+00:00
+[2026-06-11T03:10:17.695+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 2.309 seconds
+[2026-06-11T03:10:47.900+0000] {processor.py:161} INFO - Started process (PID=201) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:10:47.902+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T03:10:47.905+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:10:47.905+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:10:48.744+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:10:48.764+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:10:48.764+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T03:10:48.781+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:10:48.781+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-10 20:30:00+00:00, run_after=2026-06-11 20:30:00+00:00
+[2026-06-11T03:10:48.798+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.903 seconds
+[2026-06-11T03:11:18.998+0000] {processor.py:161} INFO - Started process (PID=207) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:11:19.000+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T03:11:19.002+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:11:19.002+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:11:19.757+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:11:19.776+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:11:19.776+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T03:11:19.792+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:11:19.792+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-10 20:30:00+00:00, run_after=2026-06-11 20:30:00+00:00
+[2026-06-11T03:11:19.812+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.819 seconds
+[2026-06-11T03:11:49.941+0000] {processor.py:161} INFO - Started process (PID=213) to work on /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:11:49.942+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sp500_master_ingestion_dag.py for tasks to queue
+[2026-06-11T03:11:49.944+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:11:49.944+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:11:50.617+0000] {processor.py:840} INFO - DAG(s) 'sp500_master_ingestion_pipeline' retrieved from /opt/airflow/dags/sp500_master_ingestion_dag.py
+[2026-06-11T03:11:50.637+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:11:50.636+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-11T03:11:50.653+0000] {logging_mixin.py:188} INFO - [2026-06-11T03:11:50.653+0000] {dag.py:3954} INFO - Setting next_dagrun for sp500_master_ingestion_pipeline to 2026-06-10 20:30:00+00:00, run_after=2026-06-11 20:30:00+00:00
+[2026-06-11T03:11:50.674+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sp500_master_ingestion_dag.py took 0.738 seconds

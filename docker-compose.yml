@@ -1,12 +1,31 @@
-version: '3.8'
+x-airflow-common:
+  &airflow-common
+  image: apache/airflow:2.9.1
+  environment:
+    &airflow-common-env
+    AIRFLOW__CORE__EXECUTOR: LocalExecutor
+    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+    AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+    # This automatically installs yfinance and boto3 inside the Airflow container
+    _PIP_ADDITIONAL_REQUIREMENTS: yfinance pandas boto3 requests lxml html5lib bs4
+  volumes:
+    - ./dags:/opt/airflow/dags
+    - ./logs:/opt/airflow/logs
+    - ./plugins:/opt/airflow/plugins
+    # This mounts your existing scripts folder so Airflow can run them directly
+    - ./bronze_layer_scripts:/opt/airflow/bronze_layer_scripts 
+  depends_on:
+    postgres:
+      condition: service_started
 
 services:
+  # --- Your Existing MinIO ---
   minio:
     image: minio/minio:latest
     container_name: market_intelligence_minio
     ports:
-      - "9000:9000"       # API Port
-      - "9001:9001"       # Web Console Port
+      - "9000:9000"
+      - "9001:9001"
     environment:
       MINIO_ROOT_USER: admin
       MINIO_ROOT_PASSWORD: supersecretpassword
@@ -14,5 +33,44 @@ services:
     volumes:
       - minio_data:/data
 
+  # --- Airflow Database ---
+  postgres:
+    image: postgres:13
+    container_name: airflow_postgres
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  # --- Airflow Initialization ---
+  airflow-init:
+    <<: *airflow-common
+    container_name: airflow_init
+    command: version && airflow db migrate && airflow users create -r Admin -u admin -e admin@example.com -f Admin -l User -p admin
+    restart: on-failure
+
+  # --- Airflow Web UI ---
+  airflow-webserver:
+    <<: *airflow-common
+    container_name: airflow_webserver
+    command: webserver
+    ports:
+      - "8080:8080"
+    depends_on:
+      airflow-init:
+        condition: service_completed_successfully
+
+  # --- Airflow Task Scheduler ---
+  airflow-scheduler:
+    <<: *airflow-common
+    container_name: airflow_scheduler
+    command: scheduler
+    depends_on:
+      airflow-init:
+        condition: service_completed_successfully
+
 volumes:
   minio_data:
+  postgres_data:
