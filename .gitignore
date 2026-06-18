@@ -3,3 +3,4 @@ hourly_download.log
 /.env
 sp500_daily_csv/
 sp500_hourly_csv/
+airflow-key.pem
