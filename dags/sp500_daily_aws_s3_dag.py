@@ -24,15 +24,15 @@ default_args = {
 }
 
 @dag(
-    dag_id="sp500_daily_download",
+    dag_id="sp500_daily_s3_ingestion",
     description="Downloads daily S&P 500 OHLCV data and stores it in S3 as Parquet",
     default_args=default_args,
-    schedule_interval="30 23 * * 1-5",  # 11:30 PM UTC, Mon-Fri (after US market close)
+    schedule="30 23 * * 1-5",  # 11:30 PM UTC, Mon-Fri (after US market close)
     start_date=datetime(2026, 1, 1),
     catchup=False,
     tags=["sp500", "yfinance", "s3", "parquet"],
 )
-def sp500_daily_download_pipeline():
+def sp500_daily_s3_ingestion_pipeline():
 
     @task()
     def run_daily_download():
@@ -169,4 +169,4 @@ def sp500_daily_download_pipeline():
 
     run_daily_download()
 
-dag_instance = sp500_daily_download_pipeline()
+dag_instance = sp500_daily_s3_ingestion_pipeline()
