@@ -1,0 +1,1040 @@
+[2026-06-13T13:33:07.823+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-06-13T13:33:07.854+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: sp500_master_ingestion_pipeline.extract_hourly_data scheduled__2026-06-11T20:30:00+00:00 [queued]>
+[2026-06-13T13:33:07.862+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: sp500_master_ingestion_pipeline.extract_hourly_data scheduled__2026-06-11T20:30:00+00:00 [queued]>
+[2026-06-13T13:33:07.863+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2026-06-13T13:33:07.881+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): extract_hourly_data> on 2026-06-11 20:30:00+00:00
+[2026-06-13T13:33:07.891+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'sp500_master_ingestion_pipeline', 'extract_hourly_data', 'scheduled__2026-06-11T20:30:00+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/sp500_master_ingestion_dag.py', '--cfg-path', '/tmp/tmpgevhvec3']
+[2026-06-13T13:33:07.894+0000] {standard_task_runner.py:91} INFO - Job 12: Subtask extract_hourly_data
+[2026-06-13T13:33:07.895+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=1224) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-06-13T13:33:07.897+0000] {standard_task_runner.py:63} INFO - Started process 1226 to run task
+[2026-06-13T13:33:07.956+0000] {task_command.py:426} INFO - Running <TaskInstance: sp500_master_ingestion_pipeline.extract_hourly_data scheduled__2026-06-11T20:30:00+00:00 [running]> on host ffc1bd9c712f
+[2026-06-13T13:33:08.038+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineering_team' AIRFLOW_CTX_DAG_ID='sp500_master_ingestion_pipeline' AIRFLOW_CTX_TASK_ID='extract_hourly_data' AIRFLOW_CTX_EXECUTION_DATE='2026-06-11T20:30:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-06-11T20:30:00+00:00'
+[2026-06-13T13:33:08.040+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-06-13T13:33:08.051+0000] {minio_fetching_data_hourly.py:51} INFO - Fetching S&P 500 tickers from Wikipedia ...
+[2026-06-13T13:33:08.453+0000] {minio_fetching_data_hourly.py:60} INFO - Found 503 tickers.
+[2026-06-13T13:33:08.495+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for MMM: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:08.519+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for AOS: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:08.543+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ABT: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:08.568+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ABBV: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:08.591+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ACN: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:08.613+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ADBE: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:08.639+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for AMD: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:08.668+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for AES: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:08.700+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for AFL: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:08.727+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for A: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:08.755+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for APD: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:08.788+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ABNB: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:08.821+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for AKAM: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:08.844+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ALB: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:08.868+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ARE: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:08.891+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ALGN: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:08.915+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ALLE: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:08.937+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for LNT: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:08.959+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ALL: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:08.983+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for GOOGL: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:09.006+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for GOOG: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:09.210+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for MO: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:09.237+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for AMZN: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:09.267+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for AMCR: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:09.296+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for AEE: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:09.322+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for AEP: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:09.353+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for AXP: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:09.380+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for AIG: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:09.408+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for AMT: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:09.430+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for AWK: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:09.453+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for AMP: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:09.476+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for AME: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:09.499+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for AMGN: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:09.521+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for APH: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:09.544+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ADI: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:09.567+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for AON: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:09.592+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for APA: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:09.619+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for APO: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:09.647+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for AAPL: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:09.673+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for AMAT: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:09.699+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for APP: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:09.729+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for APTV: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:09.752+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ACGL: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:09.773+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ADM: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:09.795+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ARES: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:09.816+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ANET: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:09.838+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for AJG: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:09.860+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for AIZ: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:09.883+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for T: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:09.905+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ATO: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:09.927+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ADSK: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:09.948+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ADP: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:09.970+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for AZO: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:09.993+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for AVB: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:10.016+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for AVY: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:10.038+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for AXON: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:10.061+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for BKR: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:10.085+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for BALL: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:10.112+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for BAC: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:10.143+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for BAX: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:10.173+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for BDX: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:10.198+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for BRK-B: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:10.228+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for BBY: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:10.252+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for TECH: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:10.275+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for BIIB: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:10.297+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for BLK: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:10.324+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for BX: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:10.345+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for XYZ: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 231
+[2026-06-13T13:33:10.364+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for BNY: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 13
+[2026-06-13T13:33:10.387+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for BA: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:10.409+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for BKNG: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:10.432+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for BSX: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:10.456+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for BMY: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:10.478+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for AVGO: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:10.500+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for BR: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:10.523+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for BRO: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:10.546+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for BF-B: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:10.569+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for BLDR: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:10.590+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for BG: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:10.613+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for BXP: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:10.634+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CHRW: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:10.658+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CDNS: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:10.687+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CPT: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:10.718+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CPB: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:10.749+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for COF: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:10.775+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CAH: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:10.806+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CCL: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:10.831+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CARR: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:10.853+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CVNA: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:10.878+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CASY: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:10.902+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CAT: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:10.924+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CBOE: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:10.945+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CBRE: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:10.968+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CDW: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:10.989+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for COR: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.012+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CNC: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.035+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CNP: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.057+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CF: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.083+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CRL: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.109+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for SCHW: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.133+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CHTR: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.156+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CVX: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.180+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CMG: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.210+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CB: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.234+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CHD: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.256+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CIEN: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.279+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CI: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.302+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CINF: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.326+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CTAS: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.352+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CSCO: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.375+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for C: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.396+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CFG: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.425+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CLX: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.450+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CME: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.476+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CMS: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.501+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for KO: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.531+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CTSH: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.557+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for COHR: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.583+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for COIN: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.604+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CL: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.625+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CMCSA: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.646+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for FIX: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.668+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CAG: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.691+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for COP: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.714+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ED: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.736+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for STZ: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.760+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CEG: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.781+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for COO: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.804+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CPRT: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.826+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for GLW: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.848+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CPAY: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.869+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CTVA: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.892+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CSGP: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.914+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for COST: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.938+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CRH: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.961+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CRWD: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:11.983+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CCI: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:12.005+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CSX: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:12.028+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CMI: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:12.052+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CVS: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:12.080+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for DHR: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:12.101+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for DRI: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:12.124+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for DDOG: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:12.146+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for DVA: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:12.169+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for DECK: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:12.192+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for DE: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:12.214+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for DELL: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:12.236+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for DAL: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:12.258+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for DVN: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:12.281+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for DXCM: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:12.303+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for FANG: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:12.329+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for DLR: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:12.358+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for DG: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:12.387+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for DLTR: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:12.517+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for D: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:12.538+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for DPZ: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:12.559+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for DASH: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:12.581+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for DOV: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:12.603+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for DOW: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:12.625+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for DHI: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:12.648+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for DTE: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:12.670+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for DUK: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:12.693+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for DD: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:12.715+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ETN: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:12.738+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for EBAY: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:12.760+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for SATS: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:12.781+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ECL: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:12.803+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for EIX: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:12.827+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for EW: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:12.848+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for EA: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:12.871+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ELV: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:12.894+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for EME: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:12.918+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for EMR: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:12.941+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ETR: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:12.966+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for EOG: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:12.989+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for EQT: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.011+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for EFX: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.033+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for EQIX: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.055+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for EQR: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.077+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ERIE: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 233
+[2026-06-13T13:33:13.099+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ESS: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.122+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for EL: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.144+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for EG: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.166+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for EVRG: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.194+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ES: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.216+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for EXC: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.236+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for EXE: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 161
+[2026-06-13T13:33:13.259+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for EXPE: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.287+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for EXPD: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.309+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for EXR: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.332+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for XOM: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.353+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for FFIV: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.377+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for FDS: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.400+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for FICO: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.422+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for FAST: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.446+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for FRT: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.474+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for FDX: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.505+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for FIS: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.529+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for FITB: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.552+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for FSLR: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.576+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for FE: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.592+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for FISV: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 545
+[2026-06-13T13:33:13.618+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for F: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.644+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for FTNT: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.667+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for FTV: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.693+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for FOXA: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.717+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for FOX: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.741+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for BEN: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.765+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for FCX: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.787+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for GRMN: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.811+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for IT: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.834+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for GE: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.857+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for GEHC: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.881+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for GEV: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.904+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for GEN: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.927+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for GNRC: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.951+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for GD: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.975+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for GIS: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:13.999+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for GM: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.021+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for GPC: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.045+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for GILD: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.070+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for GPN: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.094+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for GL: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.118+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for GDDY: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.142+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for GS: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.166+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for HAL: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.190+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for HIG: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.215+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for HAS: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.239+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for HCA: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.264+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for DOC: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.287+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for HSIC: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.311+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for HSY: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.336+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for HPE: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.362+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for HLT: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.385+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for HD: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.410+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for HON: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.435+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for HRL: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.458+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for HST: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.481+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for HWM: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.504+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for HPQ: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.527+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for HUBB: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.550+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for HUM: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.574+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for HBAN: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.596+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for HII: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.620+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for IBM: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.644+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for IEX: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.670+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for IDXX: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.695+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ITW: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.720+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for INCY: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.750+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for IR: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.775+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for PODD: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.798+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for INTC: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.822+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for IBKR: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.848+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ICE: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.871+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for IFF: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.896+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for IP: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.919+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for INTU: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.943+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ISRG: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.968+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for IVZ: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:14.992+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for INVH: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:15.015+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for IQV: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:15.040+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for IRM: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:15.064+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for JBHT: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:15.089+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for JBL: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:15.112+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for JKHY: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:15.135+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for J: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:15.159+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for JNJ: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:15.186+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for JCI: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:15.210+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for JPM: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:15.236+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for KVUE: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:15.262+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for KDP: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:15.285+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for KEY: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:15.312+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for KEYS: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:15.338+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for KMB: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:15.361+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for KIM: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:15.385+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for KMI: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:15.409+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for KKR: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:15.431+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for KLAC: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:15.453+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for KHC: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:15.477+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for KR: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:15.500+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for LHX: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:15.523+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for LH: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:15.547+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for LRCX: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:15.570+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for LVS: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:15.592+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for LDOS: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:15.616+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for LEN: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:15.638+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for LII: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:15.661+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for LLY: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:15.684+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for LIN: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:15.705+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for LYV: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:15.728+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for LMT: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:15.752+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for L: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:15.774+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for LOW: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:15.795+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for LULU: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:15.818+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for LITE: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:15.840+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for LYB: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:15.862+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for MTB: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:15.884+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for MPC: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:15.907+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for MAR: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.029+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for MRSH: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 242
+[2026-06-13T13:33:16.057+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for MLM: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.083+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for MAS: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.106+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for MA: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.129+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for MKC: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.152+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for MCD: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.175+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for MCK: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.197+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for MDT: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.219+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for MRK: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.241+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for META: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.263+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for MET: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.287+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for MTD: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.309+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for MGM: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.332+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for MCHP: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.354+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for MU: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.376+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for MSFT: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.400+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for MAA: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.421+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for MRNA: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.444+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for TAP: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.466+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for MDLZ: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.489+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for MPWR: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.512+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for MNST: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.536+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for MCO: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.558+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for MS: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.580+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for MOS: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.602+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for MSI: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.624+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for MSCI: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.646+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for NDAQ: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.673+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for NTAP: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.696+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for NFLX: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.722+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for NEM: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.743+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for NWSA: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.765+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for NWS: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.788+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for NEE: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.815+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for NKE: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.837+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for NI: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.858+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for NDSN: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.881+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for NSC: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.902+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for NTRS: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.924+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for NOC: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.948+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for NCLH: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.972+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for NRG: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:16.995+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for NUE: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.017+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for NVDA: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.038+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for NVR: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.060+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for NXPI: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.082+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ORLY: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.105+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for OXY: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.127+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ODFL: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.149+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for OMC: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.172+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ON: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.194+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for OKE: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.218+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ORCL: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.240+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for OTIS: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.262+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for PCAR: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.284+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for PKG: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.306+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for PLTR: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.329+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for PANW: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.346+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for PSKY: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 427
+[2026-06-13T13:33:17.368+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for PH: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.390+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for PAYX: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.413+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for PYPL: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.435+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for PNR: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.458+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for PEP: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.481+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for PFE: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.503+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for PCG: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.526+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for PM: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.548+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for PSX: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.571+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for PNW: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.593+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for PNC: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.614+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for POOL: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.638+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for PPG: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.661+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for PPL: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.685+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for PFG: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.706+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for PG: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.728+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for PGR: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.751+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for PLD: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.773+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for PRU: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.795+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for PEG: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.818+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for PTC: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.840+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for PSA: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.862+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for PHM: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.884+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for PWR: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.905+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for QCOM: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.928+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for DGX: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.943+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for Q: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 587
+[2026-06-13T13:33:17.965+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for RL: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:17.987+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for RJF: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.009+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for RTX: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.044+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for O: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.065+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for REG: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.089+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for REGN: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.111+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for RF: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.138+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for RSG: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.161+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for RMD: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.183+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for RVTY: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.205+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for HOOD: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.226+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ROK: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.247+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ROL: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.270+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ROP: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.292+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ROST: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.315+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for RCL: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.337+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for SPGI: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.359+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for CRM: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.376+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for SNDK: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 70
+[2026-06-13T13:33:18.399+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for SBAC: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.421+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for SLB: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.443+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for STX: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.466+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for SRE: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.489+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for NOW: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.510+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for SHW: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.532+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for SPG: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.554+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for SWKS: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.576+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for SJM: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.601+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for SW: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 588
+[2026-06-13T13:33:18.624+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for SNA: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.647+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for SOLV: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.669+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for SO: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.691+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for LUV: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.713+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for SWK: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.735+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for SBUX: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.757+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for STT: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.780+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for STLD: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.803+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for STE: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.825+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for SYK: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.847+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for SMCI: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.869+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for SYF: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.891+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for SNPS: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.913+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for SYY: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.936+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for TMUS: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.959+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for TROW: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:18.984+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for TTWO: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:19.008+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for TPR: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:19.030+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for TRGP: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:19.052+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for TGT: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:19.076+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for TEL: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:19.097+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for TDY: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 14
+[2026-06-13T13:33:19.120+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for TER: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:19.141+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for TSLA: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:19.164+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for TXN: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:19.187+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for TPL: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 236
+[2026-06-13T13:33:19.208+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for TXT: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:19.230+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for TMO: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:19.253+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for TJX: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:19.275+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for TKO: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:19.297+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for TTD: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:19.412+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for TSCO: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:19.438+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for TT: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:19.463+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for TDG: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:19.486+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for TRV: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:19.508+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for TRMB: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:19.531+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for TFC: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:19.553+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for TYL: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:19.575+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for TSN: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:19.604+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for USB: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:19.629+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for UBER: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:19.652+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for UDR: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:19.673+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ULTA: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:19.695+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for UNP: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:19.717+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for UAL: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:19.740+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for UPS: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:19.762+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for URI: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:19.784+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for UNH: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:19.805+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for UHS: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:19.827+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for VLO: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:19.849+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for VEEV: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 14
+[2026-06-13T13:33:19.871+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for VTR: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:19.893+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for VLTO: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:19.914+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for VRSN: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:19.936+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for VRSK: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:19.958+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for VZ: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:19.982+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for VRTX: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:20.004+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for VRT: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:20.026+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for VTRS: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:20.047+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for VICI: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:20.070+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for V: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:20.092+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for VST: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:20.113+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for VMC: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:20.134+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for WRB: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:20.157+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for GWW: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:20.179+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for WAB: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:20.202+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for WMT: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:20.224+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for DIS: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:20.245+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for WBD: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:20.266+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for WM: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:20.287+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for WAT: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:20.310+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for WEC: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:20.333+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for WFC: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:20.355+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for WELL: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:20.378+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for WST: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:20.401+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for WDC: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:20.422+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for WY: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:20.445+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for WSM: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:20.467+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for WMB: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:20.491+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for WTW: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:20.514+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for WDAY: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:20.535+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for WYNN: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:20.557+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for XEL: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:20.579+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for XYL: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:20.601+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for YUM: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:20.624+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ZBRA: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:20.646+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ZBH: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:20.669+0000] {minio_fetching_data_hourly.py:96} WARNING - Could not check timestamp for ZTS: Tz-aware datetime.datetime cannot be converted to datetime64 unless utc=True, at position 238
+[2026-06-13T13:33:20.671+0000] {minio_fetching_data_hourly.py:175} INFO - New tickers: 502 | To update: 1 | End date: 2026-06-13
+[2026-06-13T13:33:20.672+0000] {minio_fetching_data_hourly.py:181} INFO - Batch 1 | start=2024-06-14 | 50 tickers
+[2026-06-13T13:33:25.097+0000] {minio_fetching_data_hourly.py:132} INFO -   MMM: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:25.176+0000] {minio_fetching_data_hourly.py:132} INFO -   AOS: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:25.255+0000] {minio_fetching_data_hourly.py:132} INFO -   ABT: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:25.333+0000] {minio_fetching_data_hourly.py:132} INFO -   ABBV: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:25.413+0000] {minio_fetching_data_hourly.py:132} INFO -   ACN: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:25.501+0000] {minio_fetching_data_hourly.py:132} INFO -   ADBE: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:25.575+0000] {minio_fetching_data_hourly.py:132} INFO -   AMD: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:25.648+0000] {minio_fetching_data_hourly.py:132} INFO -   AES: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:25.726+0000] {minio_fetching_data_hourly.py:132} INFO -   AFL: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:25.829+0000] {minio_fetching_data_hourly.py:132} INFO -   A: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:25.905+0000] {minio_fetching_data_hourly.py:132} INFO -   APD: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:25.981+0000] {minio_fetching_data_hourly.py:132} INFO -   ABNB: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:26.055+0000] {minio_fetching_data_hourly.py:132} INFO -   AKAM: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:26.252+0000] {minio_fetching_data_hourly.py:132} INFO -   ALB: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:26.339+0000] {minio_fetching_data_hourly.py:132} INFO -   ARE: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:26.413+0000] {minio_fetching_data_hourly.py:132} INFO -   ALGN: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:26.485+0000] {minio_fetching_data_hourly.py:132} INFO -   ALLE: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:26.562+0000] {minio_fetching_data_hourly.py:132} INFO -   LNT: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:26.639+0000] {minio_fetching_data_hourly.py:132} INFO -   ALL: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:26.723+0000] {minio_fetching_data_hourly.py:132} INFO -   GOOGL: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:26.815+0000] {minio_fetching_data_hourly.py:132} INFO -   GOOG: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:26.884+0000] {minio_fetching_data_hourly.py:132} INFO -   MO: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:26.958+0000] {minio_fetching_data_hourly.py:132} INFO -   AMZN: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:27.033+0000] {minio_fetching_data_hourly.py:132} INFO -   AMCR: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:27.108+0000] {minio_fetching_data_hourly.py:132} INFO -   AEE: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:27.182+0000] {minio_fetching_data_hourly.py:132} INFO -   AEP: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:27.256+0000] {minio_fetching_data_hourly.py:132} INFO -   AXP: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:27.332+0000] {minio_fetching_data_hourly.py:132} INFO -   AIG: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:27.432+0000] {minio_fetching_data_hourly.py:132} INFO -   AMT: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:27.508+0000] {minio_fetching_data_hourly.py:132} INFO -   AWK: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:27.579+0000] {minio_fetching_data_hourly.py:132} INFO -   AMP: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:27.649+0000] {minio_fetching_data_hourly.py:132} INFO -   AME: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:27.745+0000] {minio_fetching_data_hourly.py:132} INFO -   AMGN: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:27.830+0000] {minio_fetching_data_hourly.py:132} INFO -   APH: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:27.904+0000] {minio_fetching_data_hourly.py:132} INFO -   ADI: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:27.988+0000] {minio_fetching_data_hourly.py:132} INFO -   AON: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:28.061+0000] {minio_fetching_data_hourly.py:132} INFO -   APA: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:28.139+0000] {minio_fetching_data_hourly.py:132} INFO -   APO: +3480 rows -> 3732 total in MinIO
+[2026-06-13T13:33:28.215+0000] {minio_fetching_data_hourly.py:132} INFO -   AAPL: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:28.293+0000] {minio_fetching_data_hourly.py:132} INFO -   AMAT: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:28.370+0000] {minio_fetching_data_hourly.py:132} INFO -   APP: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:28.442+0000] {minio_fetching_data_hourly.py:132} INFO -   APTV: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:28.519+0000] {minio_fetching_data_hourly.py:132} INFO -   ACGL: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:28.608+0000] {minio_fetching_data_hourly.py:132} INFO -   ADM: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:28.689+0000] {minio_fetching_data_hourly.py:132} INFO -   ARES: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:28.772+0000] {minio_fetching_data_hourly.py:132} INFO -   ANET: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:28.858+0000] {minio_fetching_data_hourly.py:132} INFO -   AJG: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:28.932+0000] {minio_fetching_data_hourly.py:132} INFO -   AIZ: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:29.017+0000] {minio_fetching_data_hourly.py:132} INFO -   T: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:29.114+0000] {minio_fetching_data_hourly.py:132} INFO -   ATO: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:31.157+0000] {minio_fetching_data_hourly.py:181} INFO - Batch 2 | start=2024-06-14 | 50 tickers
+[2026-06-13T13:33:35.284+0000] {minio_fetching_data_hourly.py:132} INFO -   ADSK: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:35.379+0000] {minio_fetching_data_hourly.py:132} INFO -   ADP: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:35.459+0000] {minio_fetching_data_hourly.py:132} INFO -   AZO: +3471 rows -> 3723 total in MinIO
+[2026-06-13T13:33:35.533+0000] {minio_fetching_data_hourly.py:132} INFO -   AVB: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:35.604+0000] {minio_fetching_data_hourly.py:132} INFO -   AVY: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:35.681+0000] {minio_fetching_data_hourly.py:132} INFO -   AXON: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:35.763+0000] {minio_fetching_data_hourly.py:132} INFO -   BKR: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:35.841+0000] {minio_fetching_data_hourly.py:132} INFO -   BALL: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:35.921+0000] {minio_fetching_data_hourly.py:132} INFO -   BAC: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:35.994+0000] {minio_fetching_data_hourly.py:132} INFO -   BAX: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:36.088+0000] {minio_fetching_data_hourly.py:132} INFO -   BDX: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:36.170+0000] {minio_fetching_data_hourly.py:132} INFO -   BRK-B: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:36.246+0000] {minio_fetching_data_hourly.py:132} INFO -   BBY: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:36.320+0000] {minio_fetching_data_hourly.py:132} INFO -   TECH: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:36.397+0000] {minio_fetching_data_hourly.py:132} INFO -   BIIB: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:36.483+0000] {minio_fetching_data_hourly.py:132} INFO -   BLK: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:36.559+0000] {minio_fetching_data_hourly.py:132} INFO -   BX: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:36.631+0000] {minio_fetching_data_hourly.py:132} INFO -   XYZ: +2445 rows -> 2445 total in MinIO
+[2026-06-13T13:33:36.693+0000] {minio_fetching_data_hourly.py:132} INFO -   BNY: +2889 rows -> 2916 total in MinIO
+[2026-06-13T13:33:36.855+0000] {minio_fetching_data_hourly.py:132} INFO -   BA: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:36.932+0000] {minio_fetching_data_hourly.py:132} INFO -   BKNG: +3473 rows -> 3725 total in MinIO
+[2026-06-13T13:33:37.010+0000] {minio_fetching_data_hourly.py:132} INFO -   BSX: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:37.079+0000] {minio_fetching_data_hourly.py:132} INFO -   BMY: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:37.154+0000] {minio_fetching_data_hourly.py:132} INFO -   AVGO: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:37.230+0000] {minio_fetching_data_hourly.py:132} INFO -   BR: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:37.306+0000] {minio_fetching_data_hourly.py:132} INFO -   BRO: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:37.384+0000] {minio_fetching_data_hourly.py:132} INFO -   BF-B: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:37.463+0000] {minio_fetching_data_hourly.py:132} INFO -   BLDR: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:37.535+0000] {minio_fetching_data_hourly.py:132} INFO -   BG: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:37.610+0000] {minio_fetching_data_hourly.py:132} INFO -   BXP: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:37.683+0000] {minio_fetching_data_hourly.py:132} INFO -   CHRW: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:37.783+0000] {minio_fetching_data_hourly.py:132} INFO -   CDNS: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:37.884+0000] {minio_fetching_data_hourly.py:132} INFO -   CPT: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:37.991+0000] {minio_fetching_data_hourly.py:132} INFO -   CPB: +3477 rows -> 3729 total in MinIO
+[2026-06-13T13:33:38.127+0000] {minio_fetching_data_hourly.py:132} INFO -   COF: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:38.238+0000] {minio_fetching_data_hourly.py:132} INFO -   CAH: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:38.343+0000] {minio_fetching_data_hourly.py:132} INFO -   CCL: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:38.440+0000] {minio_fetching_data_hourly.py:132} INFO -   CARR: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:38.523+0000] {minio_fetching_data_hourly.py:132} INFO -   CVNA: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:38.598+0000] {minio_fetching_data_hourly.py:132} INFO -   CASY: +3475 rows -> 3727 total in MinIO
+[2026-06-13T13:33:38.680+0000] {minio_fetching_data_hourly.py:132} INFO -   CAT: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:38.753+0000] {minio_fetching_data_hourly.py:132} INFO -   CBOE: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:38.839+0000] {minio_fetching_data_hourly.py:132} INFO -   CBRE: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:38.909+0000] {minio_fetching_data_hourly.py:132} INFO -   CDW: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:38.996+0000] {minio_fetching_data_hourly.py:132} INFO -   COR: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:39.071+0000] {minio_fetching_data_hourly.py:132} INFO -   CNC: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:39.142+0000] {minio_fetching_data_hourly.py:132} INFO -   CNP: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:39.216+0000] {minio_fetching_data_hourly.py:132} INFO -   CF: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:39.288+0000] {minio_fetching_data_hourly.py:132} INFO -   CRL: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:39.361+0000] {minio_fetching_data_hourly.py:132} INFO -   SCHW: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:41.416+0000] {minio_fetching_data_hourly.py:181} INFO - Batch 3 | start=2024-06-14 | 50 tickers
+[2026-06-13T13:33:44.962+0000] {minio_fetching_data_hourly.py:132} INFO -   CHTR: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:45.047+0000] {minio_fetching_data_hourly.py:132} INFO -   CVX: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:45.120+0000] {minio_fetching_data_hourly.py:132} INFO -   CMG: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:45.192+0000] {minio_fetching_data_hourly.py:132} INFO -   CB: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:45.272+0000] {minio_fetching_data_hourly.py:132} INFO -   CHD: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:45.343+0000] {minio_fetching_data_hourly.py:132} INFO -   CIEN: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:45.520+0000] {minio_fetching_data_hourly.py:132} INFO -   CI: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:45.594+0000] {minio_fetching_data_hourly.py:132} INFO -   CINF: +3475 rows -> 3727 total in MinIO
+[2026-06-13T13:33:45.675+0000] {minio_fetching_data_hourly.py:132} INFO -   CTAS: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:45.751+0000] {minio_fetching_data_hourly.py:132} INFO -   CSCO: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:45.833+0000] {minio_fetching_data_hourly.py:132} INFO -   C: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:45.918+0000] {minio_fetching_data_hourly.py:132} INFO -   CFG: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:45.989+0000] {minio_fetching_data_hourly.py:132} INFO -   CLX: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:46.071+0000] {minio_fetching_data_hourly.py:132} INFO -   CME: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:46.142+0000] {minio_fetching_data_hourly.py:132} INFO -   CMS: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:46.225+0000] {minio_fetching_data_hourly.py:132} INFO -   KO: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:46.299+0000] {minio_fetching_data_hourly.py:132} INFO -   CTSH: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:46.372+0000] {minio_fetching_data_hourly.py:132} INFO -   COHR: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:46.439+0000] {minio_fetching_data_hourly.py:132} INFO -   COIN: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:46.521+0000] {minio_fetching_data_hourly.py:132} INFO -   CL: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:46.590+0000] {minio_fetching_data_hourly.py:132} INFO -   CMCSA: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:46.661+0000] {minio_fetching_data_hourly.py:132} INFO -   FIX: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:46.732+0000] {minio_fetching_data_hourly.py:132} INFO -   CAG: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:46.800+0000] {minio_fetching_data_hourly.py:132} INFO -   COP: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:46.879+0000] {minio_fetching_data_hourly.py:132} INFO -   ED: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:46.951+0000] {minio_fetching_data_hourly.py:132} INFO -   STZ: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:47.020+0000] {minio_fetching_data_hourly.py:132} INFO -   CEG: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:47.103+0000] {minio_fetching_data_hourly.py:132} INFO -   COO: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:47.176+0000] {minio_fetching_data_hourly.py:132} INFO -   CPRT: +3467 rows -> 3719 total in MinIO
+[2026-06-13T13:33:47.248+0000] {minio_fetching_data_hourly.py:132} INFO -   GLW: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:47.317+0000] {minio_fetching_data_hourly.py:132} INFO -   CPAY: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:47.385+0000] {minio_fetching_data_hourly.py:132} INFO -   CTVA: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:47.454+0000] {minio_fetching_data_hourly.py:132} INFO -   CSGP: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:47.523+0000] {minio_fetching_data_hourly.py:132} INFO -   COST: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:47.592+0000] {minio_fetching_data_hourly.py:132} INFO -   CRH: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:47.663+0000] {minio_fetching_data_hourly.py:132} INFO -   CRWD: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:47.731+0000] {minio_fetching_data_hourly.py:132} INFO -   CCI: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:47.799+0000] {minio_fetching_data_hourly.py:132} INFO -   CSX: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:47.868+0000] {minio_fetching_data_hourly.py:132} INFO -   CMI: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:47.936+0000] {minio_fetching_data_hourly.py:132} INFO -   CVS: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:48.003+0000] {minio_fetching_data_hourly.py:132} INFO -   DHR: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:48.090+0000] {minio_fetching_data_hourly.py:132} INFO -   DRI: +3466 rows -> 3718 total in MinIO
+[2026-06-13T13:33:48.161+0000] {minio_fetching_data_hourly.py:132} INFO -   DDOG: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:48.232+0000] {minio_fetching_data_hourly.py:132} INFO -   DVA: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:48.305+0000] {minio_fetching_data_hourly.py:132} INFO -   DECK: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:48.375+0000] {minio_fetching_data_hourly.py:132} INFO -   DE: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:48.452+0000] {minio_fetching_data_hourly.py:132} INFO -   DELL: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:48.525+0000] {minio_fetching_data_hourly.py:132} INFO -   DAL: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:48.598+0000] {minio_fetching_data_hourly.py:132} INFO -   DVN: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:48.669+0000] {minio_fetching_data_hourly.py:132} INFO -   DXCM: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:50.715+0000] {minio_fetching_data_hourly.py:181} INFO - Batch 4 | start=2024-06-14 | 50 tickers
+[2026-06-13T13:33:54.871+0000] {minio_fetching_data_hourly.py:132} INFO -   FANG: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:54.944+0000] {minio_fetching_data_hourly.py:132} INFO -   DLR: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:55.013+0000] {minio_fetching_data_hourly.py:132} INFO -   DG: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:55.084+0000] {minio_fetching_data_hourly.py:132} INFO -   DLTR: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:55.158+0000] {minio_fetching_data_hourly.py:132} INFO -   D: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:55.229+0000] {minio_fetching_data_hourly.py:132} INFO -   DPZ: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:55.301+0000] {minio_fetching_data_hourly.py:132} INFO -   DASH: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:55.370+0000] {minio_fetching_data_hourly.py:132} INFO -   DOV: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:55.440+0000] {minio_fetching_data_hourly.py:132} INFO -   DOW: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:55.515+0000] {minio_fetching_data_hourly.py:132} INFO -   DHI: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:55.585+0000] {minio_fetching_data_hourly.py:132} INFO -   DTE: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:55.657+0000] {minio_fetching_data_hourly.py:132} INFO -   DUK: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:55.726+0000] {minio_fetching_data_hourly.py:132} INFO -   DD: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:55.798+0000] {minio_fetching_data_hourly.py:132} INFO -   ETN: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:55.872+0000] {minio_fetching_data_hourly.py:132} INFO -   EBAY: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:55.942+0000] {minio_fetching_data_hourly.py:132} INFO -   SATS: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:56.013+0000] {minio_fetching_data_hourly.py:132} INFO -   ECL: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:56.085+0000] {minio_fetching_data_hourly.py:132} INFO -   EIX: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:56.157+0000] {minio_fetching_data_hourly.py:132} INFO -   EW: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:56.229+0000] {minio_fetching_data_hourly.py:132} INFO -   EA: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:56.306+0000] {minio_fetching_data_hourly.py:132} INFO -   ELV: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:56.377+0000] {minio_fetching_data_hourly.py:132} INFO -   EME: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:56.451+0000] {minio_fetching_data_hourly.py:132} INFO -   EMR: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:56.522+0000] {minio_fetching_data_hourly.py:132} INFO -   ETR: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:56.592+0000] {minio_fetching_data_hourly.py:132} INFO -   EOG: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:56.661+0000] {minio_fetching_data_hourly.py:132} INFO -   EQT: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:56.732+0000] {minio_fetching_data_hourly.py:132} INFO -   EFX: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:56.804+0000] {minio_fetching_data_hourly.py:132} INFO -   EQIX: +3475 rows -> 3727 total in MinIO
+[2026-06-13T13:33:56.874+0000] {minio_fetching_data_hourly.py:132} INFO -   EQR: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:56.945+0000] {minio_fetching_data_hourly.py:132} INFO -   ERIE: +3460 rows -> 3707 total in MinIO
+[2026-06-13T13:33:57.014+0000] {minio_fetching_data_hourly.py:132} INFO -   ESS: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:57.086+0000] {minio_fetching_data_hourly.py:132} INFO -   EL: +3466 rows -> 3718 total in MinIO
+[2026-06-13T13:33:57.155+0000] {minio_fetching_data_hourly.py:132} INFO -   EG: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:57.227+0000] {minio_fetching_data_hourly.py:132} INFO -   EVRG: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:57.303+0000] {minio_fetching_data_hourly.py:132} INFO -   ES: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:57.373+0000] {minio_fetching_data_hourly.py:132} INFO -   EXC: +3480 rows -> 3732 total in MinIO
+[2026-06-13T13:33:57.446+0000] {minio_fetching_data_hourly.py:132} INFO -   EXE: +2955 rows -> 2955 total in MinIO
+[2026-06-13T13:33:57.517+0000] {minio_fetching_data_hourly.py:132} INFO -   EXPE: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:57.691+0000] {minio_fetching_data_hourly.py:132} INFO -   EXPD: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:57.763+0000] {minio_fetching_data_hourly.py:132} INFO -   EXR: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:57.835+0000] {minio_fetching_data_hourly.py:132} INFO -   XOM: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:57.906+0000] {minio_fetching_data_hourly.py:132} INFO -   FFIV: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:57.978+0000] {minio_fetching_data_hourly.py:132} INFO -   FDS: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:58.051+0000] {minio_fetching_data_hourly.py:132} INFO -   FICO: +3475 rows -> 3727 total in MinIO
+[2026-06-13T13:33:58.120+0000] {minio_fetching_data_hourly.py:132} INFO -   FAST: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:58.190+0000] {minio_fetching_data_hourly.py:132} INFO -   FRT: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:58.260+0000] {minio_fetching_data_hourly.py:132} INFO -   FDX: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:58.339+0000] {minio_fetching_data_hourly.py:132} INFO -   FIS: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:58.411+0000] {minio_fetching_data_hourly.py:132} INFO -   FITB: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:33:58.484+0000] {minio_fetching_data_hourly.py:132} INFO -   FSLR: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:00.528+0000] {minio_fetching_data_hourly.py:181} INFO - Batch 5 | start=2024-06-14 | 50 tickers
+[2026-06-13T13:34:05.762+0000] {minio_fetching_data_hourly.py:132} INFO -   FE: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:05.833+0000] {minio_fetching_data_hourly.py:132} INFO -   FISV: +1021 rows -> 1021 total in MinIO
+[2026-06-13T13:34:05.888+0000] {minio_fetching_data_hourly.py:132} INFO -   F: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:05.965+0000] {minio_fetching_data_hourly.py:132} INFO -   FTNT: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:06.041+0000] {minio_fetching_data_hourly.py:132} INFO -   FTV: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:06.112+0000] {minio_fetching_data_hourly.py:132} INFO -   FOXA: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:06.182+0000] {minio_fetching_data_hourly.py:132} INFO -   FOX: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:06.255+0000] {minio_fetching_data_hourly.py:132} INFO -   BEN: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:06.324+0000] {minio_fetching_data_hourly.py:132} INFO -   FCX: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:06.416+0000] {minio_fetching_data_hourly.py:132} INFO -   GRMN: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:06.499+0000] {minio_fetching_data_hourly.py:132} INFO -   IT: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:06.576+0000] {minio_fetching_data_hourly.py:132} INFO -   GE: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:06.654+0000] {minio_fetching_data_hourly.py:132} INFO -   GEHC: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:06.729+0000] {minio_fetching_data_hourly.py:132} INFO -   GEV: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:06.801+0000] {minio_fetching_data_hourly.py:132} INFO -   GEN: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:06.873+0000] {minio_fetching_data_hourly.py:132} INFO -   GNRC: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:06.939+0000] {minio_fetching_data_hourly.py:132} INFO -   GD: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:07.006+0000] {minio_fetching_data_hourly.py:132} INFO -   GIS: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:07.079+0000] {minio_fetching_data_hourly.py:132} INFO -   GM: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:07.147+0000] {minio_fetching_data_hourly.py:132} INFO -   GPC: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:07.214+0000] {minio_fetching_data_hourly.py:132} INFO -   GILD: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:07.285+0000] {minio_fetching_data_hourly.py:132} INFO -   GPN: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:07.353+0000] {minio_fetching_data_hourly.py:132} INFO -   GL: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:07.424+0000] {minio_fetching_data_hourly.py:132} INFO -   GDDY: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:07.600+0000] {minio_fetching_data_hourly.py:132} INFO -   GS: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:07.674+0000] {minio_fetching_data_hourly.py:132} INFO -   HAL: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:07.743+0000] {minio_fetching_data_hourly.py:132} INFO -   HIG: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:07.813+0000] {minio_fetching_data_hourly.py:132} INFO -   HAS: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:07.886+0000] {minio_fetching_data_hourly.py:132} INFO -   HCA: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:07.957+0000] {minio_fetching_data_hourly.py:132} INFO -   DOC: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:08.025+0000] {minio_fetching_data_hourly.py:132} INFO -   HSIC: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:08.095+0000] {minio_fetching_data_hourly.py:132} INFO -   HSY: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:08.170+0000] {minio_fetching_data_hourly.py:132} INFO -   HPE: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:08.241+0000] {minio_fetching_data_hourly.py:132} INFO -   HLT: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:08.310+0000] {minio_fetching_data_hourly.py:132} INFO -   HD: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:08.382+0000] {minio_fetching_data_hourly.py:132} INFO -   HON: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:08.452+0000] {minio_fetching_data_hourly.py:132} INFO -   HRL: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:08.520+0000] {minio_fetching_data_hourly.py:132} INFO -   HST: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:08.595+0000] {minio_fetching_data_hourly.py:132} INFO -   HWM: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:08.673+0000] {minio_fetching_data_hourly.py:132} INFO -   HPQ: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:08.746+0000] {minio_fetching_data_hourly.py:132} INFO -   HUBB: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:08.817+0000] {minio_fetching_data_hourly.py:132} INFO -   HUM: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:08.886+0000] {minio_fetching_data_hourly.py:132} INFO -   HBAN: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:08.954+0000] {minio_fetching_data_hourly.py:132} INFO -   HII: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:09.022+0000] {minio_fetching_data_hourly.py:132} INFO -   IBM: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:09.090+0000] {minio_fetching_data_hourly.py:132} INFO -   IEX: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:09.158+0000] {minio_fetching_data_hourly.py:132} INFO -   IDXX: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:09.225+0000] {minio_fetching_data_hourly.py:132} INFO -   ITW: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:09.292+0000] {minio_fetching_data_hourly.py:132} INFO -   INCY: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:09.359+0000] {minio_fetching_data_hourly.py:132} INFO -   IR: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:11.401+0000] {minio_fetching_data_hourly.py:181} INFO - Batch 6 | start=2024-06-14 | 50 tickers
+[2026-06-13T13:34:14.692+0000] {minio_fetching_data_hourly.py:132} INFO -   PODD: +3475 rows -> 3727 total in MinIO
+[2026-06-13T13:34:14.763+0000] {minio_fetching_data_hourly.py:132} INFO -   INTC: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:14.834+0000] {minio_fetching_data_hourly.py:132} INFO -   IBKR: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:14.914+0000] {minio_fetching_data_hourly.py:132} INFO -   ICE: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:15.003+0000] {minio_fetching_data_hourly.py:132} INFO -   IFF: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:15.080+0000] {minio_fetching_data_hourly.py:132} INFO -   IP: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:15.165+0000] {minio_fetching_data_hourly.py:132} INFO -   INTU: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:15.242+0000] {minio_fetching_data_hourly.py:132} INFO -   ISRG: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:15.312+0000] {minio_fetching_data_hourly.py:132} INFO -   IVZ: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:15.386+0000] {minio_fetching_data_hourly.py:132} INFO -   INVH: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:15.480+0000] {minio_fetching_data_hourly.py:132} INFO -   IQV: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:15.560+0000] {minio_fetching_data_hourly.py:132} INFO -   IRM: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:15.633+0000] {minio_fetching_data_hourly.py:132} INFO -   JBHT: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:15.700+0000] {minio_fetching_data_hourly.py:132} INFO -   JBL: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:15.771+0000] {minio_fetching_data_hourly.py:132} INFO -   JKHY: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:15.843+0000] {minio_fetching_data_hourly.py:132} INFO -   J: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:15.917+0000] {minio_fetching_data_hourly.py:132} INFO -   JNJ: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:15.985+0000] {minio_fetching_data_hourly.py:132} INFO -   JCI: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:16.077+0000] {minio_fetching_data_hourly.py:132} INFO -   JPM: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:16.169+0000] {minio_fetching_data_hourly.py:132} INFO -   KVUE: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:16.273+0000] {minio_fetching_data_hourly.py:132} INFO -   KDP: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:16.352+0000] {minio_fetching_data_hourly.py:132} INFO -   KEY: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:16.434+0000] {minio_fetching_data_hourly.py:132} INFO -   KEYS: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:16.525+0000] {minio_fetching_data_hourly.py:132} INFO -   KMB: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:16.698+0000] {minio_fetching_data_hourly.py:132} INFO -   KIM: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:16.780+0000] {minio_fetching_data_hourly.py:132} INFO -   KMI: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:16.880+0000] {minio_fetching_data_hourly.py:132} INFO -   KKR: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:16.957+0000] {minio_fetching_data_hourly.py:132} INFO -   KLAC: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:17.032+0000] {minio_fetching_data_hourly.py:132} INFO -   KHC: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:17.101+0000] {minio_fetching_data_hourly.py:132} INFO -   KR: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:17.170+0000] {minio_fetching_data_hourly.py:132} INFO -   LHX: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:17.245+0000] {minio_fetching_data_hourly.py:132} INFO -   LH: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:17.314+0000] {minio_fetching_data_hourly.py:132} INFO -   LRCX: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:17.406+0000] {minio_fetching_data_hourly.py:132} INFO -   LVS: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:17.482+0000] {minio_fetching_data_hourly.py:132} INFO -   LDOS: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:17.563+0000] {minio_fetching_data_hourly.py:132} INFO -   LEN: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:17.634+0000] {minio_fetching_data_hourly.py:132} INFO -   LII: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:17.714+0000] {minio_fetching_data_hourly.py:132} INFO -   LLY: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:17.808+0000] {minio_fetching_data_hourly.py:132} INFO -   LIN: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:17.883+0000] {minio_fetching_data_hourly.py:132} INFO -   LYV: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:17.954+0000] {minio_fetching_data_hourly.py:132} INFO -   LMT: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:18.027+0000] {minio_fetching_data_hourly.py:132} INFO -   L: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:18.136+0000] {minio_fetching_data_hourly.py:132} INFO -   LOW: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:18.209+0000] {minio_fetching_data_hourly.py:132} INFO -   LULU: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:18.280+0000] {minio_fetching_data_hourly.py:132} INFO -   LITE: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:18.349+0000] {minio_fetching_data_hourly.py:132} INFO -   LYB: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:18.418+0000] {minio_fetching_data_hourly.py:132} INFO -   MTB: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:18.508+0000] {minio_fetching_data_hourly.py:132} INFO -   MPC: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:18.589+0000] {minio_fetching_data_hourly.py:132} INFO -   MAR: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:18.652+0000] {minio_fetching_data_hourly.py:132} INFO -   MRSH: +718 rows -> 718 total in MinIO
+[2026-06-13T13:34:20.670+0000] {minio_fetching_data_hourly.py:181} INFO - Batch 7 | start=2024-06-14 | 50 tickers
+[2026-06-13T13:34:27.426+0000] {minio_fetching_data_hourly.py:132} INFO -   MLM: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:27.498+0000] {minio_fetching_data_hourly.py:132} INFO -   MAS: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:27.575+0000] {minio_fetching_data_hourly.py:132} INFO -   MA: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:27.650+0000] {minio_fetching_data_hourly.py:132} INFO -   MKC: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:27.717+0000] {minio_fetching_data_hourly.py:132} INFO -   MCD: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:27.787+0000] {minio_fetching_data_hourly.py:132} INFO -   MCK: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:27.855+0000] {minio_fetching_data_hourly.py:132} INFO -   MDT: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:27.926+0000] {minio_fetching_data_hourly.py:132} INFO -   MRK: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:27.995+0000] {minio_fetching_data_hourly.py:132} INFO -   META: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:28.064+0000] {minio_fetching_data_hourly.py:132} INFO -   MET: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:28.151+0000] {minio_fetching_data_hourly.py:132} INFO -   MTD: +3472 rows -> 3724 total in MinIO
+[2026-06-13T13:34:28.221+0000] {minio_fetching_data_hourly.py:132} INFO -   MGM: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:28.293+0000] {minio_fetching_data_hourly.py:132} INFO -   MCHP: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:28.371+0000] {minio_fetching_data_hourly.py:132} INFO -   MU: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:28.460+0000] {minio_fetching_data_hourly.py:132} INFO -   MSFT: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:28.540+0000] {minio_fetching_data_hourly.py:132} INFO -   MAA: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:28.612+0000] {minio_fetching_data_hourly.py:132} INFO -   MRNA: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:28.687+0000] {minio_fetching_data_hourly.py:132} INFO -   TAP: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:28.763+0000] {minio_fetching_data_hourly.py:132} INFO -   MDLZ: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:28.834+0000] {minio_fetching_data_hourly.py:132} INFO -   MPWR: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:28.913+0000] {minio_fetching_data_hourly.py:132} INFO -   MNST: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:28.981+0000] {minio_fetching_data_hourly.py:132} INFO -   MCO: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:29.149+0000] {minio_fetching_data_hourly.py:132} INFO -   MS: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:29.225+0000] {minio_fetching_data_hourly.py:132} INFO -   MOS: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:29.294+0000] {minio_fetching_data_hourly.py:132} INFO -   MSI: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:29.367+0000] {minio_fetching_data_hourly.py:132} INFO -   MSCI: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:29.443+0000] {minio_fetching_data_hourly.py:132} INFO -   NDAQ: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:29.523+0000] {minio_fetching_data_hourly.py:132} INFO -   NTAP: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:29.593+0000] {minio_fetching_data_hourly.py:132} INFO -   NFLX: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:29.669+0000] {minio_fetching_data_hourly.py:132} INFO -   NEM: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:29.748+0000] {minio_fetching_data_hourly.py:132} INFO -   NWSA: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:29.830+0000] {minio_fetching_data_hourly.py:132} INFO -   NWS: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:29.903+0000] {minio_fetching_data_hourly.py:132} INFO -   NEE: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:29.974+0000] {minio_fetching_data_hourly.py:132} INFO -   NKE: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:30.043+0000] {minio_fetching_data_hourly.py:132} INFO -   NI: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:30.118+0000] {minio_fetching_data_hourly.py:132} INFO -   NDSN: +3475 rows -> 3727 total in MinIO
+[2026-06-13T13:34:30.199+0000] {minio_fetching_data_hourly.py:132} INFO -   NSC: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:30.274+0000] {minio_fetching_data_hourly.py:132} INFO -   NTRS: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:30.346+0000] {minio_fetching_data_hourly.py:132} INFO -   NOC: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:30.415+0000] {minio_fetching_data_hourly.py:132} INFO -   NCLH: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:30.488+0000] {minio_fetching_data_hourly.py:132} INFO -   NRG: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:30.562+0000] {minio_fetching_data_hourly.py:132} INFO -   NUE: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:30.638+0000] {minio_fetching_data_hourly.py:132} INFO -   NVDA: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:30.722+0000] {minio_fetching_data_hourly.py:132} INFO -   NVR: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:30.810+0000] {minio_fetching_data_hourly.py:132} INFO -   NXPI: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:30.896+0000] {minio_fetching_data_hourly.py:132} INFO -   ORLY: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:30.987+0000] {minio_fetching_data_hourly.py:132} INFO -   OXY: +3466 rows -> 3718 total in MinIO
+[2026-06-13T13:34:31.085+0000] {minio_fetching_data_hourly.py:132} INFO -   ODFL: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:31.176+0000] {minio_fetching_data_hourly.py:132} INFO -   OMC: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:31.276+0000] {minio_fetching_data_hourly.py:132} INFO -   ON: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:33.332+0000] {minio_fetching_data_hourly.py:181} INFO - Batch 8 | start=2024-06-14 | 50 tickers
+[2026-06-13T13:34:36.673+0000] {minio_fetching_data_hourly.py:132} INFO -   OKE: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:36.746+0000] {minio_fetching_data_hourly.py:132} INFO -   ORCL: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:36.819+0000] {minio_fetching_data_hourly.py:132} INFO -   OTIS: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:36.892+0000] {minio_fetching_data_hourly.py:132} INFO -   PCAR: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:36.964+0000] {minio_fetching_data_hourly.py:132} INFO -   PKG: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:37.035+0000] {minio_fetching_data_hourly.py:132} INFO -   PLTR: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:37.113+0000] {minio_fetching_data_hourly.py:132} INFO -   PANW: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:37.178+0000] {minio_fetching_data_hourly.py:132} INFO -   PSKY: +1490 rows -> 1490 total in MinIO
+[2026-06-13T13:34:37.234+0000] {minio_fetching_data_hourly.py:132} INFO -   PH: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:37.307+0000] {minio_fetching_data_hourly.py:132} INFO -   PAYX: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:37.379+0000] {minio_fetching_data_hourly.py:132} INFO -   PYPL: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:37.449+0000] {minio_fetching_data_hourly.py:132} INFO -   PNR: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:37.525+0000] {minio_fetching_data_hourly.py:132} INFO -   PEP: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:37.600+0000] {minio_fetching_data_hourly.py:132} INFO -   PFE: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:37.673+0000] {minio_fetching_data_hourly.py:132} INFO -   PCG: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:37.745+0000] {minio_fetching_data_hourly.py:132} INFO -   PM: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:37.822+0000] {minio_fetching_data_hourly.py:132} INFO -   PSX: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:37.893+0000] {minio_fetching_data_hourly.py:132} INFO -   PNW: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:37.962+0000] {minio_fetching_data_hourly.py:132} INFO -   PNC: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:38.033+0000] {minio_fetching_data_hourly.py:132} INFO -   POOL: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:38.110+0000] {minio_fetching_data_hourly.py:132} INFO -   PPG: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:38.186+0000] {minio_fetching_data_hourly.py:132} INFO -   PPL: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:38.260+0000] {minio_fetching_data_hourly.py:132} INFO -   PFG: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:38.430+0000] {minio_fetching_data_hourly.py:132} INFO -   PG: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:38.507+0000] {minio_fetching_data_hourly.py:132} INFO -   PGR: +3480 rows -> 3732 total in MinIO
+[2026-06-13T13:34:38.576+0000] {minio_fetching_data_hourly.py:132} INFO -   PLD: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:38.647+0000] {minio_fetching_data_hourly.py:132} INFO -   PRU: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:38.723+0000] {minio_fetching_data_hourly.py:132} INFO -   PEG: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:38.810+0000] {minio_fetching_data_hourly.py:132} INFO -   PTC: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:38.887+0000] {minio_fetching_data_hourly.py:132} INFO -   PSA: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:38.958+0000] {minio_fetching_data_hourly.py:132} INFO -   PHM: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:39.035+0000] {minio_fetching_data_hourly.py:132} INFO -   PWR: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:39.110+0000] {minio_fetching_data_hourly.py:132} INFO -   QCOM: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:39.179+0000] {minio_fetching_data_hourly.py:132} INFO -   DGX: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:39.237+0000] {minio_fetching_data_hourly.py:132} INFO -   Q: +1063 rows -> 1063 total in MinIO
+[2026-06-13T13:34:39.290+0000] {minio_fetching_data_hourly.py:132} INFO -   RL: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:39.361+0000] {minio_fetching_data_hourly.py:132} INFO -   RJF: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:39.436+0000] {minio_fetching_data_hourly.py:132} INFO -   RTX: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:39.509+0000] {minio_fetching_data_hourly.py:132} INFO -   O: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:39.579+0000] {minio_fetching_data_hourly.py:132} INFO -   REG: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:39.653+0000] {minio_fetching_data_hourly.py:132} INFO -   REGN: +3475 rows -> 3727 total in MinIO
+[2026-06-13T13:34:39.730+0000] {minio_fetching_data_hourly.py:132} INFO -   RF: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:39.805+0000] {minio_fetching_data_hourly.py:132} INFO -   RSG: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:39.880+0000] {minio_fetching_data_hourly.py:132} INFO -   RMD: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:39.950+0000] {minio_fetching_data_hourly.py:132} INFO -   RVTY: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:40.019+0000] {minio_fetching_data_hourly.py:132} INFO -   HOOD: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:40.095+0000] {minio_fetching_data_hourly.py:132} INFO -   ROK: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:40.171+0000] {minio_fetching_data_hourly.py:132} INFO -   ROL: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:40.248+0000] {minio_fetching_data_hourly.py:132} INFO -   ROP: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:40.316+0000] {minio_fetching_data_hourly.py:132} INFO -   ROST: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:42.359+0000] {minio_fetching_data_hourly.py:181} INFO - Batch 9 | start=2024-06-14 | 50 tickers
+[2026-06-13T13:34:45.671+0000] {minio_fetching_data_hourly.py:132} INFO -   RCL: +3480 rows -> 3732 total in MinIO
+[2026-06-13T13:34:45.744+0000] {minio_fetching_data_hourly.py:132} INFO -   SPGI: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:45.812+0000] {minio_fetching_data_hourly.py:132} INFO -   CRM: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:45.887+0000] {minio_fetching_data_hourly.py:132} INFO -   SNDK: +2284 rows -> 2284 total in MinIO
+[2026-06-13T13:34:45.953+0000] {minio_fetching_data_hourly.py:132} INFO -   SBAC: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:46.025+0000] {minio_fetching_data_hourly.py:132} INFO -   SLB: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:46.096+0000] {minio_fetching_data_hourly.py:132} INFO -   STX: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:46.168+0000] {minio_fetching_data_hourly.py:132} INFO -   SRE: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:46.248+0000] {minio_fetching_data_hourly.py:132} INFO -   NOW: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:46.321+0000] {minio_fetching_data_hourly.py:132} INFO -   SHW: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:46.392+0000] {minio_fetching_data_hourly.py:132} INFO -   SPG: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:46.464+0000] {minio_fetching_data_hourly.py:132} INFO -   SWKS: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:46.531+0000] {minio_fetching_data_hourly.py:132} INFO -   SJM: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:46.612+0000] {minio_fetching_data_hourly.py:132} INFO -   SW: +3382 rows -> 3382 total in MinIO
+[2026-06-13T13:34:46.689+0000] {minio_fetching_data_hourly.py:132} INFO -   SNA: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:46.763+0000] {minio_fetching_data_hourly.py:132} INFO -   SOLV: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:46.835+0000] {minio_fetching_data_hourly.py:132} INFO -   SO: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:46.911+0000] {minio_fetching_data_hourly.py:132} INFO -   LUV: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:46.987+0000] {minio_fetching_data_hourly.py:132} INFO -   SWK: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:47.061+0000] {minio_fetching_data_hourly.py:132} INFO -   SBUX: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:47.130+0000] {minio_fetching_data_hourly.py:132} INFO -   STT: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:47.200+0000] {minio_fetching_data_hourly.py:132} INFO -   STLD: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:47.269+0000] {minio_fetching_data_hourly.py:132} INFO -   STE: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:47.343+0000] {minio_fetching_data_hourly.py:132} INFO -   SYK: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:47.414+0000] {minio_fetching_data_hourly.py:132} INFO -   SMCI: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:47.486+0000] {minio_fetching_data_hourly.py:132} INFO -   SYF: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:47.567+0000] {minio_fetching_data_hourly.py:132} INFO -   SNPS: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:47.649+0000] {minio_fetching_data_hourly.py:132} INFO -   SYY: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:47.721+0000] {minio_fetching_data_hourly.py:132} INFO -   TMUS: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:47.793+0000] {minio_fetching_data_hourly.py:132} INFO -   TROW: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:47.870+0000] {minio_fetching_data_hourly.py:132} INFO -   TTWO: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:47.938+0000] {minio_fetching_data_hourly.py:132} INFO -   TPR: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:48.014+0000] {minio_fetching_data_hourly.py:132} INFO -   TRGP: +3466 rows -> 3718 total in MinIO
+[2026-06-13T13:34:48.086+0000] {minio_fetching_data_hourly.py:132} INFO -   TGT: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:48.167+0000] {minio_fetching_data_hourly.py:132} INFO -   TEL: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:48.238+0000] {minio_fetching_data_hourly.py:132} INFO -   TDY: +3476 rows -> 3504 total in MinIO
+[2026-06-13T13:34:48.405+0000] {minio_fetching_data_hourly.py:132} INFO -   TER: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:48.479+0000] {minio_fetching_data_hourly.py:132} INFO -   TSLA: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:48.550+0000] {minio_fetching_data_hourly.py:132} INFO -   TXN: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:48.626+0000] {minio_fetching_data_hourly.py:132} INFO -   TPL: +3475 rows -> 3725 total in MinIO
+[2026-06-13T13:34:48.704+0000] {minio_fetching_data_hourly.py:132} INFO -   TXT: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:48.778+0000] {minio_fetching_data_hourly.py:132} INFO -   TMO: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:48.847+0000] {minio_fetching_data_hourly.py:132} INFO -   TJX: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:48.918+0000] {minio_fetching_data_hourly.py:132} INFO -   TKO: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:48.992+0000] {minio_fetching_data_hourly.py:132} INFO -   TTD: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:49.060+0000] {minio_fetching_data_hourly.py:132} INFO -   TSCO: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:49.130+0000] {minio_fetching_data_hourly.py:132} INFO -   TT: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:49.201+0000] {minio_fetching_data_hourly.py:132} INFO -   TDG: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:49.273+0000] {minio_fetching_data_hourly.py:132} INFO -   TRV: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:49.346+0000] {minio_fetching_data_hourly.py:132} INFO -   TRMB: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:51.393+0000] {minio_fetching_data_hourly.py:181} INFO - Batch 10 | start=2024-06-14 | 50 tickers
+[2026-06-13T13:34:54.730+0000] {minio_fetching_data_hourly.py:132} INFO -   TFC: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:54.804+0000] {minio_fetching_data_hourly.py:132} INFO -   TYL: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:54.879+0000] {minio_fetching_data_hourly.py:132} INFO -   TSN: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:54.948+0000] {minio_fetching_data_hourly.py:132} INFO -   USB: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:55.020+0000] {minio_fetching_data_hourly.py:132} INFO -   UBER: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:55.093+0000] {minio_fetching_data_hourly.py:132} INFO -   UDR: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:55.169+0000] {minio_fetching_data_hourly.py:132} INFO -   ULTA: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:55.242+0000] {minio_fetching_data_hourly.py:132} INFO -   UNP: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:55.315+0000] {minio_fetching_data_hourly.py:132} INFO -   UAL: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:55.384+0000] {minio_fetching_data_hourly.py:132} INFO -   UPS: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:55.459+0000] {minio_fetching_data_hourly.py:132} INFO -   URI: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:55.528+0000] {minio_fetching_data_hourly.py:132} INFO -   UNH: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:55.599+0000] {minio_fetching_data_hourly.py:132} INFO -   UHS: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:55.669+0000] {minio_fetching_data_hourly.py:132} INFO -   VLO: +3466 rows -> 3718 total in MinIO
+[2026-06-13T13:34:55.756+0000] {minio_fetching_data_hourly.py:132} INFO -   VEEV: +3476 rows -> 3504 total in MinIO
+[2026-06-13T13:34:55.829+0000] {minio_fetching_data_hourly.py:132} INFO -   VTR: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:55.905+0000] {minio_fetching_data_hourly.py:132} INFO -   VLTO: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:55.975+0000] {minio_fetching_data_hourly.py:132} INFO -   VRSN: +3475 rows -> 3727 total in MinIO
+[2026-06-13T13:34:56.144+0000] {minio_fetching_data_hourly.py:132} INFO -   VRSK: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:56.219+0000] {minio_fetching_data_hourly.py:132} INFO -   VZ: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:56.287+0000] {minio_fetching_data_hourly.py:132} INFO -   VRTX: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:56.357+0000] {minio_fetching_data_hourly.py:132} INFO -   VRT: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:56.429+0000] {minio_fetching_data_hourly.py:132} INFO -   VTRS: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:56.508+0000] {minio_fetching_data_hourly.py:132} INFO -   VICI: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:56.591+0000] {minio_fetching_data_hourly.py:132} INFO -   V: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:56.692+0000] {minio_fetching_data_hourly.py:132} INFO -   VST: +3466 rows -> 3718 total in MinIO
+[2026-06-13T13:34:56.766+0000] {minio_fetching_data_hourly.py:132} INFO -   VMC: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:56.842+0000] {minio_fetching_data_hourly.py:132} INFO -   WRB: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:56.914+0000] {minio_fetching_data_hourly.py:132} INFO -   GWW: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:56.987+0000] {minio_fetching_data_hourly.py:132} INFO -   WAB: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:57.057+0000] {minio_fetching_data_hourly.py:132} INFO -   WMT: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:57.126+0000] {minio_fetching_data_hourly.py:132} INFO -   DIS: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:57.198+0000] {minio_fetching_data_hourly.py:132} INFO -   WBD: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:57.267+0000] {minio_fetching_data_hourly.py:132} INFO -   WM: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:57.338+0000] {minio_fetching_data_hourly.py:132} INFO -   WAT: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:57.415+0000] {minio_fetching_data_hourly.py:132} INFO -   WEC: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:57.498+0000] {minio_fetching_data_hourly.py:132} INFO -   WFC: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:57.581+0000] {minio_fetching_data_hourly.py:132} INFO -   WELL: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:57.651+0000] {minio_fetching_data_hourly.py:132} INFO -   WST: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:57.725+0000] {minio_fetching_data_hourly.py:132} INFO -   WDC: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:57.799+0000] {minio_fetching_data_hourly.py:132} INFO -   WY: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:57.872+0000] {minio_fetching_data_hourly.py:132} INFO -   WSM: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:57.946+0000] {minio_fetching_data_hourly.py:132} INFO -   WMB: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:58.017+0000] {minio_fetching_data_hourly.py:132} INFO -   WTW: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:58.090+0000] {minio_fetching_data_hourly.py:132} INFO -   WDAY: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:58.162+0000] {minio_fetching_data_hourly.py:132} INFO -   WYNN: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:58.234+0000] {minio_fetching_data_hourly.py:132} INFO -   XEL: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:58.306+0000] {minio_fetching_data_hourly.py:132} INFO -   XYL: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:58.372+0000] {minio_fetching_data_hourly.py:132} INFO -   YUM: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:34:58.444+0000] {minio_fetching_data_hourly.py:132} INFO -   ZBRA: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:35:00.490+0000] {minio_fetching_data_hourly.py:181} INFO - Batch 11 | start=2024-06-14 | 2 tickers
+[2026-06-13T13:35:01.027+0000] {minio_fetching_data_hourly.py:132} INFO -   ZBH: +3476 rows -> 3728 total in MinIO
+[2026-06-13T13:35:01.098+0000] {minio_fetching_data_hourly.py:132} INFO -   ZTS: +3478 rows -> 3730 total in MinIO
+[2026-06-13T13:35:03.148+0000] {minio_fetching_data_hourly.py:181} INFO - Batch 1 | start=2026-06-10 | 1 tickers
+[2026-06-13T13:35:03.505+0000] {minio_fetching_data_hourly.py:132} INFO -   FDXF: +21 rows -> 70 total in MinIO
+[2026-06-13T13:35:05.525+0000] {minio_fetching_data_hourly.py:186} INFO - ==================================================
+[2026-06-13T13:35:05.526+0000] {minio_fetching_data_hourly.py:187} INFO - Done. Check your MinIO console at http://localhost:9001
+[2026-06-13T13:35:05.527+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-06-13T13:35:05.528+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-06-13T13:35:05.535+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=sp500_master_ingestion_pipeline, task_id=extract_hourly_data, run_id=scheduled__2026-06-11T20:30:00+00:00, execution_date=20260611T203000, start_date=20260613T133307, end_date=20260613T133505
+[2026-06-13T13:35:05.595+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-06-13T13:35:05.608+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-06-13T13:35:05.612+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
