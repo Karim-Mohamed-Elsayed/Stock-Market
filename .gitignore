@@ -4,3 +4,4 @@ hourly_download.log
 sp500_daily_csv/
 sp500_hourly_csv/
 airflow-key.pem
+mina-glue-user_accessKeys.csv
