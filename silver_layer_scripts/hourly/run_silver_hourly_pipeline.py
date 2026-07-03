@@ -1,3 +1,7 @@
+#This script is responsible for orchestrating the Silver layer processing of hourly stock data.
+# It reads raw CSV files from the Bronze layer,
+#  cleans the data, and saves each company's data into its own Parquet file in the Silver layer.
+
 import sys
 import os
 from pyspark.sql import SparkSession

@@ -1,3 +1,5 @@
+#This script is used to clean the hourly data in the silver layer of the data pipeline.
+
 import pyspark.sql.functions as F
 
 def clean_hourly_data(df):
