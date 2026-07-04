@@ -1,0 +1,59 @@
+.tape {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-1);
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.track {
+  display: inline-flex;
+  align-items: center;
+  animation: scroll 38s linear infinite;
+  padding: 14px 0;
+}
+
+.tape:hover .track {
+  animation-play-state: paused;
+}
+
+.item {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 0 22px;
+  font-size: 13px;
+  border-right: 1px solid var(--border);
+}
+
+.symbol {
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+}
+
+.price {
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+}
+
+.change {
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+  }
+}
