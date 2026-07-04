@@ -1,0 +1,39 @@
+from contextlib import asynccontextmanager
+
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+
+from app.core.config import get_settings
+from app.routers import auth, quote, users, watchlist
+from app.services.supabase_auth import get_supabase_auth_client
+
+settings = get_settings()
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    yield
+    await get_supabase_auth_client().aclose()
+
+
+app = FastAPI(title="Stock Market API", version="0.1.0", lifespan=lifespan)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=settings.cors_origins_list,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+API_V1_PREFIX = "/api/v1"
+
+app.include_router(auth.router, prefix=API_V1_PREFIX)
+app.include_router(users.router, prefix=API_V1_PREFIX)
+app.include_router(quote.router, prefix=API_V1_PREFIX)
+app.include_router(watchlist.router, prefix=API_V1_PREFIX)
+
+
+@app.get("/health", tags=["health"])
+def health_check() -> dict[str, str]:
+    return {"status": "ok"}
