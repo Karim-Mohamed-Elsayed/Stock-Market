@@ -112,24 +112,11 @@ export function getCurrentProfile(): Promise<ProfileOut> {
   return request<ProfileOut>("/users/me");
 }
 
-export interface TickerOut {
-  ticker: string;
-  name: string;
-  gics_sector: string | null;
-  exchange: string | null;
-}
-
-export function listTickers(params?: {
-  search?: string;
-  sector?: string;
-  limit?: number;
-}): Promise<TickerOut[]> {
-  const query = new URLSearchParams();
-  if (params?.search) query.set("search", params.search);
-  if (params?.sector) query.set("sector", params.sector);
-  if (params?.limit) query.set("limit", String(params.limit));
-  const qs = query.toString();
-  return request<TickerOut[]>(`/tickers${qs ? `?${qs}` : ""}`);
+// Ticker symbols for every S&P 500 constituent that has a gold-layer file,
+// straight from the S3 bucket listing (see app.services.s3_gold.list_tickers)
+// — there's no company-name/exchange table backing this, just the symbols.
+export function listTickers(): Promise<string[]> {
+  return request<string[]>("/tickers");
 }
 
 export interface QuoteOut {
@@ -143,4 +130,47 @@ export interface QuoteOut {
 
 export function getQuote(ticker: string): Promise<QuoteOut> {
   return request<QuoteOut>(`/quote/${ticker}`);
+}
+
+export type Interval = "daily" | "hourly";
+
+// Mirrors app.schemas.history.OhlcHistoryPoint: gold-layer indicators joined
+// with silver-layer OHLCV. Any field can be null — rolling indicators are
+// unset for the first rows of a ticker's history, and open/high/low/volume
+// are null if the silver-layer row for that date is ever missing.
+export interface OhlcHistoryPoint {
+  date: string;
+  ticker: string;
+  gics_sector: string | null;
+  open: number | null;
+  high: number | null;
+  low: number | null;
+  close: number | null;
+  volume: number | null;
+
+  // Daily-only indicators (interval="daily")
+  daily_return: number | null;
+  rolling_30day_stddev: number | null;
+  sma_50: number | null;
+  sma_200: number | null;
+  signal: string | null;
+  macd_signal_line: number | null;
+
+  // Hourly-only indicators (interval="hourly")
+  hourly_return: number | null;
+  sma_short: number | null;
+  sma_long: number | null;
+
+  // Shared indicators
+  rsi: number | null;
+  macd_line: number | null;
+}
+
+export function getHistoryOhlc(
+  ticker: string,
+  interval: Interval = "daily",
+): Promise<OhlcHistoryPoint[]> {
+  return request<OhlcHistoryPoint[]>(
+    `/history/${encodeURIComponent(ticker)}/ohlc?interval=${interval}`,
+  );
 }

@@ -151,6 +151,18 @@
   font-family: var(--font-mono);
 }
 
+.panelLink {
+  display: block;
+  margin-top: 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--brand-hover);
+}
+
+.panelLink:hover {
+  text-decoration: underline;
+}
+
 /* Section shell */
 .section {
   padding: 64px 0;

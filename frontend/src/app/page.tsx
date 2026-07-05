@@ -154,6 +154,9 @@ export default function Home() {
               <span>RSI-14: 61.2</span>
               <span>MACD: bullish</span>
             </div>
+            <Link href="/markets/NVDA" className={styles.panelLink}>
+              View live NVDA chart &rarr;
+            </Link>
           </div>
         </div>
       </section>
