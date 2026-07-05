@@ -34,6 +34,15 @@ class Settings(BaseSettings):
     cookie_domain: str | None = None
     refresh_token_max_age_seconds: int = 60 * 60 * 24 * 30   # 30 days
 
+    # AWS credentials for reading the gold- and silver-layer parquet buckets
+    # (see app.services.s3_gold). Populated by gold_layer_scripts/ and
+    # silver_layer_scripts/ respectively.
+    aws_access_key_id: str
+    aws_secret_access_key: str
+    aws_region: str
+    s3_bucket_name: str
+    s3_silver_bucket_name: str
+
     @property
     def cors_origins_list(self) -> list[str]:
         return [origin.strip() for origin in self.cors_origins.split(",") if origin.strip()]
