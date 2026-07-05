@@ -1,0 +1,334 @@
+.hero {
+  padding: 72px 0 56px;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--brand-hover);
+  background: rgba(47, 111, 235, 0.12);
+  border: 1px solid rgba(47, 111, 235, 0.28);
+  padding: 6px 12px;
+  border-radius: 999px;
+  margin-bottom: 20px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gain);
+}
+
+.title {
+  font-size: 46px;
+  line-height: 1.12;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 17px;
+  color: var(--text-secondary);
+  max-width: 46ch;
+  margin-bottom: 32px;
+}
+
+.heroActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+
+.heroMeta {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.heroMetaItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.heroMetaValue {
+  font-family: var(--font-mono);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.heroMetaLabel {
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+
+/* Hero chart panel */
+.panel {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.panelTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.panelSymbol {
+  font-weight: 700;
+  font-size: 15px;
+  font-family: var(--font-mono);
+}
+
+.panelName {
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+
+.panelPrice {
+  text-align: right;
+}
+
+.panelPriceValue {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.panelChip {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.chip {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  color: var(--text-secondary);
+}
+
+.chipActive {
+  background: var(--bg-3);
+  color: var(--text-primary);
+  border-color: var(--text-tertiary);
+}
+
+.chartFooter {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  font-size: 11px;
+  color: var(--text-tertiary);
+  font-family: var(--font-mono);
+}
+
+.panelLink {
+  display: block;
+  margin-top: 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--brand-hover);
+}
+
+.panelLink:hover {
+  text-decoration: underline;
+}
+
+/* Section shell */
+.section {
+  padding: 64px 0;
+  border-top: 1px solid var(--border);
+}
+
+.sectionHead {
+  margin-bottom: 36px;
+  max-width: 60ch;
+}
+
+.sectionLabel {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--brand-hover);
+  margin-bottom: 10px;
+}
+
+.sectionTitle {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
+}
+
+.sectionSubtitle {
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+
+/* Feature grid */
+.features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.feature {
+  background: var(--bg-1);
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.featureIcon {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-hover);
+}
+
+.featureTitle {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.featureText {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* Steps */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.step {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  background: var(--bg-1);
+}
+
+.stepIndex {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--brand-hover);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.stepTitle {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.stepText {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* CTA band */
+.cta {
+  border-top: 1px solid var(--border);
+  padding: 64px 0;
+}
+
+.ctaCard {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.ctaTitle {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.ctaText {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.ctaActions {
+  display: flex;
+  gap: 12px;
+}
+
+@media (max-width: 960px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .title {
+    font-size: 32px;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .ctaCard {
+    padding: 32px;
+  }
+}
