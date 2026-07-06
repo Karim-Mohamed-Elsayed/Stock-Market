@@ -4,7 +4,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import get_settings
-from app.routers import auth, history, quote, tickers, users, watchlist
+from app.routers import auth, history, quote, sectors, tickers, users, watchlist
 from app.services.supabase_auth import get_supabase_auth_client
 
 settings = get_settings()
@@ -12,7 +12,16 @@ settings = get_settings()
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    # Startup: Start background quotes fetcher
+    from app.services.s3_gold import get_s3_gold_client
+    from app.routers.tickers import start_quotes_scheduler, stop_quotes_scheduler
+
+    start_quotes_scheduler(get_s3_gold_client())
+
     yield
+
+    # Shutdown: Stop quotes task
+    stop_quotes_scheduler()
     await get_supabase_auth_client().aclose()
 
 
@@ -34,6 +43,7 @@ app.include_router(quote.router, prefix=API_V1_PREFIX)
 app.include_router(watchlist.router, prefix=API_V1_PREFIX)
 app.include_router(history.router, prefix=API_V1_PREFIX)
 app.include_router(tickers.router, prefix=API_V1_PREFIX)
+app.include_router(sectors.router, prefix=API_V1_PREFIX)
 
 
 @app.get("/health", tags=["health"])

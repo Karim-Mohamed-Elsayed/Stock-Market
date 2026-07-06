@@ -1,8 +1,17 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import styles from "./Footer.module.css";
 
 export default function Footer() {
+  const pathname = usePathname();
+
+  // Hide the footer on the stock market chart pages
+  if (pathname && pathname.startsWith("/markets/")) {
+    return null;
+  }
   return (
     <footer className={styles.footer}>
       <div className="container">

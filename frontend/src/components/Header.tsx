@@ -33,6 +33,9 @@ export default function Header() {
           <Link href="/markets/AAPL" className={styles.navLink}>
             Charts
           </Link>
+          <Link href="/insights" className={styles.navLink}>
+            Insights & Analytics
+          </Link>
           <Link href="/#features" className={styles.navLink}>
             Features
           </Link>

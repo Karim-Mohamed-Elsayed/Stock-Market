@@ -1,19 +1,36 @@
 .main {
+  height: calc(100vh - 64px);
+  min-height: calc(100vh - 64px);
+  max-height: calc(100vh - 64px);
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.layoutWrapper {
   flex: 1;
-  padding: 32px 0 64px;
+  min-height: 0;
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
 }
 
 .layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 220px;
-  align-items: start;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: stretch;
   gap: 20px;
-  max-width: 1180px;
+  max-width: 100% !important;
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  height: 100%;
 }
 
-@media (max-width: 860px) {
-  .layout {
-    grid-template-columns: minmax(0, 1fr);
+@media (min-width: 861px) {
+  .layoutSidebarOpen {
+    grid-template-columns: minmax(0, 1fr) 360px;
   }
 }
 
@@ -22,47 +39,175 @@
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
 }
 
-.panelHeader {
+/* ── Single-line compact toolbar ───────────────────── */
+.toolbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 16px;
   gap: 12px;
+  margin-bottom: 12px;
+  min-width: 0;
+  flex-wrap: wrap;
 }
 
-.panelTitle {
+.toolbarLeft {
   display: flex;
-  flex-direction: column;
-  gap: 2px;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  flex-shrink: 1;
+}
+
+.toolbarRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
 }
 
 .panelSymbol {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 16px;
   font-family: var(--font-mono);
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.headerLogo {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  object-fit: contain;
+  background: #ffffff;
+  padding: 2px;
+  border: 1px solid var(--border-strong);
+  flex-shrink: 0;
 }
 
 .panelName {
   font-size: 12px;
   color: var(--text-tertiary);
+  white-space: nowrap;
 }
 
 .panelPrice {
-  text-align: right;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  flex-shrink: 0;
 }
 
 .panelPriceValue {
   font-family: var(--font-mono);
-  font-size: 22px;
+  font-size: 16px;
   font-weight: 700;
+  color: var(--text-primary);
 }
 
 .panelChip {
   display: flex;
   gap: 6px;
-  margin-bottom: 14px;
+}
+
+.controlsRow {
+  display: none;
+}
+
+.dropdownContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dropdownLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.customDropdown {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+}
+
+.dropdownTrigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--brand);
+  color: #10141b;
+  background: #ffffff;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s, background-color 0.2s;
+  width: 100%;
+}
+
+.dropdownTrigger:hover {
+  border-color: var(--brand-hover);
+  background-color: #f1f5f9;
+}
+
+.arrowIcon {
+  color: #475569;
+  transition: transform 0.2s ease;
+}
+
+.arrowOpen {
+  transform: rotate(180deg);
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  width: 100%;
+  background: var(--bg-3);
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  z-index: 10;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dropdownItem {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 6px;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  width: 100%;
+}
+
+.dropdownItem:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-primary);
+}
+
+.dropdownItemActive {
+  background: var(--brand);
+  color: #ffffff;
 }
 
 .chip {
@@ -95,7 +240,39 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 480px;
+  flex: 1;
+  min-height: 0;
   color: var(--text-tertiary);
   font-size: 14px;
 }
+
+.mobileToggleBtn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 140;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--brand);
+  color: #ffffff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  transition: background 0.2s, transform 0.2s;
+  outline: none;
+}
+
+.mobileToggleBtn:hover {
+  background: var(--brand-hover);
+  transform: scale(1.05);
+}
+
+.mobileToggleBtn:active {
+  transform: scale(0.95);
+}
+
+

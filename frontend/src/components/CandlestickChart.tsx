@@ -19,6 +19,7 @@ import {
 } from "lightweight-charts";
 
 import type { Interval, OhlcHistoryPoint } from "@/lib/api";
+import TickerLogo from "@/components/TickerLogo";
 
 import styles from "./CandlestickChart.module.css";
 
@@ -26,6 +27,12 @@ interface Props {
   symbol: string;
   interval: Interval;
   data: OhlcHistoryPoint[];
+  showSma1?: boolean;
+  showSma2?: boolean;
+  showVolume?: boolean;
+  showCandles?: boolean;
+  showLegend?: boolean;
+  showRsi?: boolean;
 }
 
 interface Bar {
@@ -63,13 +70,24 @@ function formatVolume(volume: number): string {
   return volume.toFixed(0);
 }
 
-export default function CandlestickChart({ symbol, interval, data }: Props) {
+export default function CandlestickChart({
+  symbol,
+  interval,
+  data,
+  showSma1 = true,
+  showSma2 = true,
+  showVolume = true,
+  showCandles = true,
+  showLegend = true,
+  showRsi = false,
+}: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const chartRef = useRef<IChartApi | null>(null);
   const candleSeriesRef = useRef<ISeriesApi<"Candlestick"> | null>(null);
   const volumeSeriesRef = useRef<ISeriesApi<"Histogram"> | null>(null);
   const sma1SeriesRef = useRef<ISeriesApi<"Line"> | null>(null);
   const sma2SeriesRef = useRef<ISeriesApi<"Line"> | null>(null);
+  const rsiSeriesRef = useRef<ISeriesApi<"Line"> | null>(null);
 
   const bars = useMemo<Bar[]>(() => {
     const rows = data
@@ -155,6 +173,7 @@ export default function CandlestickChart({ symbol, interval, data }: Props) {
       wickUpColor: gain,
       wickDownColor: loss,
       priceScaleId: "right",
+      visible: showCandles,
     });
     candleSeries.priceScale().applyOptions({ scaleMargins: { top: 0.08, bottom: 0.28 } });
 
@@ -162,6 +181,7 @@ export default function CandlestickChart({ symbol, interval, data }: Props) {
       priceFormat: { type: "volume" },
       priceScaleId: "volume",
       color: gainBg,
+      visible: showVolume,
     });
     volumeSeries.priceScale().applyOptions({ scaleMargins: { top: 0.8, bottom: 0 } });
 
@@ -172,6 +192,7 @@ export default function CandlestickChart({ symbol, interval, data }: Props) {
       priceLineVisible: false,
       lastValueVisible: false,
       crosshairMarkerVisible: false,
+      visible: showSma1,
     });
     const sma2Series = chart.addSeries(LineSeries, {
       color: "#8b5cf6",
@@ -180,7 +201,19 @@ export default function CandlestickChart({ symbol, interval, data }: Props) {
       priceLineVisible: false,
       lastValueVisible: false,
       crosshairMarkerVisible: false,
+      visible: showSma2,
     });
+
+    const rsiSeries = chart.addSeries(LineSeries, {
+      color: "#2f6feb",
+      lineWidth: 2,
+      priceScaleId: "left",
+      priceLineVisible: true,
+      lastValueVisible: true,
+      crosshairMarkerVisible: false,
+      visible: showRsi,
+    });
+    chart.priceScale("left").applyOptions({ scaleMargins: { top: 0.65, bottom: 0.05 } });
 
     createTextWatermark(chart.panes()[0], {
       visible: true,
@@ -223,6 +256,7 @@ export default function CandlestickChart({ symbol, interval, data }: Props) {
     volumeSeriesRef.current = volumeSeries;
     sma1SeriesRef.current = sma1Series;
     sma2SeriesRef.current = sma2Series;
+    rsiSeriesRef.current = rsiSeries;
 
     return () => {
       chart.remove();
@@ -231,6 +265,7 @@ export default function CandlestickChart({ symbol, interval, data }: Props) {
       volumeSeriesRef.current = null;
       sma1SeriesRef.current = null;
       sma2SeriesRef.current = null;
+      rsiSeriesRef.current = null;
     };
     // Re-created per symbol so the watermark and a fresh crosshair subscription
     // always match the ticker currently on screen; bars are read via barsRef
@@ -273,38 +308,116 @@ export default function CandlestickChart({ symbol, interval, data }: Props) {
         .filter((bar) => bar.sma2 !== null)
         .map<LineData<Time>>((bar) => ({ time: bar.time, value: bar.sma2 as number })),
     );
+    rsiSeriesRef.current?.setData(
+      bars
+        .filter((bar) => bar.rsi !== null)
+        .map<LineData<Time>>((bar) => ({ time: bar.time, value: bar.rsi as number })),
+    );
 
-    chartRef.current?.timeScale().fitContent();
+    if (bars.length > 14) {
+      chartRef.current?.timeScale().setVisibleLogicalRange({
+        from: bars.length - 14,
+        to: bars.length - 1,
+      });
+    } else {
+      chartRef.current?.timeScale().fitContent();
+    }
   }, [bars]);
 
+  useEffect(() => {
+    sma1SeriesRef.current?.applyOptions({ visible: showSma1 });
+  }, [showSma1]);
+
+  useEffect(() => {
+    sma2SeriesRef.current?.applyOptions({ visible: showSma2 });
+  }, [showSma2]);
+
+  useEffect(() => {
+    volumeSeriesRef.current?.applyOptions({ visible: showVolume });
+  }, [showVolume]);
+
+  useEffect(() => {
+    candleSeriesRef.current?.applyOptions({ visible: showCandles });
+  }, [showCandles]);
+
+  useEffect(() => {
+    rsiSeriesRef.current?.applyOptions({ visible: showRsi });
+    chartRef.current?.priceScale("left").applyOptions({ visible: showRsi });
+  }, [showRsi]);
+
   const isGain = legend ? legend.close >= legend.open : true;
+  const changeVal = legend ? legend.close - legend.open : 0;
+  const changePct = legend && legend.open !== 0 ? (changeVal / legend.open) * 100 : 0;
+  const changeSign = changeVal >= 0 ? "+" : "";
 
   return (
     <div className={styles.wrap}>
-      <div className={styles.legend}>
-        <span className={styles.legendSymbol}>{symbol}</span>
-        {legend && (
-          <>
-            <span className={isGain ? "gain" : "loss"}>O {legend.open.toFixed(2)}</span>
-            <span className={isGain ? "gain" : "loss"}>H {legend.high.toFixed(2)}</span>
-            <span className={isGain ? "gain" : "loss"}>L {legend.low.toFixed(2)}</span>
-            <span className={isGain ? "gain" : "loss"}>C {legend.close.toFixed(2)}</span>
-            {legend.volume !== null && (
-              <span className={styles.legendMuted}>Vol {formatVolume(legend.volume)}</span>
+      {showLegend && (
+        <div className={`${styles.legend} ${showRsi ? styles.legendShifted : ""}`}>
+          {/* Row 1: Logo · Symbol · interval — OHLC */}
+          <div className={styles.legendRow1}>
+            <TickerLogo ticker={symbol} size={18} className={styles.legendLogo} />
+            <span className={styles.legendSymbol}>{symbol}</span>
+            <span className={styles.legendDot}>·</span>
+            <span className={styles.legendInterval}>{interval === "daily" ? "1D" : "1H"}</span>
+            {legend && (
+              <>
+                <span className={styles.legendSep}>—</span>
+                <span className={styles.legendOhlcLabel}>O</span>
+                <span className={isGain ? "gain" : "loss"}>{legend.open.toFixed(2)}</span>
+                <span className={styles.legendOhlcLabel}>H</span>
+                <span className={isGain ? "gain" : "loss"}>{legend.high.toFixed(2)}</span>
+                <span className={styles.legendOhlcLabel}>L</span>
+                <span className={isGain ? "gain" : "loss"}>{legend.low.toFixed(2)}</span>
+                <span className={styles.legendOhlcLabel}>C</span>
+                <span className={isGain ? "gain" : "loss"}>{legend.close.toFixed(2)}</span>
+                <span className={`${styles.legendChange} ${isGain ? "gain" : "loss"}`}>
+                  {changeSign}{changeVal.toFixed(2)} ({changeSign}{changePct.toFixed(2)}%)
+                </span>
+              </>
             )}
-            {legend.sma1 !== null && (
-              <span className={styles.smaFast}>
-                {interval === "daily" ? "SMA 50" : "SMA short"} {legend.sma1.toFixed(2)}
+          </div>
+
+          {/* Row 2: Bid/Sell — Ask/Buy boxes */}
+          {legend && (
+            <div className={styles.legendRow2}>
+              <span className={styles.bidBox}>
+                <span className={styles.bidLabel}>SELL</span>
+                <span className={styles.bidPrice}>{legend.close.toFixed(2)}</span>
               </span>
-            )}
-            {legend.sma2 !== null && (
-              <span className={styles.smaSlow}>
-                {interval === "daily" ? "SMA 200" : "SMA long"} {legend.sma2.toFixed(2)}
+              <span className={styles.spread}>0.00</span>
+              <span className={styles.askBox}>
+                <span className={styles.askLabel}>BUY</span>
+                <span className={styles.askPrice}>{legend.close.toFixed(2)}</span>
               </span>
-            )}
-          </>
-        )}
-      </div>
+            </div>
+          )}
+
+          {/* Row 3: Vol + SMAs */}
+          {legend && (
+            <div className={styles.legendRow3}>
+              {legend.volume !== null && showVolume && (
+                <span className={styles.legendMuted}>Vol <span className={styles.legendVolVal}>{formatVolume(legend.volume)}</span></span>
+              )}
+              {legend.sma1 !== null && showSma1 && (
+                <span className={styles.smaFast}>
+                  {interval === "daily" ? "SMA 50" : "SMA short"} {legend.sma1.toFixed(2)}
+                </span>
+              )}
+              {legend.sma2 !== null && showSma2 && (
+                <span className={styles.smaSlow}>
+                  {interval === "daily" ? "SMA 200" : "SMA long"} {legend.sma2.toFixed(2)}
+                </span>
+              )}
+              {legend.rsi !== null && showRsi && (
+                <span style={{ color: "#2f6feb", fontWeight: 600 }}>
+                  RSI {legend.rsi.toFixed(2)}
+                </span>
+              )}
+            </div>
+          )}
+        </div>
+      )}
       <div ref={containerRef} className={styles.chart} />
       {bars.length === 0 && <div className={styles.empty}>No OHLC data for this range.</div>}
     </div>
