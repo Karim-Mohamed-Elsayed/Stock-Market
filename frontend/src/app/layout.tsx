@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Vantage — S&P 500 Market Dashboard",
+  title: "Axiom — S&P 500 Market Dashboard",
   description:
     "Track S&P 500 prices, technical indicators, and sector performance. Build a personal watchlist and follow the market in real time.",
 };

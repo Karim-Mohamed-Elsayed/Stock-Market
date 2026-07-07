@@ -117,12 +117,12 @@ export default function Home() {
               S&amp;P 500 coverage, updated daily
             </span>
             <h1 className={styles.title}>
-              Read the market like a desk,
+              Data-driven insights to time
               <br />
-              not a spreadsheet.
+              your next big trade.
             </h1>
             <p className={styles.subtitle}>
-              Vantage tracks every S&amp;P 500 constituent, layers on the
+              Axiom tracks every S&amp;P 500 constituent, layers on the
               technical indicators traders actually use, and lets you save a
               watchlist — all in one dashboard.
             </p>

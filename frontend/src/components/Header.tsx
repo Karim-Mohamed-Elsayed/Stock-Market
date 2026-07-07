@@ -22,8 +22,8 @@ export default function Header() {
     <header className={styles.header}>
       <div className={`container ${styles.bar}`}>
         <Link href="/" className={styles.logo}>
-          <span className={styles.mark}>V</span>
-          Vantage
+          <span className={styles.mark}>A</span>
+          Axiom
         </Link>
 
         <nav className={styles.nav}>

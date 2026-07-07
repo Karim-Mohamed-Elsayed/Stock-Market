@@ -18,8 +18,8 @@ export default function Footer() {
         <div className={styles.grid}>
           <div>
             <div className={styles.brand}>
-              <span className={styles.mark}>V</span>
-              Vantage
+              <span className={styles.mark}>A</span>
+              Axiom
             </div>
             <p className={styles.tagline}>
               Market data, technical indicators, and watchlists for the S&amp;P
@@ -61,7 +61,7 @@ export default function Footer() {
 
         <div className={styles.bottom}>
           <span className={styles.copyright}>
-            &copy; {new Date().getFullYear()} Vantage Markets.
+            &copy; {new Date().getFullYear()} Axiom Markets.
           </span>
           <p className={styles.disclaimer}>
             Market data may be delayed and is provided for informational
