@@ -1,12 +1,19 @@
+.fullContainer {
+  width: 100%;
+  max-width: 1536px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
 .hero {
-  padding: 72px 0 56px;
+  padding: 48px 0 100px;
 }
 
 .heroGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto 1fr;
   gap: 56px;
-  align-items: center;
+  align-items: stretch;
 }
 
 .eyebrow {
@@ -33,26 +40,27 @@
 }
 
 .title {
-  font-size: 46px;
+  font-size: 64px;
   line-height: 1.12;
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--text-primary);
-  margin-bottom: 20px;
+  margin-bottom: 32px;
 }
 
 .subtitle {
-  font-size: 17px;
+  font-size: 19px;
   color: var(--text-secondary);
-  max-width: 46ch;
-  margin-bottom: 32px;
+  max-width: 50ch;
+  line-height: 1.6;
+  margin-bottom: 48px;
 }
 
 .heroActions {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 36px;
+  gap: 16px;
+  margin-bottom: 56px;
 }
 
 .heroMeta {
@@ -85,6 +93,9 @@
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
 }
 
 .panelHeader {
@@ -306,8 +317,16 @@
 }
 
 @media (max-width: 960px) {
+  .fullContainer {
+    padding: 0 32px;
+  }
+
   .heroGrid {
     grid-template-columns: 1fr;
+  }
+
+  .panel {
+    min-height: 460px;
   }
 
   .features {
@@ -320,6 +339,10 @@
 }
 
 @media (max-width: 560px) {
+  .fullContainer {
+    padding: 0 24px;
+  }
+
   .title {
     font-size: 32px;
   }

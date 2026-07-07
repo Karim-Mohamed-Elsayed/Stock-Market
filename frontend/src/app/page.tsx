@@ -110,7 +110,7 @@ export default function Home() {
       <TickerTape />
 
       <section className={styles.hero}>
-        <div className={`container ${styles.heroGrid}`}>
+        <div className={`${styles.fullContainer} ${styles.heroGrid}`}>
           <div>
             <span className={styles.eyebrow}>
               <span className={styles.dot} />
@@ -182,7 +182,7 @@ export default function Home() {
                 </button>
               </div>
             </div>
-            <div style={{ height: 260, position: 'relative' }}>
+            <div style={{ flex: 1, minHeight: 0, position: 'relative' }}>
               {nvdaData ? (
                 <CandlestickChart 
                   symbol="NVDA" 
@@ -206,7 +206,7 @@ export default function Home() {
       </section>
 
       <section className={styles.section} id="features">
-        <div className="container">
+        <div className={styles.fullContainer}>
           <div className={styles.sectionHead}>
             <div className={styles.sectionLabel}>Platform</div>
             <h2 className={styles.sectionTitle}>Everything the dashboard needs, nothing it doesn&apos;t</h2>
@@ -233,7 +233,7 @@ export default function Home() {
       </section>
 
       <section className={styles.section} id="sectors">
-        <div className="container">
+        <div className={styles.fullContainer}>
           <div className={styles.sectionHead}>
             <div className={styles.sectionLabel}>Sector performance</div>
             <h2 className={styles.sectionTitle}>See where the market is moving</h2>
@@ -252,7 +252,7 @@ export default function Home() {
       </section>
 
       <section className={styles.section} id="markets">
-        <div className="container">
+        <div className={styles.fullContainer}>
           <div className={styles.sectionHead}>
             <div className={styles.sectionLabel}>How it works</div>
             <h2 className={styles.sectionTitle}>Set up in three steps</h2>
@@ -271,7 +271,7 @@ export default function Home() {
       </section>
 
       <section className={styles.cta}>
-        <div className="container">
+        <div className={styles.fullContainer}>
           <div className={styles.ctaCard}>
             <div>
               <div className={styles.ctaTitle}>Ready to track the market your way?</div>
