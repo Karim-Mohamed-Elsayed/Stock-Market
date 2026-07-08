@@ -3,11 +3,13 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { useAuth } from "@/lib/auth-context";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
   const pathname = usePathname();
-
+  const { profile, isLoading } = useAuth();
+  const isLoggedIn = !isLoading && profile !== null;
   // Hide the footer on the stock market chart pages
   if (pathname && pathname.startsWith("/markets/")) {
     return null;
@@ -30,19 +32,20 @@ export default function Footer() {
           <div>
             <div className={styles.heading}>Product</div>
             <div className={styles.links}>
-              <Link href="/#markets">Markets</Link>
-              <Link href="/#features">Features</Link>
-              <Link href="/#sectors">Sectors</Link>
+              <Link href="/markets/AAPL">Charts</Link>
+              <Link href="/insights">Insights &amp; Analytics</Link>
             </div>
           </div>
 
-          <div>
-            <div className={styles.heading}>Account</div>
-            <div className={styles.links}>
-              <Link href="/login">Log in</Link>
-              <Link href="/register">Create account</Link>
+          {!isLoggedIn && (
+            <div>
+              <div className={styles.heading}>Account</div>
+              <div className={styles.links}>
+                <Link href="/login">Log in</Link>
+                <Link href="/register">Create account</Link>
+              </div>
             </div>
-          </div>
+          )}
 
           <div>
             <div className={styles.heading}>Company</div>

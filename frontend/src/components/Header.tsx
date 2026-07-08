@@ -27,21 +27,14 @@ export default function Header() {
         </Link>
 
         <nav className={styles.nav}>
-          <Link href="/#markets" className={styles.navLink}>
-            Markets
-          </Link>
+
           <Link href="/markets/AAPL" className={styles.navLink}>
             Charts
           </Link>
           <Link href="/insights" className={styles.navLink}>
             Insights & Analytics
           </Link>
-          <Link href="/#features" className={styles.navLink}>
-            Features
-          </Link>
-          <Link href="/#sectors" className={styles.navLink}>
-            Sectors
-          </Link>
+
         </nav>
 
         <div className={styles.actions}>

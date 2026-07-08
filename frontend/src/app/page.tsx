@@ -194,8 +194,8 @@ export default function Home() {
             </div>
             <div className={styles.ctaActions}>
               {isLoggedIn ? (
-                <Link href="/insights" className={`${btn.btn} ${btn.primary} ${btn.lg}`}>
-                  Go to insights
+                <Link href="/markets/AAPL" className={`${btn.btn} ${btn.primary} ${btn.lg}`}>
+                  Go to charts
                 </Link>
               ) : (
                 <>

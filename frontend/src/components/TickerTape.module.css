@@ -11,7 +11,7 @@
   display: inline-flex;
   align-items: center;
   animation: scroll 38s linear infinite;
-  padding: 14px 0;
+  padding: 20px 0;
 }
 
 .tape:hover .track {
@@ -21,9 +21,9 @@
 .item {
   display: inline-flex;
   align-items: baseline;
-  gap: 8px;
-  padding: 0 22px;
-  font-size: 13px;
+  gap: 12px;
+  padding: 0 28px;
+  font-size: 16px;
   border-right: 1px solid var(--border);
 }
 
