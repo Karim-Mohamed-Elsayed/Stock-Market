@@ -88,7 +88,7 @@ export default function LoginPage() {
         </form>
 
         <p className={styles.footerText}>
-          New to Axiom? <Link href="/register">Create an account</Link>
+          New to Meridian Axiom? <Link href="/register">Create an account</Link>
         </p>
       </div>
     </div>

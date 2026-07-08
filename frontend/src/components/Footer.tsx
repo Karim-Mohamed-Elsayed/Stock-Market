@@ -20,8 +20,8 @@ export default function Footer() {
         <div className={styles.grid}>
           <div>
             <div className={styles.brand}>
-              <span className={styles.mark}>A</span>
-              Axiom
+              <img src="/logo/light_logo.png" alt="Meridian Axiom Logo" style={{ width: 96, height: 96, objectFit: 'contain' }} />
+              Meridian Axiom
             </div>
             <p className={styles.tagline}>
               Market data, technical indicators, and watchlists for the S&amp;P
@@ -64,7 +64,7 @@ export default function Footer() {
 
         <div className={styles.bottom}>
           <span className={styles.copyright}>
-            &copy; {new Date().getFullYear()} Axiom Markets.
+            &copy; {new Date().getFullYear()} Meridian Axiom Markets.
           </span>
           <p className={styles.disclaimer}>
             Market data may be delayed and is provided for informational

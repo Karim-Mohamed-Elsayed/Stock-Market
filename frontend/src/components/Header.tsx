@@ -22,8 +22,8 @@ export default function Header() {
     <header className={styles.header}>
       <div className={`container ${styles.bar}`}>
         <Link href="/" className={styles.logo}>
-          <span className={styles.mark}>A</span>
-          Axiom
+          <img src="/logo/light_logo.png" alt="Meridian Axiom Logo" style={{ width: 96, height: 96, objectFit: 'contain' }} />
+          Meridian Axiom
         </Link>
 
         <nav className={styles.nav}>

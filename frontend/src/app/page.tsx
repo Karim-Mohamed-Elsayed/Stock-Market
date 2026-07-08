@@ -107,7 +107,7 @@ export default function Home() {
               your next big trade.
             </h1>
             <p className={styles.subtitle}>
-              Axiom tracks every S&amp;P 500 constituent, layers on the
+              Meridian Axiom tracks every S&amp;P 500 constituent, layers on the
               technical indicators traders actually use, and lets you save a
               watchlist — all in one dashboard.
             </p>
@@ -184,7 +184,7 @@ export default function Home() {
           <div className={styles.ctaCard}>
             <div>
               <div className={styles.ctaTitle}>
-                {isLoggedIn ? "Welcome back to Axiom" : "Ready to track the market your way?"}
+                {isLoggedIn ? "Welcome back to Meridian Axiom" : "Ready to track the market your way?"}
               </div>
               <p className={styles.ctaText}>
                 {isLoggedIn
@@ -226,12 +226,14 @@ export default function Home() {
           <div className={styles.features}>
             {FEATURES.map((feature) => (
               <div className={styles.feature} key={feature.title}>
-                <span className={styles.featureIcon}>
-                  <svg width="18" height="18" viewBox="0 0 24 24">
-                    {feature.icon}
-                  </svg>
-                </span>
-                <span className={styles.featureTitle}>{feature.title}</span>
+                <div className={styles.featureHeader}>
+                  <span className={styles.featureIcon}>
+                    <svg width="18" height="18" viewBox="0 0 24 24">
+                      {feature.icon}
+                    </svg>
+                  </span>
+                  <span className={styles.featureTitle}>{feature.title}</span>
+                </div>
                 <p className={styles.featureText}>{feature.text}</p>
               </div>
             ))}

@@ -230,6 +230,12 @@
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
+.featureHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .featureIcon {
   width: 34px;
   height: 34px;
