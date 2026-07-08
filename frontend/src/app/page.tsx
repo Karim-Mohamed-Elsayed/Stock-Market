@@ -69,21 +69,6 @@ const FEATURES = [
   },
 ];
 
-const STEPS = [
-  {
-    title: "Create your account",
-    text: "Sign up with an email and password. No brokerage link, no card required.",
-  },
-  {
-    title: "Browse the market",
-    text: "Search the S&P 500, filter by GICS sector, and drill into a ticker's price history and indicators.",
-  },
-  {
-    title: "Build your watchlist",
-    text: "Save tickers you care about and check back on live quotes whenever you sign in.",
-  },
-];
-
 export default function Home() {
   const { profile, isLoading } = useAuth();
   const isLoggedIn = !isLoading && profile !== null;
@@ -126,18 +111,7 @@ export default function Home() {
               technical indicators traders actually use, and lets you save a
               watchlist — all in one dashboard.
             </p>
-            <div className={styles.heroActions}>
-              {!isLoggedIn && (
-                <>
-                  <Link href="/register" className={`${btn.btn} ${btn.primary} ${btn.lg}`}>
-                    Create free account
-                  </Link>
-                  <Link href="/login" className={`${btn.btn} ${btn.secondary} ${btn.lg}`}>
-                    Log in
-                  </Link>
-                </>
-              )}
-            </div>
+            <div className={styles.heroActions}></div>
             <div className={styles.heroMeta}>
               <div className={styles.heroMetaItem}>
                 <span className={styles.heroMetaValue}>500+</span>
@@ -205,6 +179,39 @@ export default function Home() {
         </div>
       </section>
 
+      <section className={styles.cta}>
+        <div className={styles.fullContainer}>
+          <div className={styles.ctaCard}>
+            <div>
+              <div className={styles.ctaTitle}>
+                {isLoggedIn ? "Welcome back to Axiom" : "Ready to track the market your way?"}
+              </div>
+              <p className={styles.ctaText}>
+                {isLoggedIn
+                  ? "Dive right into the live markets and review your watchlist."
+                  : "Create a free account and start building your watchlist in under a minute."}
+              </p>
+            </div>
+            <div className={styles.ctaActions}>
+              {isLoggedIn ? (
+                <Link href="/insights" className={`${btn.btn} ${btn.primary} ${btn.lg}`}>
+                  Go to insights
+                </Link>
+              ) : (
+                <>
+                  <Link href="/register" className={`${btn.btn} ${btn.primary} ${btn.lg}`}>
+                    Create free account
+                  </Link>
+                  <Link href="/login" className={`${btn.btn} ${btn.secondary} ${btn.lg}`}>
+                    Log in
+                  </Link>
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className={styles.section} id="features">
         <div className={styles.fullContainer}>
           <div className={styles.sectionHead}>
@@ -251,45 +258,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={styles.section} id="markets">
-        <div className={styles.fullContainer}>
-          <div className={styles.sectionHead}>
-            <div className={styles.sectionLabel}>How it works</div>
-            <h2 className={styles.sectionTitle}>Set up in three steps</h2>
-          </div>
-
-          <div className={styles.steps}>
-            {STEPS.map((step, index) => (
-              <div className={styles.step} key={step.title}>
-                <div className={styles.stepIndex}>{`0${index + 1}`}</div>
-                <div className={styles.stepTitle}>{step.title}</div>
-                <p className={styles.stepText}>{step.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className={styles.cta}>
-        <div className={styles.fullContainer}>
-          <div className={styles.ctaCard}>
-            <div>
-              <div className={styles.ctaTitle}>Ready to track the market your way?</div>
-              <p className={styles.ctaText}>
-                Create a free account and start building your watchlist in
-                under a minute.
-              </p>
-            </div>
-            <div className={styles.ctaActions}>
-              {!isLoggedIn && (
-                <Link href="/register" className={`${btn.btn} ${btn.primary} ${btn.lg}`}>
-                  Create free account
-                </Link>
-              )}
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }

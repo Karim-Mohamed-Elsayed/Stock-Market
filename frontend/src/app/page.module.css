@@ -210,19 +210,24 @@
 .features {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
+  gap: 24px;
 }
 
 .feature {
-  background: var(--bg-1);
-  padding: 26px 24px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px 24px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
+  transition: all 0.2s ease;
+}
+
+.feature:hover {
+  border-color: var(--brand);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
 .featureIcon {
@@ -242,40 +247,6 @@
 }
 
 .featureText {
-  font-size: 13.5px;
-  color: var(--text-secondary);
-  line-height: 1.55;
-}
-
-/* Steps */
-.steps {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.step {
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 24px;
-  background: var(--bg-1);
-}
-
-.stepIndex {
-  font-family: var(--font-mono);
-  font-size: 13px;
-  color: var(--brand-hover);
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-
-.stepTitle {
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-
-.stepText {
   font-size: 13.5px;
   color: var(--text-secondary);
   line-height: 1.55;
@@ -331,10 +302,6 @@
 
   .features {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .steps {
-    grid-template-columns: 1fr;
   }
 }
 
