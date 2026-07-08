@@ -44,31 +44,57 @@ export default function TickerLogo({ ticker, className, size = 16 }: Props) {
 
   if (attempt === 0) {
     return (
-      <img
-        src={`https://eodhd.com/img/logos/US/${normalized}.png`}
-        alt={`${ticker} logo`}
+      <div
         className={className}
-        width={size}
-        height={size}
-        style={{ objectFit: "contain" }}
-        loading="lazy"
-        onError={handleError}
-      />
+        style={{
+          width: size,
+          height: size,
+          borderRadius: "50%",
+          backgroundColor: "#ffffff",
+          overflow: "hidden",
+          display: "inline-flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexShrink: 0,
+          border: "1px solid var(--border)"
+        }}
+      >
+        <img
+          src={`https://eodhd.com/img/logos/US/${normalized}.png`}
+          alt={`${ticker} logo`}
+          style={{ width: "80%", height: "80%", objectFit: "contain", mixBlendMode: "multiply" }}
+          loading="lazy"
+          onError={handleError}
+        />
+      </div>
     );
   }
 
   if (attempt === 1) {
     return (
-      <img
-        src={`https://financialmodelingprep.com/image-stock/${normalized}.png`}
-        alt={`${ticker} logo`}
+      <div
         className={className}
-        width={size}
-        height={size}
-        style={{ objectFit: "contain" }}
-        loading="lazy"
-        onError={handleError}
-      />
+        style={{
+          width: size,
+          height: size,
+          borderRadius: "50%",
+          backgroundColor: "#ffffff",
+          overflow: "hidden",
+          display: "inline-flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexShrink: 0,
+          border: "1px solid var(--border)"
+        }}
+      >
+        <img
+          src={`https://financialmodelingprep.com/image-stock/${normalized}.png`}
+          alt={`${ticker} logo`}
+          style={{ width: "80%", height: "80%", objectFit: "contain", mixBlendMode: "multiply" }}
+          loading="lazy"
+          onError={handleError}
+        />
+      </div>
     );
   }
 
