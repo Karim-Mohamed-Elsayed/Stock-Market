@@ -75,7 +75,7 @@ export default function InsightsAndAnalyticsPage() {
 
   // Fetch Insights
   useEffect(() => {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000/api/v1";
+    const apiUrl = `${process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000"}/api/v1`;
     let cancelled = false;
 
     Promise.all([
@@ -111,7 +111,7 @@ export default function InsightsAndAnalyticsPage() {
 
   // Fetch Ticker List for Analytics
   useEffect(() => {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000/api/v1";
+    const apiUrl = `${process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000"}/api/v1`;
     fetch(`${apiUrl}/tickers`)
       .then((res) => res.json())
       .then((data) => {
@@ -130,7 +130,7 @@ export default function InsightsAndAnalyticsPage() {
     if (!selectedTicker) return;
 
     setLoadingAnalytics(true);
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000/api/v1";
+    const apiUrl = `${process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000"}/api/v1`;
 
     fetch(`${apiUrl}/history/${selectedTicker}?interval=daily`)
       .then((res) => res.json())
