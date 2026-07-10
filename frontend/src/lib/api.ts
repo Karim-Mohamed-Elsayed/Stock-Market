@@ -119,6 +119,10 @@ export function listTickers(): Promise<string[]> {
   return request<string[]>("/tickers");
 }
 
+export function listTickerQuotes(): Promise<Record<string, QuoteOut>> {
+  return request<Record<string, QuoteOut>>("/tickers/quotes");
+}
+
 export interface QuoteOut {
   ticker: string;
   price: number | null;

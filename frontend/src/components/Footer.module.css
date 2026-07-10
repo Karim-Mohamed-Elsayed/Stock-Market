@@ -2,7 +2,7 @@
   border-top: 1px solid var(--border);
   background: var(--bg-1);
   margin-top: auto;
-  padding: 48px 0 28px;
+  padding: 64px 0 32px;
 }
 
 .grid {
@@ -15,39 +15,39 @@
 .brand {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 20px;
   color: var(--text-primary);
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .mark {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   border-radius: var(--radius-sm);
   background: var(--brand);
   color: #fff;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 800;
 }
 
 .tagline {
   color: var(--text-tertiary);
-  font-size: 13px;
-  max-width: 32ch;
+  font-size: 15px;
+  max-width: 34ch;
 }
 
 .heading {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--text-tertiary);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin-bottom: 14px;
+  letter-spacing: 0.05em;
+  margin-bottom: 20px;
 }
 
 .links {
@@ -57,7 +57,7 @@
 }
 
 .links a {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--text-secondary);
 }
 
@@ -76,12 +76,12 @@
 }
 
 .copyright {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-tertiary);
 }
 
 .disclaimer {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-tertiary);
   max-width: 60ch;
   line-height: 1.6;

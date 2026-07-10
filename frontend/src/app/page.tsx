@@ -1,8 +1,14 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
-import MiniCandles from "@/components/MiniCandles";
+import CandlestickChart from "@/components/CandlestickChart";
 import SectorPreview from "@/components/SectorPreview";
 import TickerTape from "@/components/TickerTape";
+import TickerLogo from "@/components/TickerLogo";
+import { getHistoryOhlc, type Interval, type OhlcHistoryPoint } from "@/lib/api";
+import { useAuth } from "@/lib/auth-context";
 import btn from "@/components/Button.module.css";
 
 import styles from "./page.module.css";
@@ -63,51 +69,49 @@ const FEATURES = [
   },
 ];
 
-const STEPS = [
-  {
-    title: "Create your account",
-    text: "Sign up with an email and password. No brokerage link, no card required.",
-  },
-  {
-    title: "Browse the market",
-    text: "Search the S&P 500, filter by GICS sector, and drill into a ticker's price history and indicators.",
-  },
-  {
-    title: "Build your watchlist",
-    text: "Save tickers you care about and check back on live quotes whenever you sign in.",
-  },
-];
-
 export default function Home() {
+  const { profile, isLoading } = useAuth();
+  const isLoggedIn = !isLoading && profile !== null;
+
+  const [interval, setInterval] = useState<Interval>("daily");
+  const [nvdaData, setNvdaData] = useState<OhlcHistoryPoint[] | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    getHistoryOhlc("NVDA", interval)
+      .then((points) => {
+        if (!cancelled) setNvdaData(points);
+      })
+      .catch(() => {
+        if (!cancelled) setNvdaData(null);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [interval]);
+
   return (
     <main>
       <TickerTape />
 
       <section className={styles.hero}>
-        <div className={`container ${styles.heroGrid}`}>
+        <div className={`${styles.fullContainer} ${styles.heroGrid}`}>
           <div>
             <span className={styles.eyebrow}>
               <span className={styles.dot} />
               S&amp;P 500 coverage, updated daily
             </span>
             <h1 className={styles.title}>
-              Read the market like a desk,
+              Data-driven insights to time
               <br />
-              not a spreadsheet.
+              your next big trade.
             </h1>
             <p className={styles.subtitle}>
-              Vantage tracks every S&amp;P 500 constituent, layers on the
+              Meridian Axiom tracks every S&amp;P 500 constituent, layers on the
               technical indicators traders actually use, and lets you save a
               watchlist — all in one dashboard.
             </p>
-            <div className={styles.heroActions}>
-              <Link href="/register" className={`${btn.btn} ${btn.primary} ${btn.lg}`}>
-                Create free account
-              </Link>
-              <Link href="/login" className={`${btn.btn} ${btn.secondary} ${btn.lg}`}>
-                Log in
-              </Link>
-            </div>
+            <div className={styles.heroActions}></div>
             <div className={styles.heroMeta}>
               <div className={styles.heroMetaItem}>
                 <span className={styles.heroMetaValue}>500+</span>
@@ -129,30 +133,44 @@ export default function Home() {
           </div>
 
           <div className={styles.panel}>
-            <div className={styles.panelHeader}>
-              <div className={styles.panelTitle}>
-                <span className={styles.panelSymbol}>NVDA</span>
-                <span className={styles.panelName}>NVIDIA Corp &middot; NASDAQ</span>
-              </div>
-              <div className={styles.panelPrice}>
-                <div className={styles.panelPriceValue}>128.34</div>
-                <div className="gain mono" style={{ fontSize: 12, fontWeight: 600 }}>
-                  +3.44 (+2.75%)
+            <div className={styles.panelHeader} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
+              <div className={styles.panelTitle} style={{ flexDirection: 'row', alignItems: 'center', gap: '8px' }}>
+                <TickerLogo ticker="NVDA" size={18} />
+                <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'baseline', gap: '6px' }}>
+                  <span className={styles.panelSymbol}>NVDA</span>
+                  <span className={styles.panelName}>NVIDIA Corp</span>
                 </div>
               </div>
+              <div className={styles.panelChip} style={{ margin: 0 }}>
+                <button 
+                  className={`${styles.chip} ${interval === "daily" ? styles.chipActive : ""}`} 
+                  onClick={() => setInterval("daily")}
+                >
+                  1D
+                </button>
+                <button 
+                  className={`${styles.chip} ${interval === "hourly" ? styles.chipActive : ""}`} 
+                  onClick={() => setInterval("hourly")}
+                >
+                  1H
+                </button>
+              </div>
             </div>
-            <div className={styles.panelChip}>
-              <span className={`${styles.chip} ${styles.chipActive}`}>1D</span>
-              <span className={styles.chip}>1M</span>
-              <span className={styles.chip}>6M</span>
-              <span className={styles.chip}>1Y</span>
-              <span className={styles.chip}>5Y</span>
-            </div>
-            <MiniCandles />
-            <div className={styles.chartFooter}>
-              <span>SMA 50: 121.86</span>
-              <span>RSI-14: 61.2</span>
-              <span>MACD: bullish</span>
+            <div style={{ flex: 1, minHeight: 0, position: 'relative' }}>
+              {nvdaData ? (
+                <CandlestickChart 
+                  symbol="NVDA" 
+                  interval={interval} 
+                  data={nvdaData} 
+                  showSma1={false} 
+                  showSma2={false} 
+                  showRsi={false} 
+                  showVolume={false}
+                  showLegend={false} 
+                />
+              ) : (
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', color: 'var(--text-tertiary)' }}>Loading...</div>
+              )}
             </div>
             <Link href="/markets/NVDA" className={styles.panelLink}>
               View live NVDA chart &rarr;
@@ -161,8 +179,41 @@ export default function Home() {
         </div>
       </section>
 
+      <section className={styles.cta}>
+        <div className={styles.fullContainer}>
+          <div className={styles.ctaCard}>
+            <div>
+              <div className={styles.ctaTitle}>
+                {isLoggedIn ? "Welcome back to Meridian Axiom" : "Ready to track the market your way?"}
+              </div>
+              <p className={styles.ctaText}>
+                {isLoggedIn
+                  ? "Dive right into the live markets and review your watchlist."
+                  : "Create a free account and start building your watchlist in under a minute."}
+              </p>
+            </div>
+            <div className={styles.ctaActions}>
+              {isLoggedIn ? (
+                <Link href="/markets/AAPL" className={`${btn.btn} ${btn.primary} ${btn.lg}`}>
+                  Go to charts
+                </Link>
+              ) : (
+                <>
+                  <Link href="/register" className={`${btn.btn} ${btn.primary} ${btn.lg}`}>
+                    Create free account
+                  </Link>
+                  <Link href="/login" className={`${btn.btn} ${btn.secondary} ${btn.lg}`}>
+                    Log in
+                  </Link>
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className={styles.section} id="features">
-        <div className="container">
+        <div className={styles.fullContainer}>
           <div className={styles.sectionHead}>
             <div className={styles.sectionLabel}>Platform</div>
             <h2 className={styles.sectionTitle}>Everything the dashboard needs, nothing it doesn&apos;t</h2>
@@ -175,12 +226,14 @@ export default function Home() {
           <div className={styles.features}>
             {FEATURES.map((feature) => (
               <div className={styles.feature} key={feature.title}>
-                <span className={styles.featureIcon}>
-                  <svg width="18" height="18" viewBox="0 0 24 24">
-                    {feature.icon}
-                  </svg>
-                </span>
-                <span className={styles.featureTitle}>{feature.title}</span>
+                <div className={styles.featureHeader}>
+                  <span className={styles.featureIcon}>
+                    <svg width="18" height="18" viewBox="0 0 24 24">
+                      {feature.icon}
+                    </svg>
+                  </span>
+                  <span className={styles.featureTitle}>{feature.title}</span>
+                </div>
                 <p className={styles.featureText}>{feature.text}</p>
               </div>
             ))}
@@ -189,7 +242,7 @@ export default function Home() {
       </section>
 
       <section className={styles.section} id="sectors">
-        <div className="container">
+        <div className={styles.fullContainer}>
           <div className={styles.sectionHead}>
             <div className={styles.sectionLabel}>Sector performance</div>
             <h2 className={styles.sectionTitle}>See where the market is moving</h2>
@@ -199,46 +252,14 @@ export default function Home() {
             </p>
           </div>
           <SectorPreview />
-        </div>
-      </section>
-
-      <section className={styles.section} id="markets">
-        <div className="container">
-          <div className={styles.sectionHead}>
-            <div className={styles.sectionLabel}>How it works</div>
-            <h2 className={styles.sectionTitle}>Set up in three steps</h2>
-          </div>
-
-          <div className={styles.steps}>
-            {STEPS.map((step, index) => (
-              <div className={styles.step} key={step.title}>
-                <div className={styles.stepIndex}>{`0${index + 1}`}</div>
-                <div className={styles.stepTitle}>{step.title}</div>
-                <p className={styles.stepText}>{step.text}</p>
-              </div>
-            ))}
+          <div style={{ display: 'flex', justifyContent: 'flex-start', marginTop: '32px' }}>
+            <Link href="/insights" className={`${btn.btn} ${btn.primary}`}>
+              See more insights
+            </Link>
           </div>
         </div>
       </section>
 
-      <section className={styles.cta}>
-        <div className="container">
-          <div className={styles.ctaCard}>
-            <div>
-              <div className={styles.ctaTitle}>Ready to track the market your way?</div>
-              <p className={styles.ctaText}>
-                Create a free account and start building your watchlist in
-                under a minute.
-              </p>
-            </div>
-            <div className={styles.ctaActions}>
-              <Link href="/register" className={`${btn.btn} ${btn.primary} ${btn.lg}`}>
-                Create free account
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }

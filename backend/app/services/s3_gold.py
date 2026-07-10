@@ -70,7 +70,7 @@ class S3GoldClient:
                 raise S3GoldError(404, not_found_message) from exc
             raise S3GoldError(502, f"S3 error fetching '{bucket}/{key}': {exc}") from exc
 
-        return pd.read_parquet(BytesIO(body))
+        return await asyncio.to_thread(pd.read_parquet, BytesIO(body))
 
     @staticmethod
     def _to_records(df: pd.DataFrame) -> list[dict]:

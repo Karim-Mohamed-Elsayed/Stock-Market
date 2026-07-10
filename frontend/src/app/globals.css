@@ -31,7 +31,7 @@
   --radius-sm: 4px;
   --radius-md: 6px;
   --radius-lg: 10px;
-  --max-width: 1200px;
+  --max-width: 1536px;
 
   --font-sans: var(--font-geist-sans), -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -68,6 +68,7 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding-top: 80px;
 }
 
 a {
@@ -120,7 +121,7 @@ textarea {
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 40px;
 }
 
 .visually-hidden {
@@ -130,4 +131,23 @@ textarea {
   overflow: hidden;
   clip: rect(0 0 0 0);
   white-space: nowrap;
+}
+
+/* Custom Webkit Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
 }

@@ -1,16 +1,27 @@
-import Link from "next/link";
+"use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+import { useAuth } from "@/lib/auth-context";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
+  const pathname = usePathname();
+  const { profile, isLoading } = useAuth();
+  const isLoggedIn = !isLoading && profile !== null;
+  // Hide the footer on the stock market chart pages
+  if (pathname && pathname.startsWith("/markets/")) {
+    return null;
+  }
   return (
     <footer className={styles.footer}>
       <div className="container">
         <div className={styles.grid}>
           <div>
             <div className={styles.brand}>
-              <span className={styles.mark}>V</span>
-              Vantage
+              <img src="/logo/light_logo.png" alt="Meridian Axiom Logo" style={{ width: 96, height: 96, objectFit: 'contain' }} />
+              Meridian Axiom
             </div>
             <p className={styles.tagline}>
               Market data, technical indicators, and watchlists for the S&amp;P
@@ -21,19 +32,20 @@ export default function Footer() {
           <div>
             <div className={styles.heading}>Product</div>
             <div className={styles.links}>
-              <Link href="/#markets">Markets</Link>
-              <Link href="/#features">Features</Link>
-              <Link href="/#sectors">Sectors</Link>
+              <Link href="/markets/AAPL">Charts</Link>
+              <Link href="/insights">Insights &amp; Analytics</Link>
             </div>
           </div>
 
-          <div>
-            <div className={styles.heading}>Account</div>
-            <div className={styles.links}>
-              <Link href="/login">Log in</Link>
-              <Link href="/register">Create account</Link>
+          {!isLoggedIn && (
+            <div>
+              <div className={styles.heading}>Account</div>
+              <div className={styles.links}>
+                <Link href="/login">Log in</Link>
+                <Link href="/register">Create account</Link>
+              </div>
             </div>
-          </div>
+          )}
 
           <div>
             <div className={styles.heading}>Company</div>
@@ -52,7 +64,7 @@ export default function Footer() {
 
         <div className={styles.bottom}>
           <span className={styles.copyright}>
-            &copy; {new Date().getFullYear()} Vantage Markets.
+            &copy; {new Date().getFullYear()} Meridian Axiom Markets.
           </span>
           <p className={styles.disclaimer}>
             Market data may be delayed and is provided for informational
