@@ -1,0 +1,450 @@
+/* Full-height chat shell: fills the viewport below the 80px fixed header. */
+.page {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 80px);
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* --- Header ------------------------------------------------------------ */
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 4px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.headLeft {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--brand);
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+
+.subtitle {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  color: var(--text-secondary);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gain);
+  box-shadow: 0 0 0 3px var(--gain-bg);
+}
+
+.clearBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  border-radius: var(--radius-sm);
+  padding: 7px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.clearBtn:hover {
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+  background: var(--bg-2);
+}
+
+/* --- Scroll / message area -------------------------------------------- */
+.scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px 4px;
+  scroll-behavior: smooth;
+}
+
+.thread {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  max-width: 100%;
+}
+
+.rowUser {
+  flex-direction: row-reverse;
+}
+
+.msgAvatar {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.msgAvatarAi {
+  background: var(--bg-3);
+  color: var(--brand-hover);
+  border: 1px solid var(--border);
+}
+
+.msgAvatarUser {
+  background: var(--brand);
+  color: #fff;
+}
+
+.bubble {
+  padding: 14px 16px;
+  border-radius: var(--radius-lg);
+  font-size: 15px;
+  line-height: 1.65;
+  max-width: 78%;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+}
+
+.bubbleUser {
+  background: var(--brand);
+  color: #fff;
+  border-top-right-radius: var(--radius-sm);
+}
+
+.bubbleAi {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  border-top-left-radius: var(--radius-sm);
+}
+
+/* Markdown inside assistant bubbles */
+.bubbleAi p {
+  margin: 0 0 10px;
+}
+.bubbleAi p:last-child {
+  margin-bottom: 0;
+}
+.bubbleAi ul,
+.bubbleAi ol {
+  margin: 0 0 10px;
+  padding-left: 20px;
+  list-style: revert;
+}
+.bubbleAi li {
+  margin-bottom: 4px;
+}
+.bubbleAi strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+.bubbleAi code {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 1px 5px;
+}
+.bubbleUser code {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-sm);
+  padding: 1px 5px;
+}
+
+/* Blinking caret shown while a reply streams in */
+.caret {
+  display: inline-block;
+  width: 7px;
+  height: 15px;
+  margin-left: 2px;
+  background: var(--brand-hover);
+  vertical-align: text-bottom;
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Typing dots (before the first token arrives) */
+.typing {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+  padding: 4px 0;
+}
+.typing span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--text-tertiary);
+  animation: bounce 1.2s infinite ease-in-out;
+}
+.typing span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.typing span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+@keyframes bounce {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  30% {
+    transform: translateY(-5px);
+    opacity: 1;
+  }
+}
+
+.error {
+  align-self: center;
+  max-width: 90%;
+  text-align: center;
+  font-size: 13.5px;
+  color: var(--loss);
+  background: var(--loss-bg);
+  border: 1px solid var(--loss);
+  border-radius: var(--radius-md);
+  padding: 10px 16px;
+}
+
+/* --- Empty / welcome state -------------------------------------------- */
+.welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 32px 8px;
+}
+
+.welcomeMark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-lg);
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  color: var(--brand-hover);
+  margin-bottom: 20px;
+}
+
+.welcomeTitle {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.welcomeText {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 520px;
+  margin-bottom: 28px;
+}
+
+.suggestions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
+  max-width: 640px;
+}
+
+.suggestion {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  background: var(--bg-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.1s ease;
+}
+
+.suggestion:hover {
+  border-color: var(--border-strong);
+  background: var(--bg-2);
+}
+
+.suggestion:active {
+  transform: scale(0.99);
+}
+
+.suggestionIcon {
+  color: var(--brand-hover);
+  flex-shrink: 0;
+}
+
+/* --- Composer --------------------------------------------------------- */
+.composerWrap {
+  padding: 12px 4px 16px;
+  border-top: 1px solid var(--border);
+}
+
+.composer {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 10px 10px 10px 16px;
+  transition: border-color 0.15s ease;
+}
+
+.composer:focus-within {
+  border-color: var(--border-strong);
+}
+
+.input {
+  flex: 1;
+  resize: none;
+  border: none;
+  background: transparent;
+  outline: none;
+  color: var(--text-primary);
+  font-size: 15px;
+  line-height: 1.5;
+  max-height: 160px;
+  padding: 6px 0;
+}
+
+.input::placeholder {
+  color: var(--text-tertiary);
+}
+
+.sendBtn {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  border: none;
+  background: var(--brand);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.15s ease, opacity 0.15s ease;
+}
+
+.sendBtn:hover:not(:disabled) {
+  background: var(--brand-hover);
+}
+
+.sendBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.stopBtn {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-strong);
+  background: var(--bg-3);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.stopBtn:hover {
+  background: var(--bg-2);
+}
+
+.disclaimer {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-tertiary);
+}
+
+/* --- Responsive ------------------------------------------------------- */
+@media (max-width: 640px) {
+  .page {
+    padding: 0 14px;
+    height: calc(100vh - 80px);
+  }
+
+  .subtitle {
+    display: none;
+  }
+
+  .clearBtn span {
+    display: none;
+  }
+
+  .bubble {
+    max-width: 88%;
+  }
+
+  .suggestions {
+    grid-template-columns: 1fr;
+  }
+
+  .welcomeTitle {
+    font-size: 22px;
+  }
+}

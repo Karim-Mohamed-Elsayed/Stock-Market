@@ -4,7 +4,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import get_settings
-from app.routers import auth, history, quote, sectors, tickers, users, watchlist
+from app.routers import auth, chat, history, quote, sectors, tickers, users, watchlist
 from app.services.supabase_auth import get_supabase_auth_client
 
 settings = get_settings()
@@ -44,6 +44,7 @@ app.include_router(watchlist.router, prefix=API_V1_PREFIX)
 app.include_router(history.router, prefix=API_V1_PREFIX)
 app.include_router(tickers.router, prefix=API_V1_PREFIX)
 app.include_router(sectors.router, prefix=API_V1_PREFIX)
+app.include_router(chat.router, prefix=API_V1_PREFIX)
 
 
 @app.get("/health", tags=["health"])

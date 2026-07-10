@@ -59,6 +59,26 @@
   color: var(--text-primary);
 }
 
+.navLinkAi {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--brand-hover);
+}
+
+.navLinkAi:hover {
+  color: var(--brand-text);
+}
+
+.navLinkAi svg {
+  color: var(--brand);
+  transition: color 0.15s ease;
+}
+
+.navLinkAi:hover svg {
+  color: var(--brand-hover);
+}
+
 .actions {
   display: flex;
   align-items: center;

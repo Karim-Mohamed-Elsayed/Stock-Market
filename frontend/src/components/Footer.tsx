@@ -10,8 +10,8 @@ export default function Footer() {
   const pathname = usePathname();
   const { profile, isLoading } = useAuth();
   const isLoggedIn = !isLoading && profile !== null;
-  // Hide the footer on the stock market chart pages
-  if (pathname && pathname.startsWith("/markets/")) {
+  // Hide the footer on the full-height chart and AI assistant pages
+  if (pathname && (pathname.startsWith("/markets/") || pathname === "/assistant")) {
     return null;
   }
   return (
@@ -34,6 +34,7 @@ export default function Footer() {
             <div className={styles.links}>
               <Link href="/markets/AAPL">Charts</Link>
               <Link href="/insights">Insights &amp; Analytics</Link>
+              <Link href="/assistant">AI Assistant</Link>
             </div>
           </div>
 
@@ -50,6 +51,8 @@ export default function Footer() {
           <div>
             <div className={styles.heading}>Company</div>
             <div className={styles.links}>
+              <Link href="/about">About us</Link>
+              <Link href="/faq">FAQ</Link>
               <a
                 href="https://github.com"
                 target="_blank"
@@ -57,7 +60,7 @@ export default function Footer() {
               >
                 GitHub
               </a>
-              <a href="mailto:hello@vantage.markets">Contact</a>
+              <a href="mailto:hello@meridianaxiom.markets">Contact</a>
             </div>
           </div>
         </div>

@@ -26,6 +26,16 @@ class Settings(BaseSettings):
     # TTL (seconds) for the /quote in-process cache.
     quote_cache_ttl_seconds: int = 30
 
+    # AI Assistant (chatbot) provider. Google Gemini is the default backend.
+    # Get a key from Google AI Studio (https://aistudio.google.com/apikey).
+    # Left blank the /chat endpoint returns a clear "not configured" error
+    # instead of breaking app startup.
+    gemini_api_key: str = ""
+    # "gemini-flash-latest" is an alias Google keeps pointed at the current
+    # Flash model, so it won't 404 as pinned versions get retired. Override
+    # via GEMINI_MODEL (e.g. gemini-flash-lite-latest for lower cost).
+    gemini_model: str = "gemini-flash-latest"
+
     # Auth cookie settings. `cookie_secure` must be True in production (HTTPS);
     # keep False for local http:// development. `cookie_samesite` must be "none"
     # (with cookie_secure=True) if the frontend and API are on different sites.

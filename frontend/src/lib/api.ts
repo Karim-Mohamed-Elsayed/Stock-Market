@@ -178,3 +178,49 @@ export function getHistoryOhlc(
     `/history/${encodeURIComponent(ticker)}/ohlc?interval=${interval}`,
   );
 }
+
+// --- AI Assistant (chatbot) ---------------------------------------------
+
+export type ChatRole = "user" | "assistant";
+
+export interface ChatMessage {
+  role: ChatRole;
+  content: string;
+}
+
+// Streams the assistant's reply from the /chat endpoint. The backend responds
+// with a plain-text stream of incremental token chunks; `onChunk` is called
+// with each delta as it arrives. Pass an AbortSignal to cancel a reply.
+export async function streamChat(
+  messages: ChatMessage[],
+  onChunk: (delta: string) => void,
+  signal?: AbortSignal,
+): Promise<void> {
+  const response = await fetch(`${API_URL}/chat`, {
+    method: "POST",
+    credentials: "include",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ messages }),
+    signal,
+  });
+
+  if (!response.ok || !response.body) {
+    let message = response.statusText;
+    try {
+      const body = await response.json();
+      message = body.detail ?? message;
+    } catch {
+      // no JSON body
+    }
+    throw new ApiError(response.status, message);
+  }
+
+  const reader = response.body.getReader();
+  const decoder = new TextDecoder();
+  while (true) {
+    const { value, done } = await reader.read();
+    if (done) break;
+    const delta = decoder.decode(value, { stream: true });
+    if (delta) onChunk(delta);
+  }
+}

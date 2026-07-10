@@ -56,6 +56,19 @@ export default function Header() {
           <Link href="/insights" className={styles.navLink}>
             Insights & Analytics
           </Link>
+          <Link href="/assistant" className={`${styles.navLink} ${styles.navLinkAi}`}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M12 3l1.9 4.6L18.5 9.5 13.9 11.4 12 16l-1.9-4.6L5.5 9.5l4.6-1.9z"></path>
+              <path d="M19 14l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"></path>
+            </svg>
+            AI Assistant
+          </Link>
+          <Link href="/faq" className={styles.navLink}>
+            FAQ
+          </Link>
+          <Link href="/about" className={styles.navLink}>
+            About Us
+          </Link>
         </nav>
 
         <div className={styles.actions}>
