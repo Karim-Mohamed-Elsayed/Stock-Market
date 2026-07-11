@@ -114,6 +114,12 @@ export default function CandlestickChart({
 
   const [legend, setLegend] = useState<Bar | null>(null);
   const barsRef = useRef<Bar[]>([]);
+  const showSmaRef = useRef({ showSma1, showSma2 });
+  const [crossTooltip, setCrossTooltip] = useState<{ x: number; y: number; signal: string } | null>(null);
+
+  useEffect(() => {
+    showSmaRef.current = { showSma1, showSma2 };
+  }, [showSma1, showSma2]);
 
   useEffect(() => {
     barsRef.current = bars;
@@ -230,6 +236,7 @@ export default function CandlestickChart({
       const currentBars = barsRef.current;
       if (!param.time) {
         setLegend(currentBars.length > 0 ? currentBars[currentBars.length - 1] : null);
+        setCrossTooltip(null);
         return;
       }
       const candle = param.seriesData.get(candleSeries) as CandlestickData<Time> | undefined;
@@ -249,6 +256,29 @@ export default function CandlestickChart({
         macd: match?.macd ?? null,
         signal: match?.signal ?? null,
       });
+
+      const { showSma1: s1, showSma2: s2 } = showSmaRef.current;
+      if (
+        param.point &&
+        match &&
+        (match.signal === "Golden Cross" || match.signal === "Death Cross") &&
+        s1 &&
+        s2
+      ) {
+        const sma1 = match.sma1;
+        if (sma1 !== null) {
+          const smaY = sma1Series.priceToCoordinate(sma1);
+          if (smaY !== null && Math.abs(param.point.y - smaY) < 40) {
+            setCrossTooltip({
+              x: param.point.x,
+              y: smaY,
+              signal: match.signal,
+            });
+            return;
+          }
+        }
+      }
+      setCrossTooltip(null);
     });
 
     chartRef.current = chart;
@@ -416,6 +446,16 @@ export default function CandlestickChart({
               )}
             </div>
           )}
+        </div>
+      )}
+      {crossTooltip && (
+        <div
+          className={`${styles.crossTooltip} ${
+            crossTooltip.signal === "Golden Cross" ? styles.goldenCross : styles.deathCross
+          }`}
+          style={{ left: crossTooltip.x, top: crossTooltip.y }}
+        >
+          {crossTooltip.signal}
         </div>
       )}
       <div ref={containerRef} className={styles.chart} />

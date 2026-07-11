@@ -176,3 +176,30 @@
   font-size: 13px;
   pointer-events: none;
 }
+
+/* Tooltip for SMA Crosses */
+.crossTooltip {
+  position: absolute;
+  z-index: 10;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  pointer-events: none;
+  transform: translate(-50%, -120%);
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--border);
+}
+
+.goldenCross {
+  background-color: rgba(12, 163, 12, 0.9);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.deathCross {
+  background-color: rgba(208, 59, 59, 0.9);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
