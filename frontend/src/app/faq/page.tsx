@@ -29,7 +29,7 @@ const GROUPS: FaqGroup[] = [
             Meridian Axiom is a market dashboard for the{" "}
             <strong>S&amp;P 500</strong>. It tracks every constituent of the
             index, layers on the technical indicators traders actually use,
-            rolls returns up by sector, and lets you save a personal watchlist —
+            rolls returns up by sector, and lets you save a personal watchlist
             all in one place. It grew out of a data-engineering project into a
             full product you can browse in your browser.
           </>
@@ -39,8 +39,8 @@ const GROUPS: FaqGroup[] = [
         q: "Do I need an account to use it?",
         a: (
           <>
-            No. Browsing the market — charts, indicators, sector rankings, and
-            the insights dashboards — is completely open and requires no login.
+            No. Browsing the market  charts, indicators, sector rankings, and
+            the insights dashboards  is completely open and requires no login.
             You only need a free account to build a{" "}
             <strong>personal watchlist</strong>, which is then saved to your
             profile and follows you across sessions and devices.
@@ -152,7 +152,7 @@ const GROUPS: FaqGroup[] = [
           <>
             Both are moving-average crossover signals. A{" "}
             <strong>Golden Cross</strong> is when the shorter 50-day average
-            crosses <em>above</em> the longer 200-day average — often read as
+            crosses <em>above</em> the longer 200-day average  often read as
             bullish momentum. A <strong>Death Cross</strong> is the opposite: the
             50-day crossing <em>below</em> the 200-day, often read as bearish.
           </>
@@ -176,9 +176,124 @@ const GROUPS: FaqGroup[] = [
         a: (
           <>
             It&apos;s the <strong>rolling 30-day standard deviation</strong> of a
-            ticker&apos;s daily returns — a common way to measure how much a
+            ticker&apos;s daily returns  a common way to measure how much a
             stock&apos;s price has been swinging recently. Higher values mean a
             choppier, riskier ride; lower values mean a steadier one.
+          </>
+        ),
+      },
+    ],
+  },
+  {
+    id: "insights-analytics",
+    title: "Insights & Analytics guide",
+    items: [
+      {
+        q: "How do I use the Deep-Dive Ticker Analytics section?",
+        a: (
+          <>
+            Use the <strong>ticker dropdown</strong> at the top right to switch
+            between any S&amp;P 500 stock  both dashboards update instantly.
+            Start with a stock you follow (e.g. <strong>AAPL</strong>) and check
+            whether its RSI is above 70 (potentially overbought) or below 30
+            (potentially oversold). Then cross-reference that with the MACD: if
+            both signal the same direction, the case is stronger.
+          </>
+        ),
+      },
+      {
+        q: "How do I read the Risk & Return Performance Dashboard?",
+        a: (
+          <>
+            There are two panels.
+            <br /><br />
+            <strong>Top dual-axis chart:</strong> The <em>blue line</em> (left
+            axis) is the daily return %  positive means the stock gained that
+            day, negative means it fell. The <em>orange line</em> (right axis)
+            is the 30-day rolling volatility. When it spikes, the stock is in a
+            high-swing period regardless of direction.
+            <br /><br />
+            <strong>Bottom histogram:</strong> Shows how often each return range
+            occurred across the full price history. A narrow peak near 0% means
+            a steady stock; a wide, flat spread means high volatility. A
+            right-skewed histogram (more mass on the positive side) suggests the
+            stock historically drifts upward.
+          </>
+        ),
+      },
+      {
+        q: "How do I read the RSI chart?",
+        a: (
+          <>
+            RSI oscillates between <strong>0 and 100</strong>. Two zones matter:
+            <br /><br />
+            <strong>Red zone (70–100)  Overbought:</strong> The stock has risen
+            much faster than it has fallen over 14 days. A pullback risk is
+            elevated. Many traders tighten stop-losses or reduce position size
+            here.
+            <br /><br />
+            <strong>Green zone (0–30)  Oversold:</strong> The stock has dropped
+            hard. This can be a contrarian entry signal, especially when the MACD
+            histogram begins turning positive from below zero.
+            <br /><br />
+            When RSI crosses back <em>below</em> 70 after being above it, or
+            back <em>above</em> 30 after being below it, traders treat those
+            crossings as actionable triggers.
+          </>
+        ),
+      },
+      {
+        q: "How do I read the MACD chart?",
+        a: (
+          <>
+            Three components to know:
+            <br /><br />
+            <strong>MACD Line (blue):</strong> The 12-day EMA minus the 26-day
+            EMA. Above zero = short-term momentum outpacing long-term (bullish).
+            Below zero = the reverse (bearish).
+            <br /><br />
+            <strong>Signal Line (red):</strong> A 9-day EMA of the MACD line.
+            When the blue line crosses <em>above</em> the red, that is a classic{" "}
+            <strong>buy crossover</strong>. When it crosses <em>below</em>, that
+            is a <strong>sell crossover</strong>.
+            <br /><br />
+            <strong>Histogram bars:</strong> The gap between the two lines. Blue
+            bars growing means bullish momentum is accelerating; red bars growing
+            means bearish momentum is building. Shrinking bars often precede a
+            crossover  watch for that as an early warning.
+          </>
+        ),
+      },
+      {
+        q: "How do I read the Sector Performance Ranking table?",
+        a: (
+          <>
+            Each row is one of the <strong>11 GICS sectors</strong> and shows
+            its <strong>average daily return</strong>  the mean price change of
+            all member stocks on the latest trading day. Green = net inflows,
+            red = net outflows. Click a row to expand it and see which tickers
+            belong to that sector, each linking to its full market page. Click
+            the <em>Avg Daily Return</em> column header to reverse the sort.
+          </>
+        ),
+      },
+      {
+        q: "How do I use the Ticker Rankings table?",
+        a: (
+          <>
+            Toggle between two modes with the <strong>RSI / Volatility</strong>{" "}
+            switch at the top of the table:
+            <br /><br />
+            <strong>RSI mode:</strong> Lists every S&amp;P 500 stock ranked by
+            its current RSI-14. Top = most overbought, bottom = most oversold.
+            The Status column flags Overbought / Neutral / Oversold so you can
+            scan the extremes at a glance without opening each stock page.
+            <br /><br />
+            <strong>Volatility mode:</strong> Lists stocks by their 30-day
+            rolling standard deviation of returns. Top = wildest movers. Use
+            this to gauge risk before entering a position  if a stock ranks in
+            the top 10, expect large daily swings. Click the column header to
+            flip sort order. Use the search icon to jump to a specific ticker.
           </>
         ),
       },
@@ -194,7 +309,7 @@ const GROUPS: FaqGroup[] = [
           <>
             Once you&apos;re signed in you can save any ticker to your
             watchlist. The list is tied to your account and persists across
-            sessions, so it&apos;s there every time you come back — from any
+            sessions, so it&apos;s there every time you come back  from any
             device.
           </>
         ),
@@ -205,7 +320,7 @@ const GROUPS: FaqGroup[] = [
           <>
             Authentication is handled by <strong>Supabase Auth</strong> using
             signed JSON Web Tokens (JWT), and every watchlist is protected by{" "}
-            <strong>row-level security</strong> in the database — meaning you can
+            <strong>row-level security</strong> in the database  meaning you can
             only ever read or modify your own saved tickers, never anyone
             else&apos;s.
           </>
@@ -240,7 +355,7 @@ const GROUPS: FaqGroup[] = [
             <strong>Bronze</strong> layer holds the raw scraped data, the{" "}
             <strong>Silver</strong> layer holds it cleaned and standardized, and
             the <strong>Gold</strong> layer holds the finished, analysis-ready
-            tables — the indicators and sector aggregates you actually see on the
+            tables  the indicators and sector aggregates you actually see on the
             site. Each layer builds on the one before it.
           </>
         ),

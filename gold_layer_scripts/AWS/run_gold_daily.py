@@ -68,7 +68,7 @@ def calculate_daily_indicators(df, gics_df):
     df['SMA_50'] = df['Close'].rolling(window=50, min_periods=1).mean()
     df['SMA_200'] = df['Close'].rolling(window=200, min_periods=1).mean()
     
-    # Trading Signals — Golden Cross / Death Cross
+    # Trading Signals  Golden Cross / Death Cross
     df['Prev_SMA_50'] = df['SMA_50'].shift(1)
     df['Prev_SMA_200'] = df['SMA_200'].shift(1)
     

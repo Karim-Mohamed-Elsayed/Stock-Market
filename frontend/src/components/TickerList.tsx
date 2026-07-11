@@ -79,9 +79,9 @@ export default function TickerList({ tickers, activeTicker, isOpen = false, onCl
       <ul className={styles.list}>
         {filtered.map((ticker) => {
           const q = quotes[ticker];
-          const priceStr = q?.price != null ? q.price.toFixed(2) : "—";
-          const changeStr = q?.change != null ? (q.change >= 0 ? "+" : "") + q.change.toFixed(2) : "—";
-          const changePctStr = q?.change_percent != null ? (q.change_percent >= 0 ? "+" : "") + q.change_percent.toFixed(2) + "%" : "—";
+          const priceStr = q?.price != null ? q.price.toFixed(2) : " ";
+          const changeStr = q?.change != null ? (q.change >= 0 ? "+" : "") + q.change.toFixed(2) : " ";
+          const changePctStr = q?.change_percent != null ? (q.change_percent >= 0 ? "+" : "") + q.change_percent.toFixed(2) + "%" : " ";
           const isGain = q?.change != null ? q.change >= 0 : null;
 
           return (

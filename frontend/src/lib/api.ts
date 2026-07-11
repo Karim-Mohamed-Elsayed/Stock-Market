@@ -114,7 +114,7 @@ export function getCurrentProfile(): Promise<ProfileOut> {
 
 // Ticker symbols for every S&P 500 constituent that has a gold-layer file,
 // straight from the S3 bucket listing (see app.services.s3_gold.list_tickers)
-// — there's no company-name/exchange table backing this, just the symbols.
+//  there's no company-name/exchange table backing this, just the symbols.
 export function listTickers(): Promise<string[]> {
   return request<string[]>("/tickers");
 }
@@ -139,7 +139,7 @@ export function getQuote(ticker: string): Promise<QuoteOut> {
 export type Interval = "daily" | "hourly";
 
 // Mirrors app.schemas.history.OhlcHistoryPoint: gold-layer indicators joined
-// with silver-layer OHLCV. Any field can be null — rolling indicators are
+// with silver-layer OHLCV. Any field can be null  rolling indicators are
 // unset for the first rows of a ticker's history, and open/high/low/volume
 // are null if the silver-layer row for that date is ever missing.
 export interface OhlcHistoryPoint {

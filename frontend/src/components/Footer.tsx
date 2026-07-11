@@ -25,7 +25,7 @@ export default function Footer() {
             </div>
             <p className={styles.tagline}>
               Market data, technical indicators, and watchlists for the S&amp;P
-              500 — in one dashboard.
+              500  in one dashboard.
             </p>
           </div>
 

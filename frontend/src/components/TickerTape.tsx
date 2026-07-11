@@ -20,12 +20,12 @@ const FALLBACK: QuoteOut[] = [
 ];
 
 function formatPrice(value: number | null) {
-  if (value === null) return "—";
+  if (value === null) return " ";
   return value.toFixed(2);
 }
 
 function formatChange(quote: QuoteOut) {
-  if (quote.change === null || quote.change_percent === null) return "—";
+  if (quote.change === null || quote.change_percent === null) return " ";
   const sign = quote.change >= 0 ? "+" : "";
   return `${sign}${quote.change.toFixed(2)} (${sign}${quote.change_percent.toFixed(2)}%)`;
 }
@@ -42,7 +42,7 @@ export default function TickerTape() {
         .filter((result): result is PromiseFulfilledResult<QuoteOut> => result.status === "fulfilled")
         .map((result) => result.value)
         // A 200 response with a null price (e.g. the quote provider is
-        // unreachable) resolves the promise but carries no usable data —
+        // unreachable) resolves the promise but carries no usable data  
         // treat it the same as a failed fetch so the fallback tape isn't
         // replaced with a row of dashes.
         .filter((quote) => quote.price !== null);

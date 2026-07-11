@@ -46,7 +46,7 @@ const SUGGESTIONS: Suggestion[] = [
 ];
 
 const GREETING =
-  "Hi! I'm Axiom AI, your guide to the market. Ask me anything about how stocks work, what the indicators on this dashboard mean, or how trading works — I'll keep it clear and simple.";
+  "Hi! I'm Axiom AI, your guide to the market. Ask me anything about how stocks work, what the indicators on this dashboard mean, or how trading works  I'll keep it clear and simple.";
 
 export default function AssistantPage() {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
@@ -110,7 +110,7 @@ export default function AssistantPage() {
       );
     } catch (err) {
       if (err instanceof DOMException && err.name === "AbortError") {
-        // User pressed stop — keep whatever streamed so far.
+        // User pressed stop  keep whatever streamed so far.
       } else {
         const message =
           err instanceof ApiError
@@ -222,9 +222,8 @@ export default function AssistantPage() {
                   className={`${styles.row} ${isUser ? styles.rowUser : ""}`}
                 >
                   <div
-                    className={`${styles.msgAvatar} ${
-                      isUser ? styles.msgAvatarUser : styles.msgAvatarAi
-                    }`}
+                    className={`${styles.msgAvatar} ${isUser ? styles.msgAvatarUser : styles.msgAvatarAi
+                      }`}
                     aria-hidden="true"
                   >
                     {isUser ? (
@@ -236,9 +235,8 @@ export default function AssistantPage() {
                     )}
                   </div>
                   <div
-                    className={`${styles.bubble} ${
-                      isUser ? styles.bubbleUser : styles.bubbleAi
-                    }`}
+                    className={`${styles.bubble} ${isUser ? styles.bubbleUser : styles.bubbleAi
+                      }`}
                   >
                     {isUser ? (
                       m.content
@@ -307,7 +305,7 @@ export default function AssistantPage() {
         </div>
         <p className={styles.disclaimer}>
           Axiom AI is for education only and can make mistakes. This is not
-          financial advice — always do your own research.
+          financial advice  always do your own research.
         </p>
       </div>
     </main>
@@ -315,7 +313,7 @@ export default function AssistantPage() {
 }
 
 /* ---------------------------------------------------------------------- */
-/* Minimal, safe Markdown rendering — no raw HTML injection. Handles       */
+/* Minimal, safe Markdown rendering  no raw HTML injection. Handles       */
 /* paragraphs, bullet/numbered lists, **bold**, and `inline code`.         */
 /* ---------------------------------------------------------------------- */
 

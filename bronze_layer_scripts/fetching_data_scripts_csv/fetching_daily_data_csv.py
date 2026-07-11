@@ -80,7 +80,7 @@ def download_batch(tickers: list[str], start: str) -> pd.DataFrame:
 
 def append_or_create(ticker: str, new_data: pd.DataFrame) -> None:
     if new_data.empty:
-        log.warning(f"  No new data for {ticker} — skipped.")
+        log.warning(f"  No new data for {ticker}  skipped.")
         return
     path = OUTPUT_DIR / f"{ticker}.csv"
     if path.exists():

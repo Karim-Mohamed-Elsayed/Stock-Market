@@ -384,7 +384,7 @@ export default function CandlestickChart({
     <div className={styles.wrap}>
       {showLegend && (
         <div className={`${styles.legend} ${showRsi ? styles.legendShifted : ""}`}>
-          {/* Row 1: Logo · Symbol · interval — OHLC */}
+          {/* Row 1: Logo · Symbol · interval  OHLC */}
           <div className={styles.legendRow1}>
             <TickerLogo ticker={symbol} size={18} className={styles.legendLogo} />
             <span className={styles.legendSymbol}>{symbol}</span>
@@ -392,7 +392,7 @@ export default function CandlestickChart({
             <span className={styles.legendInterval}>{interval === "daily" ? "1D" : "1H"}</span>
             {legend && (
               <>
-                <span className={styles.legendSep}>—</span>
+                <span className={styles.legendSep}> </span>
                 <span className={styles.legendOhlcLabel}>O</span>
                 <span className={isGain ? "gain" : "loss"}>{legend.open.toFixed(2)}</span>
                 <span className={styles.legendOhlcLabel}>H</span>
@@ -408,7 +408,7 @@ export default function CandlestickChart({
             )}
           </div>
 
-          {/* Row 2: Bid/Sell — Ask/Buy boxes */}
+          {/* Row 2: Bid/Sell  Ask/Buy boxes */}
           {legend && (
             <div className={styles.legendRow2}>
               <span className={styles.bidBox}>
@@ -450,9 +450,8 @@ export default function CandlestickChart({
       )}
       {crossTooltip && (
         <div
-          className={`${styles.crossTooltip} ${
-            crossTooltip.signal === "Golden Cross" ? styles.goldenCross : styles.deathCross
-          }`}
+          className={`${styles.crossTooltip} ${crossTooltip.signal === "Golden Cross" ? styles.goldenCross : styles.deathCross
+            }`}
           style={{ left: crossTooltip.x, top: crossTooltip.y }}
         >
           {crossTooltip.signal}

@@ -109,7 +109,7 @@ export default function Home() {
             <p className={styles.subtitle}>
               Meridian Axiom tracks every S&amp;P 500 constituent, layers on the
               technical indicators traders actually use, and lets you save a
-              watchlist — all in one dashboard.
+              watchlist  all in one dashboard.
             </p>
             <div className={styles.heroActions}></div>
             <div className={styles.heroMeta}>
@@ -142,14 +142,14 @@ export default function Home() {
                 </div>
               </div>
               <div className={styles.panelChip} style={{ margin: 0 }}>
-                <button 
-                  className={`${styles.chip} ${interval === "daily" ? styles.chipActive : ""}`} 
+                <button
+                  className={`${styles.chip} ${interval === "daily" ? styles.chipActive : ""}`}
                   onClick={() => setInterval("daily")}
                 >
                   1D
                 </button>
-                <button 
-                  className={`${styles.chip} ${interval === "hourly" ? styles.chipActive : ""}`} 
+                <button
+                  className={`${styles.chip} ${interval === "hourly" ? styles.chipActive : ""}`}
                   onClick={() => setInterval("hourly")}
                 >
                   1H
@@ -158,15 +158,15 @@ export default function Home() {
             </div>
             <div style={{ flex: 1, minHeight: 0, position: 'relative' }}>
               {nvdaData ? (
-                <CandlestickChart 
-                  symbol="NVDA" 
-                  interval={interval} 
-                  data={nvdaData} 
-                  showSma1={false} 
-                  showSma2={false} 
-                  showRsi={false} 
+                <CandlestickChart
+                  symbol="NVDA"
+                  interval={interval}
+                  data={nvdaData}
+                  showSma1={false}
+                  showSma2={false}
+                  showRsi={false}
                   showVolume={false}
-                  showLegend={false} 
+                  showLegend={false}
                 />
               ) : (
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', color: 'var(--text-tertiary)' }}>Loading...</div>
@@ -219,7 +219,7 @@ export default function Home() {
             <h2 className={styles.sectionTitle}>Everything the dashboard needs, nothing it doesn&apos;t</h2>
             <p className={styles.sectionSubtitle}>
               Built on a medallion data pipeline that scrapes, cleans, and
-              scores the S&amp;P 500 — surfaced through a fast API.
+              scores the S&amp;P 500  surfaced through a fast API.
             </p>
           </div>
 

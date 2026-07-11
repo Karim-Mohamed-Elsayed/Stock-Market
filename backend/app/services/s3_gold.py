@@ -94,7 +94,7 @@ class S3GoldClient:
         """Gold's indicators joined with silver's Open/High/Low/Volume on Date.
 
         Gold is derived from silver by the same pipeline run, so every Date in
-        gold is expected to have a matching row in silver — a left join off
+        gold is expected to have a matching row in silver  a left join off
         gold keeps its indicator set as the source of truth for which rows
         exist, same as ``get_history``.
         """
@@ -144,7 +144,7 @@ class S3GoldClient:
         """Presigns a short-lived GET URL for the same key ``get_history`` reads.
 
         Signing is local (no request to AWS), so unlike ``get_history`` this
-        can't confirm the object exists first — a bad ticker just yields a
+        can't confirm the object exists first  a bad ticker just yields a
         URL that 404s when the frontend fetches it directly from S3.
         """
         key = f"{interval}/{ticker}.parquet"
